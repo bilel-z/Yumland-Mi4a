@@ -1,0 +1,91 @@
+/* --- PAGE D'ACCUEIL --- */
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid #C62828;
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: #C62828;
+}
+
+.btn-secondary {
+    background-color: #F9A825;
+}
+
+.btn-secondary:hover {
+    background-color: #fbc02d;
+}
+
+.btn-primary:hover {
+    background-color: #b71c1c;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C62828;
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+}
+
+.site-name {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 4px solid #F9A825;
+}
