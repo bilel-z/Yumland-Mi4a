@@ -6,15 +6,32 @@ body {
 }
 
 nav {
-   background-color: white;
+   background-color: rgb(0, 0, 0);
    height: 130px;
    display: flex;
    align-items: center;
    width: 100%;
+   justify-content: space-between;
 }
 
 div.logo img{
     padding-left: 50px;
-    height: 120px;
+    height: 100px;
     width: auto;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+li{
+    border-right: 1px solid rgb(218, 187, 14);
+    padding: 15px 25px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
 }
