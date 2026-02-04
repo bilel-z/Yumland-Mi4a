@@ -1,12 +1,16 @@
 body {
     background-image: url(image/hd.jpeg);
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
 
 nav {
    background-color: rgb(0, 0, 0);
+   position: fixed;
+   z-index: 50000;
    height: 130px;
    display: flex;
    align-items: center;
@@ -26,6 +30,10 @@ div.logo img{
     list-style: none;
 }
 
+.navigation {
+    padding-right: 50px;
+}
+
 li{
     border-right: 1px solid rgb(218, 187, 14);
     padding: 15px 25px;
@@ -34,4 +42,97 @@ li{
 li a {
     text-decoration: none;
     color: white;
+    text-transform: uppercase;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding-top :10px;
+    padding-bottom: 10px;
+}
+
+li a:hover{
+    border-top-color: rgb(165, 142, 11);
+    border-bottom-color: rgb(165, 142, 11);
+}
+
+section {
+    padding-top: 130px;
+    background-color: rgba(0,0,0,0.553);
+}
+
+.LogoCorp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 80px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    box-sizing: border-box;
+    gap: 0;
+}
+
+.typeResto {
+   font-size: 50px; 
+}
+.LogoCorp img {
+    height: 500px;
+    width: auto;
+}
+
+.Presentation {
+    padding-top: 120px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Horaire {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.titreHoraire {
+    font-size: 90px;
+}
+
+.tableauHoraire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.blocTableau {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 2px solid white;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.AVIS {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+footer {
+    background-color: rgba(0,0,0,0.553);
+    color: white;
+    font-size: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
