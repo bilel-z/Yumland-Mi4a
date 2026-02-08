@@ -89,3 +89,49 @@ footer {
     padding-bottom: 15px;
     padding-left: 15px;
 }
+
+@media (max-width: 768px) {
+    section{
+        padding-top: 80px;
+    }
+
+    .LogoCorp {
+        font-size: 40px;
+    }
+
+    .LogoCorp img {
+        width: 50%;
+        height: auto;
+    }
+
+    .typeResto{
+        font-size: 20px;
+    }
+
+    .Presentation {
+        padding-top: 40px;    
+        padding-left: 20px; 
+        padding-right: 20px;
+        font-size: 18px;
+    }
+
+    .Horaire {
+        padding-top: 60px; 
+    }
+
+    .titreHoraire {
+        font-size: 35px;   
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .tableauHoraire {
+        width: 90%;       
+        font-size: 16px;   
+    }
+
+    .blocTableau {
+        padding-bottom: 15px; 
+        padding-top: 15px;
+    }
+}
