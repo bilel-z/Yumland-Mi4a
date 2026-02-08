@@ -1,9 +1,121 @@
 body {
-    background-image: url(image/hd.jpeg);
-    background-size: cover;
+    background-image: url(image/FondInscription.jpg);
     background-attachment: fixed;
-    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
 
+section{
+    display: flex;
+    padding-top: 180px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoInscription img{
+    height:250px;
+    width: auto;
+}
+
+.logoInscription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.TitreInscription{
+    grid-column: span 2;
+    text-align: center;
+    font-size: 40px;
+}
+
+.BoiteForm{
+    background-color: white;
+    width: 65%;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.BoiteForm form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ChampsInscription {
+    display: flex;
+    flex-direction: column;
+}
+
+.ChampsInscription label{
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.ChampsInscription input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(207, 207, 207);
+    box-sizing: border-box;
+}
+
+.StyleEnvoi{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.StyleEnvoi:hover{
+    background-color: rgb(68, 68, 68);
+}
+
+.envoi {
+    grid-column: span 2;
+    text-align: center;
+}
+
+footer{
+    color: white;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+
+    section {
+        padding-top: 100px;
+    }
+
+    .logoInscription{
+        width: 50px;
+        height: auto;
+    }
+
+    .BoiteForm {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .BoiteForm form {
+        grid-template-columns: 1fr;
+    }
+
+    .TitreInscription {
+        grid-column: span 1;
+    }
+
+    .envoi {
+        grid-column: span 1;
+    }
+}
