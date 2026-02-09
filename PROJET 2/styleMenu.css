@@ -4,3 +4,62 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.effetNoir {  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.553); 
+    z-index: -1; 
+    /*backdrop-filter: blur(5px);*/
+
+}
+
+section {
+    padding-top: 130px;
+    text-align: center;
+    color: white;
+}
+
+.PosBarre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Recherche {
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#rechercheFor {
+    width: 100%;        
+    height: 100%;
+    border: none;
+    outline: none;      
+    font-size: 28px;
+}
+
+.Recherche button {
+    height: 50px;
+    width: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.Recherche button:hover {
+    cursor: pointer;
+}
+
+button img {
+    height: 80%;
+    width: auto;
+}
