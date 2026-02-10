@@ -1,0 +1,164 @@
+body {
+     background-image: url(image/resized_1920x1080.jpg);
+    background-attachment: fixed;
+    background-size: cover;       
+    background-position: top;     
+    margin: 0;
+    padding: 0;
+}
+.logoInscription img{
+    height:250px;
+    width: auto;
+}
+.logoInscription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+.Formulaire {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;       
+    padding-top: 20px;            
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    padding-top: 180px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoInscription img {
+    height: 200px;  
+    width: auto;
+}
+
+.logoInscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    margin-bottom: 10px;  
+}
+
+fieldset {
+    width: 600px;      
+    padding: 40px;     
+    background-color: white;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+
+.ligne-note {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.ligne-note p {
+    margin: 0;
+    min-width: 180px;
+    font-weight: bold;
+}
+
+.notation {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2rem;
+    display: flex;
+}
+
+.notation input {
+    position: absolute; 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    caret-color: transparent;
+}
+
+.notation input:focus {
+    outline: none;
+}
+
+.notation label {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.notation label:hover,
+.notation label:hover ~ label {
+    color: gold;
+}
+
+.notation input:checked ~ label {
+    color: gold;
+}
+
+
+.commentaire {
+    margin: 0;
+    min-width: 180px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(207, 207, 207);
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+@media (max-width: 768px) {
+    .ligne-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ligne-note p {
+        min-width: auto;
+    }
+
+    fieldset {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logoInscription img {
+        height: 150px;
+    }
+}
