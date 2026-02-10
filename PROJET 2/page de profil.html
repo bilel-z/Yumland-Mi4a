@@ -3,36 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <title>KUNG FOOD - Profil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Profil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <h1>Mon Profil</h1>
-</header>
+<nav>
+    <div class="logo">
+        <img src="image/pandaLogo.png" alt="Logo Kung Food">
+    </div>
 
-<main class="container">
-    <section class="profile-card">
-        <h2>Informations personnelles</h2>
-
-        <p><strong>Nom :</strong> Zhang Wei ✏️</p>
-        <p><strong>Email :</strong> zhang@email.com ✏️</p>
-        <p><strong>Téléphone :</strong> 06 00 00 00 00 ✏️</p>
-
-        <h3>Anciennes commandes</h3>
+    <div class="navigation">
         <ul>
-            <li>Commande #120 - 32€</li>
-            <li>Commande #98 - 25€</li>
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Connexion.html">Connexion</a></li>
+            <li><a href="Profil.html">Profil</a></li>
+            <li><a href="Livraison.html">Livraison</a></li>
         </ul>
+    </div>
+</nav>
 
-        <h3>Fidélité</h3>
-        <p>Points : 120 ⭐</p>
-    </section>
-</main>
+<div class="Teinte"></div>
 
-<footer>
-    <p>© KUNG FOOD</p>
-</footer>
+<div class="centrage">
+
+    <div class="carte-blanche profil-global">
+
+        <div class="profil-gauche">
+
+            <div class="photo-profil">
+                <img src="image/pdp.png" alt="Photo de profil">
+            </div>
+
+            <h2>Jean Martin</h2>
+
+            <div class="infos-profil">
+                <p><strong>Prénom :</strong> Jean</p>
+                <p><strong>Nom :</strong> Martin</p>
+                <p><strong>Email :</strong> jean.martin@gmail.com</p>
+                <p><strong>Téléphone :</strong> 06 63 15 94 28</p>
+                <p><strong>Adresse :</strong><br>4 avenue d’Italie, 75013 Paris</p>
+            </div>
+
+        </div>
+
+        <div class="profil-droite">
+
+            <div class="bloc-droite">
+                <h3>Anciennes commandes</h3>
+                <p><strong>Commande #245</strong> – 02/02/2025 – 28,90 €</p>
+                <p><strong>Commande #231</strong> – 15/01/2025 – 19,50 €</p>
+                <p><strong>Commande #198</strong> – 05/12/2024 – 22,00 €</p>
+            </div>
+
+            <div class="bloc-droite">
+                <h3>Compte fidélité</h3>
+                <p><strong>Points :</strong> 120 pts</p>
+                <p>Prochaine récompense :</p>
+                <p>-10 % à 150 points</p>
+            </div>
+
+        </div>
+
+        <div class="actions-profil">
+            <button class="btn-modifier">
+                <i class="fa-solid fa-pen"></i>
+            </button>
+            <button class="btn-deco">
+                <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+            </button>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
+

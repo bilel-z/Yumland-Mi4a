@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>KUNG FOOD - Connexion</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Connexion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>KUNG FOOD</h1>
-    <p>Cuisine chinoise authentique</p>
-</header>
+<nav>
+    <div class="logo">
+        <img src="image/pandaLogo.png" alt="Logo Kung Food">
+    </div>
 
-<main class="container">
-    <h2>Connexion</h2>
+    <div class="navigation">
+        <ul>
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Connexion.html">Connexion</a></li>
+            <li><a href="Profil.html">Profil</a></li>
+            <li><a href="Livraison.html">Livraison</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <form class="form">
-        <label>Email</label>
-        <input type="email" placeholder="exemple@email.com" required>
+<div class="Teinte"></div>
 
-        <label>Mot de passe</label>
-        <input type="password" placeholder="••••••••" required>
+<main class="login-wrapper">
+    <div class="login-box">
 
-        <button type="submit">Se connecter</button>
-    </form>
+       
+        <h2 class="titre-principal">Bienvenue</h2>
+        <p class="sous-titre">Connectez-vous pour accéder à votre espace</p>
+
+        <form>
+            <label>Email</label>
+            <input type="email" placeholder="exemple@email.com" required>
+
+            <label>Mot de passe</label>
+            <input type="password" placeholder="••••••••" required>
+
+            <button type="submit">Se connecter</button>
+
+            <a href="inscription.html" class="inscrire">Créer un compte</a>
+        </form>
+
+    </div>
 </main>
-
-<footer>
-    <p>© 2026 KUNG FOOD</p>
-</footer>
 
 </body>
 </html>
