@@ -39,7 +39,7 @@ section{
     width: 65%;
     padding: 40px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 .BoiteForm form {
@@ -72,6 +72,7 @@ section{
     border: none;
     padding: 12px;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 .StyleEnvoi:hover{
