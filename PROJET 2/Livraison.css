@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Dancing Script', cursive;
-    background-image: url("image/marchéChinois.png");
+    background-image: url("image/marchéChinois.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -13,55 +13,6 @@ body {
     z-index: -1;
 }
 
-nav {
-   background-color: black;
-   position: fixed;
-   top: 0;
-   z-index: 50000;
-   height: 130px;
-   display: flex;
-   align-items: center;
-   width: 100%;
-   justify-content: space-between;
-}
-
-div.logo img {
-    padding-left: 50px;
-    height: 100px;
-}
-
-.navigation {
-    padding-right: 50px;
-}
-
-.navigation ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-}
-
-li {
-    border-right: 1px solid rgb(218, 187, 14);
-    padding: 15px 25px;
-}
-
-li:last-child {
-    border-right: none;
-}
-
-li a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    padding: 10px 0;
-}
-
-li a:hover {
-    border-top-color: rgb(165, 142, 11);
-    border-bottom-color: rgb(165, 142, 11);
-}
 
 .centrage {
     min-height: calc(100vh - 130px);
@@ -113,7 +64,7 @@ li a:hover {
     height: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
-    background-image: url("image/image-maps.png");
+    background-image: url("image/image-maps.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
