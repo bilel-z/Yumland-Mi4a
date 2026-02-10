@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    background-image: url("image/marchéChinois.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.Teinte {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+}
+
+nav {
+   background-color: black;
+   position: fixed;
+   top: 0;
+   z-index: 50000;
+   height: 130px;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+}
+
+div.logo img {
+    padding-left: 50px;
+    height: 100px;
+}
+
+.navigation {
+    padding-right: 50px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    border-right: 1px solid rgb(218, 187, 14);
+    padding: 15px 25px;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+}
+
+li a:hover {
+    border-top-color: rgb(165, 142, 11);
+    border-bottom-color: rgb(165, 142, 11);
+}
+
+.centrage {
+    min-height: calc(100vh - 130px);
+    padding-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carte-blanche {
+    background-color: white;
+    width: 500px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.carte-blanche h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.carte-blanche h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.Livraison-contenu {
+    display: flex;
+    gap: 30px;
+}
+
+.Livraison-info {
+    flex: 1;
+}
+
+.Livraison-info p {
+    margin-bottom: 15px;
+}
+
+.mapss {
+    flex: 1;
+    text-align: center;
+}
+
+.image-maps {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-image: url("image/image-maps.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ddd;
+}
+
+.maps {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.LivraisonTerminee {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #d63031;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.LivraisonTerminee:hover {
+    background-color: #b02324;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    .centrage {
+        padding-top: 30px;
+    }
+
+    div.logo img {
+        height: 60px;
+        padding-left: 0;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    li {
+        border-right: none;
+        border-bottom: 1px solid rgb(218, 187, 14);
+        width: 80%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .Livraison-contenu {
+        flex-direction: column;
+    }
+}

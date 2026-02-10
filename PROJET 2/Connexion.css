@@ -1,0 +1,155 @@
+body {
+    background-image: url(image/lac.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.Teinte {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+nav {
+   background-color: black;
+   position: fixed;
+   top: 0;
+   z-index: 50000;
+   height: 130px;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+}
+
+div.logo img {
+    padding-left: 50px;
+    height: 100px;
+}
+.navigation {
+    padding-right: 50px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    border-right: 1px solid rgb(218, 187, 14);
+    padding: 15px 25px;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+}
+
+li a:hover {
+    border-top-color: rgb(165, 142, 11);
+    border-bottom-color: rgb(165, 142, 11);
+}
+
+.login-wrapper {
+    min-height: calc(100vh - 130px);
+    padding-top: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.login-box {
+    background-color: white;
+    width: 360px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #145fd1;
+}
+
+a.inscrire {
+    margin-top: 20px;
+    display: inline-block;
+    color: black;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    .login-wrapper {
+        padding-top: 30px;
+    }
+
+    div.logo img {
+        height: 60px;
+        padding-left: 0;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    li {
+        border-right: none;
+        border-bottom: 1px solid rgb(218, 187, 14);
+        width: 80%;
+        text-align: center;
+        padding: 10px;
+    }
+}

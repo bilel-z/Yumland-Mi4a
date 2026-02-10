@@ -3,35 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>KUNG FOOD - Livraison</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Livraison.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>Livraison</h1>
-</header>
+<nav>
+    <div class="logo">
+        <img src="image/pandaLogo.png" alt="Logo Kung Food">
+    </div>
 
-<main class="container">
-    <section class="delivery-card">
-        <h2>Commande #245</h2>
+    <div class="navigation">
+        <ul>
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Connexion.html">Connexion</a></li>
+            <li><a href="Profil.html">Profil</a></li>
+            <li><a href="Livraison.html">Livraison</a></li>
+        </ul>
+    </div>
+</nav>
 
-        <p><strong>Adresse :</strong><br>
-        12 rue de Pékin, 75013 Paris</p>
+<div class="Teinte"></div>
 
-        <p><strong>Code interphone :</strong> 2589</p>
-        <p><strong>Étage :</strong> 4</p>
+<div class="centrage">
+    <div class="carte-blanche">
 
-        <p><strong>Téléphone :</strong><br>06 12 34 56 78</p>
+        <h2>Livraison – Interface Livreur</h2>
+        <h3>Commande #245</h3>
 
-        <a class="map-button" href="#">Ouvrir dans Maps</a>
+        <div class="Livraison-contenu">
 
-        <button class="validate-button">Livraison terminée</button>
-    </section>
-</main>
+            <div class="Livraison-info">
+                <p><strong>Adresse :</strong><br>12 rue de Pékin, 75013 Paris</p>
+                <p><strong>Code interphone :</strong> 2589</p>
+                <p><strong>Étage :</strong> 4</p>
+                <p><strong>Téléphone :</strong><br>06 12 34 56 78</p>
+                <p><strong>Commentaires :</strong><br>
+                Merci de m’appeler en bas, l’ascenseur est en panne.</p>
+            </div>
 
-<footer>
-    <p>KUNG FOOD</p>
-</footer>
+            <div class="mapss">
+                <div class="image-maps"></div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=25+rue+Nationale+75013+Paris"
+                  class="maps"
+                  target="_blank">
+                  Ouvrir dans Maps
+                </a>
+            </div>
+
+        </div>
+
+        <button class="LivraisonTerminee">Livraison terminée</button>
+
+    </div>
+</div>
 
 </body>
 </html>
