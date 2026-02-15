@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Dancing Script', cursive;
-    background-image: url("image/marchéChinois.jpeg");
+    background-image: url("../image/marchéChinois.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -64,7 +64,7 @@ body {
     height: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
-    background-image: url("image/image-maps.jpeg");
+    background-image: url("../image/image-maps.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

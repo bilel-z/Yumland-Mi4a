@@ -1,5 +1,5 @@
 body {
-     background-image: url(image/resized_1920x1080.jpg);
+     background-image: url(../image/resized_1920x1080.jpg);
     background-attachment: fixed;
     background-size: cover;       
     background-position: top;     

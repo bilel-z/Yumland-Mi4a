@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Dancing Script', cursive;
-    background-image: url("image/muraille.png");
+    background-image: url("../image/muraille.png");
     background-size: cover;
     background-position: center;
 }
