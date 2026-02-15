@@ -6,11 +6,11 @@ body {
 }
 
 .effetNoir {  
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.553); 
     z-index: -1; 
     /*backdrop-filter: blur(5px);*/
@@ -18,13 +18,18 @@ body {
 }
 
 section {
-    padding-top: 130px;
+    padding-top: 180px;
     text-align: center;
     color: white;
 }
 
+.Titre {
+    font-size: 50px;
+}
+
 .PosBarre{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -62,4 +67,149 @@ section {
 button img {
     height: 80%;
     width: auto;
+}
+
+
+.filtre {
+    display: flex;
+    flex-direction: row;
+}
+
+div.filtre select{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 20px;
+}
+
+div.filtre select:hover{
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+.Menu {
+    padding-top: 50px; 
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.MenuGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.BoitePlat {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.BoitePlat:hover {
+    border-color: rgb(207, 83, 83); 
+}
+
+.PlatImage {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+}
+
+.PlatImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.BoitePlat:hover .PlatImage img {
+    transform: scale(1.1);
+}
+
+.BoiteContenu {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.BoiteContenu h3 {
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 22px;
+    font-family: sans-serif; 
+}
+
+.description {
+    color: rgb(218, 218, 218);
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.AjoutPanier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.prix {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 223, 42); /* Jaune doré */
+}
+
+.AjouterPanier {
+    padding: 10px 20px;
+    background-color: rgb(247, 71, 55); 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.AjouterPanier:hover {
+    background-color: rgb(201, 68, 50);
+}
+
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 120px;
+    }
+    
+    .Titre {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .Recherche {
+        width: 90%;
+    }
+
+    .filtre {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .MenuGrid {
+        grid-template-columns:  1fr;
+    }
+
+    .Menu {
+        width: 95%;
+    }
+
+    .PlatImage {
+        height: 180px; 
+    }
 }
