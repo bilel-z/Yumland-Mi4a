@@ -82,6 +82,10 @@ section {
     margin-top: 150px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Peut etre a séparé dans un fichier apart */
 .GrillePlatCelebre {
     display: grid;
