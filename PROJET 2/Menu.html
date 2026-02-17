@@ -50,25 +50,30 @@
                             </button>
                         </div>
                         <div class="filtre">
+                            
                             <div class="Type">
-                                <select name="typePlat">
+                                <select name="typePlat" selected="ToutT">
+                                    <label for="typeSelect">Type de plat</label>
                                     <option value="ToutT">Tout</option>
                                     <option value="Entree">Entrée</option>
                                     <option value="Plat">Plat</option>
                                     <option value="Dessert">Dessert</option>
                                 </select>
                             </div>
+                            
                             <div class="Allergène">
-                                <select name="Allergene">
-                                    <option value="Vegetarien">Entrée</option>
+                                <select name="Allergene" selected="Sans">
+                                    <option value="Sans">Sans</option>
+                                    <option value="Vegetarien">Végétarien</option>
                                     <option value="Gluten">Gluten</option>
                                     <option value="Lactose">Lactose</option>
                                     <option value="Cacahuete">Arachide</option>
                                     <option value="Mer">Fruit de mer</option>
                                 </select>
                             </div>
+                            
                             <div class="Saveur">
-                                <select name="typeSaveur">
+                                <select name="typeSaveur" selected="ToutS">
                                     <option value="ToutS">Tout</option>
                                     <option value="Sucre">Sucrée</option>
                                     <option value="Sel">Salé</option>
