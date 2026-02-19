@@ -50,31 +50,30 @@
                             </button>
                         </div>
                         <div class="filtre">
-                            
                             <div class="Type">
-                                <select name="typePlat" selected="ToutT">
-                                    <label for="typeSelect">Type de plat</label>
-                                    <option value="ToutT">Tout</option>
+                                <label for="LabelType">Choisissez le type de plat :</label>
+                                <select name="typePlat" id="LabelType">
+                                    <option value="ToutT" selected>Tout</option>
                                     <option value="Entree">Entrée</option>
-                                    <option value="Plat">Plat</option>
+                                    <option value="Plat">Plat principal</option>
                                     <option value="Dessert">Dessert</option>
                                 </select>
                             </div>
-                            
                             <div class="Allergène">
-                                <select name="Allergene" selected="Sans">
-                                    <option value="Sans">Sans</option>
+                                <label for="LabelAllergene">Choisissez votre régime :</label>
+                                <select name="Allergene" id="LabelAllergene">
+                                    <option value="Sans" selected>Pas de régime</option>
                                     <option value="Vegetarien">Végétarien</option>
-                                    <option value="Gluten">Gluten</option>
-                                    <option value="Lactose">Lactose</option>
-                                    <option value="Cacahuete">Arachide</option>
-                                    <option value="Mer">Fruit de mer</option>
+                                    <option value="Gluten">Sans gluten</option>
+                                    <option value="Lactose">Sans lactose</option>
+                                    <option value="Cacahuete">Sans arachide</option>
+                                    <option value="Mer">Sans fruit de mer</option>
                                 </select>
                             </div>
-                            
                             <div class="Saveur">
-                                <select name="typeSaveur" selected="ToutS">
-                                    <option value="ToutS">Tout</option>
+                                <label for="LabelSaveur">Choisissez la saveur :</label>
+                                <select name="typeSaveur" id="LabelSaveur">
+                                    <option value="ToutS" selected>Tout</option>
                                     <option value="Sucre">Sucrée</option>
                                     <option value="Sel">Salé</option>
                                     <option value="Gras">Gras</option>

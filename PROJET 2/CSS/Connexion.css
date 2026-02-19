@@ -168,6 +168,11 @@ a.inscrire {
         border-bottom: none;
     }
 
+    li a:hover{
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+    }
+
     .login-wrapper {
         padding: 20px;
         margin-top: 20px;
