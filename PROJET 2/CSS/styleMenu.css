@@ -35,7 +35,7 @@ section {
 
 .MenuGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
 }
 
@@ -128,7 +128,7 @@ section {
     }
 
     .MenuGrid {
-        grid-template-columns:  1fr;
+        grid-template-columns: 1fr;
     }
 
     .Menu {
