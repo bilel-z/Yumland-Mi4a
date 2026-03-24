@@ -37,14 +37,14 @@
                     <td> jean.martin@gmail.com</td>
                     <td>5</td>
                     <td>Actif</td>
-                    <td><a href="profil.html" class="Envoi">Voir profil</a></td>
+                    <td><a href="Profil.php" class="Envoi">Voir profil</a></td>
                 </tr>
                 <tr>
                     <td>Marie Martin</td>
                     <td>marie@email.com</td>
                     <td>0</td>
                     <td>Inactif</td>
-                    <td><a href="profil.html" class="Envoi">Voir profil</a></td>
+                    <td><a href="Profil.php" class="Envoi">Voir profil</a></td>
                 </tr>
             </tbody>
         </table>

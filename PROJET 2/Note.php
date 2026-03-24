@@ -7,34 +7,7 @@
      <link rel="stylesheet" href="CSS/BarreNav.css">
 </head>
 <body>
-	<nav>
-	
-		<div class="logo">
-                <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
-            </div>
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="Acceuil.html">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="Menu.html">Menu</a>
-                    </li>
-                    <li>
-                        <a href="page de connexion.html">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="page de profil.html">Profil</a>
-                    </li>
-                    <li>
-                        <a href="page de livraison.html">Livraison</a>
-                    </li>
-                    <li>
-                        <a href="Note.html">Notez-nous</a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
+	<?php include 'Navigation.php'; ?>
     <section>
 	<div class="logoInscription">
                 <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
