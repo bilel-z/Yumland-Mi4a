@@ -8,33 +8,8 @@
         <link rel="stylesheet" href="CSS/Recherche.css">
     </head>
     <body>
-        <nav>
-            <div class="logo">
-                <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
-            </div>
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="Acceuil.php">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="Menu.php">Menu</a>
-                    </li>
-                    <li>
-                        <a href="Connexion.php">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="Profil.php">Profil</a>
-                    </li>
-                    <li>
-                        <a href="Livraison.php">Livraison</a>
-                    </li>
-                    <li>
-                        <a href="Note.php">Notez-nous</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php include 'Navigation.php'; ?>
+
         <section>
             <div class="LogoCorp">
                 <img src="image/pandaLogo.png" alt="logo du restaurant" />
@@ -52,7 +27,7 @@
             <h1 class="TitrePlatPrefere">Les plats les plus commandés</h1>
             <div class="GrillePlatCelebre">
 
-                <a href="Menu.html">
+                <a href="Menu.php">
                     <div class="BoitePlat">
                         <div class="PlatImage">
                             <img src="image/Plats/brochetteBoeuf.jpg" alt="Image Brochettes de bœuf" />
@@ -129,44 +104,7 @@
         </section>
             <form method="get">
                 <section class="PosBarre">
-                        <div class="Recherche">
-                            <label for="rechercheFor"></label>
-                            <input id="rechercheFor" name="recherche" placeholder="Recherchez un plat !">
-                            <button type="submit" title="Boutton Recherche">
-                                <img src="image/Loupe.png" alt="LogoRecherche">
-                            </button>
-                        </div>
-                        <div class="filtre">
-                            <div class="Type">
-                                <label for="LabelType">Choisissez le type de plat :</label>
-                                <select name="typePlat" id="LabelType">
-                                    <option value="ToutT" selected>Tout</option>
-                                    <option value="Entree">Entrée</option>
-                                    <option value="Plat">Plat principal</option>
-                                    <option value="Dessert">Dessert</option>
-                                </select>
-                            </div>
-                            <div class="Allergène">
-                                <label for="LabelAllergene">Choisissez votre régime :</label>
-                                <select name="Allergene" id="LabelAllergene">
-                                    <option value="Sans" selected>Pas de régime</option>
-                                    <option value="Vegetarien">Végétarien</option>
-                                    <option value="Gluten">Sans gluten</option>
-                                    <option value="Lactose">Sans lactose</option>
-                                    <option value="Cacahuete">Sans arachide</option>
-                                    <option value="Mer">Sans fruit de mer</option>
-                                </select>
-                            </div>
-                            <div class="Saveur">
-                                <label for="LabelSaveur">Choisissez la saveur :</label>
-                                <select name="typeSaveur" id="LabelSaveur">
-                                    <option value="ToutS" selected>Tout</option>
-                                    <option value="Sucre">Sucrée</option>
-                                    <option value="Sel">Salé</option>
-                                    <option value="Gras">Gras</option>
-                                </select>
-                            </div>
-                        </div>
+                        <?php include 'BarreMenu.php'; ?>
                 </section>
             </form>
         <footer>
