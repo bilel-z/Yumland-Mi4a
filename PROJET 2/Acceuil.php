@@ -15,22 +15,22 @@
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="Acceuil.html">Accueil</a>
+                        <a href="Acceuil.php">Accueil</a>
                     </li>
                     <li>
-                        <a href="Menu.html">Menu</a>
+                        <a href="Menu.php">Menu</a>
                     </li>
                     <li>
-                        <a href="page de connexion.html">Connexion</a>
+                        <a href="Connexion.php">Connexion</a>
                     </li>
                     <li>
-                        <a href="page de profil.html">Profil</a>
+                        <a href="Profil.php">Profil</a>
                     </li>
                     <li>
-                        <a href="page de livraison.html">Livraison</a>
+                        <a href="Livraison.php">Livraison</a>
                     </li>
                     <li>
-                        <a href="Note.html">Notez-nous</a>
+                        <a href="Note.php">Notez-nous</a>
                     </li>
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     </div>
                 </a>
 
-                <a href="Menu.html">
+                <a href="Menu.php">
                     <div class="BoitePlat">
                         <div class="PlatImage">
                             <img src="image/Plats/riz_cantonais.jpg" alt="Image riz cantonais" />
@@ -76,7 +76,7 @@
                     </div>
                 </a>
 
-                <a href="Menu.html">
+                <a href="Menu.php">
                     <div class="BoitePlat">
                         <div class="PlatImage">
                             <img src="image/Plats/RavioVapeur.jpg" alt="Image Raviolis vapeur" />
