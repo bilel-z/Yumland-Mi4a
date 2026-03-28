@@ -7,14 +7,13 @@ body {
 
 .effetNoir {  
     position: absolute;
-    top: 0;
+    top: 80px;
+    min-height: calc(100vh - 80px);
     left: 0;
     width: 100%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.553); 
     z-index: -1; 
-    /*backdrop-filter: blur(5px);*/
-
 }
 
 section {
@@ -40,6 +39,8 @@ section {
 }
 
 .BoitePlat {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
