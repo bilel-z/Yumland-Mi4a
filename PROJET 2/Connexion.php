@@ -10,7 +10,31 @@
 </head>
 <body>
 
-<?php include 'section/Navigation.php'; ?>
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = $_POST["Mail"];
+    $password = $_POST["Mdp"];
+
+    $file = "section/JSON/utilisateurs.json";
+
+    if (file_exists($file)) {
+        $users = json_decode(file_get_contents($file), true);
+
+        foreach ($users as $user) {
+            if ($user["Mail"] === $email && $user["Mdp"] === $password) {
+                $_SESSION["user"] = $user;
+                header("Location: Acceuil.php");
+                exit();
+            }
+        }
+    }
+
+    $error = "Email ou mot de passe incorrect";
+}
+?>
 
 <div class="Teinte"></div>
 
@@ -23,10 +47,10 @@
 
         <form>
             <label>Email</label>
-            <input type="email" placeholder="exemple@email.com" required>
+    <input type="email" name="Mail" placeholder="exemple@email.com" required>
 
-            <label>Mot de passe</label>
-            <input type="password" placeholder="••••••••" required>
+    <label>Mot de passe</label>
+    <input type="password" name="Mdp" placeholder="••••••••" required>
 
             <button type="submit">Se connecter</button>
 
