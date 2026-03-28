@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="CSS/styleAccueil.css">
         <link rel="stylesheet" href="CSS/BarreNav.css">
         <link rel="stylesheet" href="CSS/Recherche.css">
+        <link rel="stylesheet" href="CSS/Variable.css">
     </head>
     <body>
         <?php include 'section/Navigation.php'; ?>

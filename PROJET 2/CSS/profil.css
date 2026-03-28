@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--police_texte);
     background-image: url("../image/muraille.png");
     background-size: cover;
     background-position: center;
@@ -9,7 +9,7 @@ body {
 .Teinte {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: var(--fond_transparent);
     z-index: -1;
 }
 
@@ -23,9 +23,9 @@ body {
 .carte-blanche {
     width: 900px;
     padding: 50px;
-    background-color: white;
+    background-color: var(--fond_blanc);
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 50px var(--ombre);
     margin-top: 30px;
 }
 
@@ -85,8 +85,8 @@ body {
 .btn-modifier {
     width: 45px;
     height: 45px;
-    background-color: #27ae60;
-    color: white;
+    background-color: var(--boutton_vert);
+    color: var(--texte_blanc);
     border: none;
     border-radius: 50%;
     font-size: 18px;
@@ -102,8 +102,8 @@ body {
 }
 
 .btn-deco {
-    background-color: #d63031;
-    color: white;
+    background-color: var(--boutton_rouge);
+    color: var(--texte_blanc);
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
@@ -114,7 +114,7 @@ body {
 @media (max-width: 768px) {
 
     .navigation li {
-        border-right: 1px solid rgba(255, 255, 255, 0);
+        border-right: 1px solid var(--invisible);
     }
 
     .centrage {

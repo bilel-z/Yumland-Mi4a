@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--police_texte);
     background-image: url("../image/marchéChinois.jpeg");
     background-size: cover;
     background-position: center;
@@ -9,7 +9,7 @@ body {
 .Teinte {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: var(--fond_transparent);
     z-index: -1;
 }
 
@@ -23,11 +23,11 @@ body {
 }
 
 .carte-blanche {
-    background-color: white;
+    background-color: var(--fond_blanc);
     width: 500px;
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 50px var(--ombre);
 }
 
 .carte-blanche h2 {
@@ -38,7 +38,7 @@ body {
 .carte-blanche h3 {
     text-align: center;
     margin-bottom: 30px;
-    color: #555;
+    color: var(--texte_gris_fonce);
 }
 
 .Livraison-contenu {
@@ -68,14 +68,14 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 1px solid #ddd;
+    border: 1px solid var(--contour_gris);
 }
 
 .maps {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #2ecc71;
-    color: white;
+    background-color: var(--boutton_vert);
+    color: var(--texte_blanc);
     text-decoration: none;
     border-radius: 6px;
     font-size: 14px;
@@ -86,15 +86,15 @@ body {
     margin-top: 30px;
     padding: 15px;
     font-size: 18px;
-    background-color: #d63031;
-    color: white;
+    background-color: var(--boutton_rouge);
+    color: var(--texte_blanc);
     border: none;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .LivraisonTerminee:hover {
-    background-color: #b02324;
+    background-color: var(--boutton_rouge_hover);
 }
 
 @media (max-width: 768px) {

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/profil.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
+    <link rel="stylesheet" href="CSS/Variable.css">
 </head>
 <body>
 

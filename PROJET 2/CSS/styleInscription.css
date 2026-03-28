@@ -22,9 +22,9 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:white;
+    color: var(--texte_blanc);
     font-size: 30px;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--police_titre);
     font-weight: bold;
 }
 
@@ -35,10 +35,10 @@ section{
 }
 
 .BoiteForm{
-    background-color: white;
+    background-color: var(--fond_blanc);
     width: 65%;
     padding: 40px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px var(--contour_transparent);
     border-radius: 12px;
 }
 
@@ -61,13 +61,13 @@ section{
 .ChampsInscription input{
     width: 100%;
     padding: 12px;
-    border: 1px solid rgb(207, 207, 207);
+    border: 1px solid var(--contour_gris);
     box-sizing: border-box;
 }
 
 .StyleEnvoi{
-    background-color: black;
-    color: white;
+    background-color: var(--boutton_noir);
+    color: var(--texte_blanc);
     font-size: 18px;
     border: none;
     padding: 12px;
@@ -76,7 +76,7 @@ section{
 }
 
 .StyleEnvoi:hover{
-    background-color: rgb(68, 68, 68);
+    background-color: var(--boutton_noir_hover);
 }
 
 .envoi {
@@ -85,7 +85,7 @@ section{
 }
 
 footer{
-    color: white;
+    color: var(--texte_blanc);
     font-size: 20px;
     padding-top: 50px;
     padding-bottom: 15px;

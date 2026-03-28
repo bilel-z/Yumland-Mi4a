@@ -14,9 +14,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:white;
+    color: var(--texte_blanc);
     font-size: 30px;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--police_titre);
     font-weight: bold;
 }
 .Formulaire {
@@ -44,7 +44,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: var(--texte_blanc);
     font-size: 30px;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
@@ -54,11 +54,17 @@ section{
 fieldset {
     width: 600px;      
     padding: 40px;     
-    background-color: white;
+    background-color: var(--fond_blanc);
     border-radius: 8px; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px var(--contour_transparent);
 }
 
+.Teinte {
+    position: fixed;
+    inset: 0;
+    background-color: var(--fond_transparent);
+    z-index: -1;
+}
 
 .ligne-note {
     display: flex;
@@ -97,16 +103,16 @@ fieldset {
 
 .notation label {
     cursor: pointer;
-    color: #ccc;
+    color: var(--contour_gris);
 }
 
 .notation label:hover,
 .notation label:hover ~ label {
-    color: gold;
+    color: var(--texte_or);
 }
 
 .notation input:checked ~ label {
-    color: gold;
+    color: var(--texte_or);
 }
 
 
@@ -119,14 +125,14 @@ fieldset {
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgb(207, 207, 207);
+    border: 1px solid var(--contour_gris);
     box-sizing: border-box;
     resize: vertical;
 }
 
 input[type="submit"] {
-    background-color: black;
-    color: white;
+    background-color: var(--boutton_noir);
+    color: var(--texte_blanc);
     font-size: 18px;
     border: none;
     padding: 12px 30px;
@@ -139,7 +145,7 @@ textarea:focus {
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(68, 68, 68);
+    background-color: var(--boutton_noir_hover);
 }
 
 @media (max-width: 768px) {

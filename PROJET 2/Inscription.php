@@ -5,6 +5,7 @@
         <title>KUNG FOOD - Inscription</title>
         <link rel="stylesheet" href="CSS/styleInscription.css">
         <link rel="stylesheet" href="CSS/BarreNav.css">
+        <link rel="stylesheet" href="CSS/Variable.css">
     </head>
     <body>
         <?php include 'section/Navigation.php'; ?>
@@ -20,19 +21,19 @@
                     </div>
                     <div class="ChampsInscription">
                         <label for="NomFor">Nom</label>
-                        <input id="NomFor" name="Nom" required="required">
+                        <input id="NomFor" name="Nom" placeholder="Martin" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="PrenomFor">Prenom</label>
-                        <input id="PrenomFor" name="Prenom" required="required">
+                        <input id="PrenomFor" name="Prenom" placeholder="Jean" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="MailFor">Email</label>
-                        <input type="email" id="MailFor" name="Mail" required="required">
+                        <input type="email" id="MailFor" name="Mail" placeholder="exemple@email.com" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="MdpFor">Mot de passe</label>
-                        <input type="password" id="MdpFor" name="Mdp" required="required">
+                        <input type="password" id="MdpFor" name="Mdp" placeholder="••••••••" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="AgeFor">Date de naissance</label>
@@ -40,15 +41,15 @@
                     </div>
                     <div class="ChampsInscription">
                         <label for="NumFor">Numéro de téléphone</label>
-                        <input id="NumFor" name="Num" required="required">
+                        <input id="NumFor" name="Num" placeholder="06••••••••" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="AdresseFor">Adresse</label>
-                        <input id="AdresseFor" name="Adresse" required="required">
+                        <input id="AdresseFor" name="Adresse" placeholder="12 rue de Pékin, 75013 Paris" required="required">
                     </div>
                     <div class="ChampsInscription">
-                        <label for="InterphoneFor">Numéro d'interphone (facultatif)</label>
-                        <input id="InterphoneFor" name="Interphone">
+                        <label for="InterphoneFor">Code d'interphone (facultatif)</label>
+                        <input id="InterphoneFor" name="Interphone" placeholder="2589">
                     </div>
                     <div class="envoi">
                         <input class="StyleEnvoi" type="submit" name="Boutton envoi" value="Envoyer">

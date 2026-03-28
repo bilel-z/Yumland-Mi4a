@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Gestion des utilisateurs</title>
     <link rel="stylesheet" href="CSS/styleAdmin+commandes.css">
+    <link rel="stylesheet" href="CSS/Variable.css">
 </head>
 <body>
 

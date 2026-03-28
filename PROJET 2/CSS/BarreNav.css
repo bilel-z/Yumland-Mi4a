@@ -1,5 +1,5 @@
 nav {
-   background-color: rgb(0, 0, 0);
+   background-color: var(--fond_noir);
    position: fixed;
    z-index: 50000;
    height: 130px;
@@ -7,7 +7,7 @@ nav {
    align-items: center;
    width: 100%;
    justify-content: space-between;
-   font-family:Arial, Helvetica, sans-serif ;
+   font-family: var(--police_texte);
 }
 
 div.logo img{
@@ -27,23 +27,23 @@ div.logo img{
 }
 
 li{
-    border-right: 1px solid rgb(218, 187, 14);
+    border-right: 1px solid var(--contour_or);
     padding: 15px 25px;
 }
 
 li a {
     text-decoration: none;
-    color: white;
+    color: var(--texte_blanc);
     text-transform: uppercase;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     padding-top :10px;
     padding-bottom: 10px;
 }
 
 li a:hover{
-    border-top-color: rgb(165, 142, 11);
-    border-bottom-color: rgb(165, 142, 11);
+    border-top-color: var(--contour_or);
+    border-bottom-color: var(--contour_or);
 }
 
 @media (max-width: 768px) {
@@ -70,7 +70,7 @@ li a:hover{
 
     li {
         border-right: none;
-        border-bottom: 1px solid rgb(218, 187, 14);
+        border-bottom: 1px solid var(--contour_or);
         width: 80%;
         text-align: center;
         padding: 10px;

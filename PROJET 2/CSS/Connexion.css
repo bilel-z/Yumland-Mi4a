@@ -3,18 +3,18 @@ body {
     background-size: cover;
     background-position: center;
     margin: 0;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--police_texte);
 }
 
 .Teinte {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--fond_transparent);
     z-index: -1;
 }
 
 nav {
-   background-color: black;
+   background-color: var(--fond_noir);
    position: fixed;
    top: 0;
    z-index: 50000;
@@ -23,7 +23,7 @@ nav {
    align-items: center;
    width: 100%;
    justify-content: space-between;
-   font-family:Arial, Helvetica, sans-serif ;
+   font-family: var(--police_texte);
 }
 
 div.logo img {
@@ -41,7 +41,7 @@ div.logo img {
 }
 
 li {
-    border-right: 1px solid rgb(218, 187, 14);
+    border-right: 1px solid var(--contour_or);
     padding: 15px 25px;
 }
 
@@ -51,7 +51,7 @@ li:last-child {
 
 li a {
     text-decoration: none;
-    color: white;
+    color: var(--texte_blanc);
     text-transform: uppercase;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
@@ -59,8 +59,8 @@ li a {
 }
 
 li a:hover {
-    border-top-color: rgb(165, 142, 11);
-    border-bottom-color: rgb(165, 142, 11);
+    border-top: 1px solid var(--contour_or);
+    border-bottom: 1px solid var(--contour_or);
 }
 
 .login-wrapper {
@@ -73,11 +73,11 @@ li a:hover {
 }
 
 .login-box {
-    background-color: white;
+    background-color: var(--texte_blanc);
     width: 360px;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px var(--ombre);
     text-align: center;
     margin-top: 50px;
 }
@@ -98,14 +98,14 @@ li a:hover {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--contour_gris);
 }
 
 .login-box button {
     width: 100%;
     padding: 12px;
-    background-color: #1877f2;
-    color: white;
+    background-color: var(--boutton_bleu);
+    color: var(--texte_blanc);
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -113,13 +113,13 @@ li a:hover {
 }
 
 .login-box button:hover {
-    background-color: #145fd1;
+    background-color: var(--boutton_bleu_hover);
 }
 
 a.inscrire {
     margin-top: 20px;
     display: inline-block;
-    color: black;
+    color: var(--texte_noir);
 }
 
 @media (max-width: 768px) {
@@ -158,7 +158,7 @@ a.inscrire {
 
     li {
         border-right: none;
-        border-bottom: 1px solid rgb(218, 187, 14);
+        border-bottom: 1px solid var(--contour_or);
         width: 80%;
         text-align: center;
         padding: 12px;
@@ -169,8 +169,8 @@ a.inscrire {
     }
 
     li a:hover{
-        border-top: 2px solid transparent;
-        border-bottom: 2px solid transparent;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
     }
 
     .login-wrapper {

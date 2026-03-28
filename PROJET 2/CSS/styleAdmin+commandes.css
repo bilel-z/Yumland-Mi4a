@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--police_texte);
     display: flex;
-    background-color: #f4f6f9;
+    background-color: var(--fond_gris);
 }
 
 .contenu {
@@ -18,7 +18,7 @@ body {
 .filtres-bouton {
     padding: 8px 15px;
     border: none;
-    background-color: #ddd;
+    background-color: var(--boutton_gris);
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
@@ -26,24 +26,24 @@ body {
 
 .filtres-bouton.actif,
 .filtres-bouton:hover {
-    background-color: #1abc9c;
-    color: white;
+    background-color: var(--boutton_gris_hover);
+    color: var(--texte_blanc);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: var(--fond_blanc);
 }
 
 th, td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--contour_gris);
 }
 
 th {
-    background-color: #ecf0f1;
+    background-color: var(--fond_gris_fonce);
 }
 
 td:last-child {
@@ -53,10 +53,10 @@ td:last-child {
 
 
 .Envoi {
-    background-color: blue;
-    color: white;
+    background-color: var(--boutton_bleu);
+    color: var(--texte_blanc);
     font-size: 18px;
-	font-family:inherit
+	font-family:inherit;
     border: none;
     text-decoration: none;
     padding: 10px 20px; 
@@ -66,9 +66,14 @@ td:last-child {
 }
 
 .Envoi.rouge{
-	background-color: red;
+	background-color: var(--boutton_rouge);
 }
+
+.Envoi.rouge:hover{
+	background-color: var(--boutton_rouge_hover);
+}
+
 .Envoi:hover {
-    background-color: rgb(68, 68, 68);
+    background-color: var(--boutton_bleu_hover);
 }
 

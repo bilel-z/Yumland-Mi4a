@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Notez notre restaurant</title>
     <link rel="stylesheet" href="CSS/styleNotation.css">
-     <link rel="stylesheet" href="CSS/BarreNav.css">
+    <link rel="stylesheet" href="CSS/BarreNav.css">
+    <link rel="stylesheet" href="CSS/Variable.css">
 </head>
 <body>
 	<?php include 'section/Navigation.php'; ?>
+    <div class="Teinte"></div>
     <section>
 	<div class="logoInscription">
                 <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
