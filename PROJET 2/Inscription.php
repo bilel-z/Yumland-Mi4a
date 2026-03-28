@@ -8,7 +8,37 @@
         <link rel="stylesheet" href="CSS/Variable.css">
     </head>
     <body>
-        <?php include 'section/Navigation.php'; ?>
+        <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $newUser = [
+        "Nom" => $_POST["Nom"],
+        "Prenom" => $_POST["Prenom"],
+        "Mail" => $_POST["Mail"],
+        "Mdp" => $_POST["Mdp"],
+        "date" => $_POST["Age"],
+        "numero" => $_POST["Num"],
+        "adresse" => $_POST["Adresse"]
+    ];
+
+    $file = "section/JSON/utilisateurs.json";
+
+    if (file_exists($file)) {
+        $users = json_decode(file_get_contents($file), true);
+    } else {
+        $users = [];
+    }
+
+    $users[] = $newUser;
+
+    file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+
+    header("Location: connexion.php");
+    exit();
+}
+?>
+
+<?php include 'section/Navigation.php'; ?>
         <section>
             <div class="logoInscription">
                 <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
