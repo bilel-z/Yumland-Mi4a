@@ -1,0 +1,46 @@
+CHARTE GRAPHIQUE
+
+1. IDENTITÉ
+- Thème : Sombre, Asiatique
+
+2. POLICES
+- Nom du restaurant : Dancing Script, cursive -> --police_titre
+- Textes : Arial, Helvetica, sans-serif -> --police_texte
+
+3. VARIABLES COULEURS
+
+FONDS
+- Fond noir : Noir rgb(0,0,0) -> --fond_noir
+- Fond formulaires : Blanc rgb(255,255,255) -> --fond_blanc
+- Fond admin : Gris clair #f4f6f9 -> --fond_gris
+- Tableau admin : Gris foncé #ecf0f1 -> --fond_gris_fonce
+- Effet vitre : Noir transparent moyen rgba(0,0,0,0.553) -> --fond_transparent
+- Cartes menu : Noir moins transparent rgba(0,0,0,0.7) -> --fond_boite_menu
+
+BOUTONS
+- Achat : Rouge corail rgb(247,71,55) -> --boutton_acheter
+- Survol achat : Rouge rgb(201,68,50) -> --boutton_acheter_hover
+- Boutton bleu : Bleu #1877f2 -> --boutton_bleu
+- Survol boutton bleu : Bleu #145fd1 -> --boutton_bleu_hover
+- Boutton rouge : Rouge vif #d63031 -> --boutton_rouge
+- Survol boutton rouge : Rouge #b02324 -> --boutton_rouge_hover
+- Boutton vert : Vert #2ecc71 -> --boutton_vert
+- Filtre Admin : Gris #ddd -> --boutton_gris
+- Survol filtre Admin : Turquoise #1abc9c -> --boutton_gris_hover
+- Boutton noir : Noir rgb(0,0,0) -> --boutton_noir
+- Survol boutton noir : Gris rgb(128,128,128) -> --boutton_noir_hover
+
+BORDURES ET OMBRES
+- Survol cartes : Rouge rgb(207,83,83) -> --contour_menu
+- Séparation barre navigation : Or rgb(218,187,14) -> --contour_or
+- Champs : Gris #ccc -> --contour_gris
+- Discret : Transpareent rgba(255,255,255,0.2) -> --contour_transparent
+- Ombre : Noir très transparent rgba(0,0,0,0.3) -> --ombre
+- Invisible : Invisible rgba(255,255,255,0) -> --invisible
+
+TEXTES
+- Sur fond foncé : Blanc rgb(255,255,255) -> --texte_blanc
+- Sur fond clair : Noir rgb(0,0,0) -> --texte_noir
+- Descriptions : Gris rgb(218,218,218) -> --texte_gris
+- Sous-titres : Gris foncé #555 -> --texte_gris_fonce
+- Prix : Or rgb(255,223,42) -> --texte_or
