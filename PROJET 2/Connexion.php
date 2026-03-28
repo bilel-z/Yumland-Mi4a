@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="titre-principal">Bienvenue</h2>
         <p class="sous-titre">Connectez-vous pour accéder à votre espace</p>
 
-        <form>
+        <form method="POST" action="">
             <label>Email</label>
     <input type="email" name="Mail" placeholder="exemple@email.com" required>
 
