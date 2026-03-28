@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error = "Email ou mot de passe incorrect";
 }
 ?>
-
+<?php include 'section/Navigation.php'; ?>
 <div class="Teinte"></div>
 
 <main class="login-wrapper">
