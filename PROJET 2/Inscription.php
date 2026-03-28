@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="CSS/BarreNav.css">
     </head>
     <body>
-        <?php include 'Navigation.php'; ?>
+        <?php include 'section/Navigation.php'; ?>
         <section>
             <div class="logoInscription">
                 <img src="image/pandaLogo.png" alt="Logo restaurant panda" />

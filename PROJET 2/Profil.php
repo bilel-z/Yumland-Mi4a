@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<?php include 'Navigation.php'; ?>
+<?php include 'section/Navigation.php'; ?>
 
 <div class="Teinte"></div>
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php include 'Navigation.php'; ?>
+<?php include 'section/Navigation.php'; ?>
 
 <div class="Teinte"></div>
 
@@ -29,7 +29,7 @@
 
             <button type="submit">Se connecter</button>
 
-            <a href="Inscription.html" class="inscrire">Créer un compte</a>
+            <a href="Inscription.php" class="inscrire">Créer un compte</a>
         </form>
 
     </div>

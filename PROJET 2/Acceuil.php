@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="CSS/Recherche.css">
     </head>
     <body>
-        <?php include 'Navigation.php'; ?>
+        <?php include 'section/Navigation.php'; ?>
 
         <section>
             <div class="LogoCorp">
@@ -104,7 +104,7 @@
         </section>
             <form method="get">
                 <section class="PosBarre">
-                        <?php include 'BarreMenu.php'; ?>
+                        <?php include 'section/BarreMenu.php'; ?>
                 </section>
             </form>
         <footer>

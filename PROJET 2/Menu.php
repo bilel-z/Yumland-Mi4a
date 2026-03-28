@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="CSS/Recherche.css">
     </head>
     <body>
-        <?php include 'Navigation.php'; ?>
+        <?php include 'section/Navigation.php'; ?>
 
         <div class="effetNoir">
             <form method="get">
@@ -16,7 +16,7 @@
                     <div class="Titre">
                         <h1>Presentation des plats</h1>
                     </div>
-                        <?php include 'BarreMenu.php'; ?>
+                        <?php include 'section/BarreMenu.php'; ?>
                 </section>
             </form>
             <section class="Menu">
