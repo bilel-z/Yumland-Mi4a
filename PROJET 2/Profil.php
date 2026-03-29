@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="CSS/Variable.css">
 </head>
 <body>
+<?php
+session_start();
 
+if (!isset($_SESSION["user"])) {
+    header("Location: connexion.php");
+    exit();
+}
+
+$user = $_SESSION["user"];
+?>
 <?php include 'section/Navigation.php'; ?>
 
 <div class="Teinte"></div>
