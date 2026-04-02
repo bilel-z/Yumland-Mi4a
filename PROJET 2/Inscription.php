@@ -12,13 +12,18 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
+        "id" => time(),
         "Nom" => $_POST["Nom"],
         "Prenom" => $_POST["Prenom"],
         "Mail" => $_POST["Mail"],
         "Mdp" => $_POST["Mdp"],
-        "date" => $_POST["Age"],
+        "age" => $_POST["Age"],
         "numero" => $_POST["Num"],
-        "adresse" => $_POST["Adresse"]
+        "adresse" => $_POST["Adresse"],
+        "interphone" => $_POST["Interphone"],
+        "role" => "client",
+        "date_inscription" => date("Y-m-d"),
+        "derniere_connexion" => []
     ];
 
     $file = "section/JSON/utilisateurs.json";
@@ -33,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
 
-    header("Location: connexion.php");
+    header("Location: Connexion.php");
     exit();
 }
 ?>
