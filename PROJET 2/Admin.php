@@ -5,6 +5,7 @@
     <title>Gestion des utilisateurs</title>
     <link rel="stylesheet" href="CSS/styleAdmin+commandes.css">
     <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
 </head>
 <body>
 

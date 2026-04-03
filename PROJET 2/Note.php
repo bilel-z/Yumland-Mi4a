@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="CSS/styleNotation.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
     <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
 </head>
 <body>
 	<?php include 'section/Navigation.php'; ?>

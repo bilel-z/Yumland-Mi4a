@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/Connexion.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
 </head>
 <body>
 
