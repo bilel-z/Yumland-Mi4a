@@ -37,12 +37,15 @@
         <?php include 'section/Navigation.php'; ?>
 
         <div class="effetNoir">
-                <section class="PosBarre">
-                    <div class="Titre">
-                        <h1>Presentation des plats</h1>
-                    </div>
-                        <?php include 'section/BarreMenu.php'; ?>
-                </section>
+            <a href="Panier.php" class="panier">
+                <img src="image/panierIcone.png" alt="Icone de panier">
+            </a>
+            <section class="PosBarre">
+                <div class="Titre">
+                    <h1>Presentation des plats</h1>
+                </div>
+                    <?php include 'section/BarreMenu.php'; ?>
+            </section>
             <section class="Menu">
                 <div class="MenuGrid">
                     <?php include 'section/plat.php'; ?>

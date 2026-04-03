@@ -16,8 +16,24 @@ body {
     z-index: -1; 
 }
 
+.panier {
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: var(--boutton_acheter); 
+    color: var(--texte_blanc);
+    border: none;
+    height: 100px;
+    width: auto;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.panier:hover {
+    background-color: var(--boutton_acheter_hover);
+}
+
 section {
-    padding-top: 100px;
     text-align: center;
     color: var(--texte_blanc);
 }
