@@ -14,6 +14,7 @@
                 <option value="Entree">Entrée</option>
                 <option value="Plat">Plat principal</option>
                 <option value="Dessert">Dessert</option>
+                <option value="Boisson">Boisson</option>
             </select>
         </div>
         <div class="Allergène">

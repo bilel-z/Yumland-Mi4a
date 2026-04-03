@@ -126,5 +126,29 @@
     "prix": 7.00,
     "categorie": "Entree",
     "filtres": ["Gras", "Lactose", "Cacahuete", "Mer"]
+  },
+  {
+    "nom": "Coca-Cola 33cl" ,
+    "description": "Rouge éclatante, promet une explosion de fraîcheur pétillante dès qu’on l’ouvre.",
+    "image": "image/Plats/coca.jpg",
+    "prix": 2.30,
+    "categorie": "Boisson",
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+  },
+  {
+    "nom": "Lipton pêche 33cl" ,
+    "description": "Un Lipton pêche, doux et rafraîchissant.",
+    "image": "image/Plats/lipton.jpg",
+    "prix": 2.30,
+    "categorie": "Boisson",
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+  },
+  {
+    "nom": "Fanta 33cl" ,
+    "description": "Un Fanta orange, pétillant et fruité.",
+    "image": "image/Plats/fanta.jpeg",
+    "prix": 2.30,
+    "categorie": "Boisson",
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
   }
 ]
