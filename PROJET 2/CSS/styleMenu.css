@@ -17,15 +17,17 @@ body {
 }
 
 .panier {
+    display: inline-block;
     margin-top: 100px;
     margin-left: 50px;
     background-color: var(--boutton_acheter); 
     color: var(--texte_blanc);
     border: none;
-    height: 100px;
+    height: fit-content;
     width: auto;
     border-radius: 25px;
     font-weight: bold;
+    padding: 10px;
     cursor: pointer;
 }
 

@@ -9,11 +9,9 @@
             if($_POST["Ajouter"] == "Ajouter"){
                 $couple = array($_POST["nomAjout"],$_POST["prixAjout"]);
                 $_SESSION["Panier"][] = $couple;
-                unset($_POST);
             }
             else if($_POST["Ajouter"] == "Supprimer"){
                 SupprPanier($_SESSION["Panier"],$_POST["nomSuppr"],$_POST["prixSuppr"]);
-                unset($_POST);
             }
         }
         else{

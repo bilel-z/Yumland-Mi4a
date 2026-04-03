@@ -1,0 +1,83 @@
+.TitrePanier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nbPlat {
+    width: 150px;
+    height: 30px;
+    padding: 10px 20px;
+    font-size: 28px;
+    background-color: var(--boutton_acheter); 
+    color: var(--texte_blanc);
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.panierCommande {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.panierPlat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boitePlatPanier {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fond_boite_menu);
+    border-radius: 15px;
+    width: 600px;
+    height: 45px;
+}
+
+.boitePlatPanier:hover {
+    border-color: var(--contour_menu); 
+}
+
+.prixPanier {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--texte_or);     
+}
+
+.droiteBoitePanier {
+    display: flex;
+    gap: 25px;
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+.gaucheBoitePanier {
+    display: flex;  
+    padding-left: 20px;
+    font-size: 25px;
+}
+
+.retirerPlatPanier {
+    background-color: var(--boutton_acheter); 
+    color: var(--texte_blanc);
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.retirerPlatPanier:hover {
+    background-color: var(--boutton_acheter_hover);
+}

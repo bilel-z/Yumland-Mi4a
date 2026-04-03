@@ -22,4 +22,13 @@
         $liste = array_values($liste);
     }
 
+    function listeUnique($liste){
+        $unique = [];
+        foreach($liste as $plat){
+            if(!isset($unique[$plat[0]])){
+                $unique[$plat[0]] = array("nom" => $plat[0], "prix" => $plat[1]);
+            }
+        }
+        return $unique;
+    }
 ?>
