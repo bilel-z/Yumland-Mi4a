@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "interphone" => $_POST["Interphone"],
         "role" => "client",
         "date_inscription" => date("Y-m-d"),
-        "derniere_connexion" => [],
+        "derniere_connexion" => date("Y-m-d H:i:s"),
         "Commandes" => []
     ];
 
