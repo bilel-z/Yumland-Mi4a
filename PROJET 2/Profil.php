@@ -38,10 +38,10 @@ $user = $_SESSION["user"];
             <h2>Jean Martin</h2>
 
             <div class="infos-profil">
-                <p><strong>Nom :</strong> <?php echo $user[Nom]?></p>
-                <p><strong>Email :</strong> <?php echo $user[Mail]?></p>
-                <p><strong>Téléphone :</strong> <?php echo $user[numero]?></p>
-                <p><strong>Adresse :</strong><?php echo $user[adresse]?></p><br>
+                <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
+                <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
+                <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
+                <p><strong>Adresse :</strong><?php echo $user["adresse"]?></p><br>
             </div>
 
         </div>
