@@ -19,4 +19,6 @@ Conformément au cahier des charges, les pages suivantes ont été intégrées :
 * **Livraison (`page de livraison.html`)** : Page pour le livreur avec informations client.
 * **Notation (`Note.html`)** : Page permettant au client de noter le service et la qualité des plats et du restaurant.
 
+# Phase 2
+
 
