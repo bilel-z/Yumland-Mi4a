@@ -24,22 +24,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $users = json_decode(file_get_contents($file), true);
 
         foreach ($users as $user) {
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==6){
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])=="client"){
                 $_SESSION["user"] = $user;
                 header("Location: Acceuil.php");
                 exit();
             }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==7){
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])=="livreur"){
                 $_SESSION["user"] = $user;
                 header("Location: Livraison.php");
                 exit();
             }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==10){
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="restaurateur"){
                 $_SESSION["user"] = $user;
                 header("Location: commandes.php");
                 exit();
             }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==14){
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="administrateur"){
                 $_SESSION["user"] = $user;
                 header("Location: Admin.php");
                 exit();
