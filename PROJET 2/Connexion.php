@@ -24,9 +24,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $users = json_decode(file_get_contents($file), true);
 
         foreach ($users as $user) {
-            if ($user["Mail"] === $email && $user["Mdp"] === $password) {
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==6){
                 $_SESSION["user"] = $user;
                 header("Location: Acceuil.php");
+                exit();
+            }
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==7){
+                $_SESSION["user"] = $user;
+                header("Location: Livraison.php");
+                exit();
+            }
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==10){
+                $_SESSION["user"] = $user;
+                header("Location: commandes.php");
+                exit();
+            }
+            if ($user["Mail"] === $email && $user["Mdp"] === $password && strlen($user["role"])==14){
+                $_SESSION["user"] = $user;
+                header("Location: Admin.php");
                 exit();
             }
         }

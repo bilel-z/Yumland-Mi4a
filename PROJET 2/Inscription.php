@@ -9,6 +9,7 @@
     </head>
     <body>
         <?php
+        session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
 
-    header("Location: Connexion.php");
+    header("Location: Acceuil.php");
     exit();
 }
 ?>
