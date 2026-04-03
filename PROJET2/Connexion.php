@@ -21,34 +21,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $file = "section/JSON/utilisateurs.json";
 
-    if (file_exists($file)) {
+   
+
+        if (file_exists($file)) {
         $users = json_decode(file_get_contents($file), true);
 
-        foreach ($users as $user) {
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="client"){
-                $_SESSION["user"] = $user;
-                header("Location: Acceuil.php");
-                exit();
-            }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="livreur"){
-                $_SESSION["user"] = $user;
-                header("Location: Livraison.php");
-                exit();
-            }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="restaurateur"){
-                $_SESSION["user"] = $user;
-                header("Location: commandes.php");
-                exit();
-            }
-            if ($user["Mail"] === $email && $user["Mdp"] === $password && $user["role"]=="administrateur"){
-                $_SESSION["user"] = $user;
-                header("Location: Admin.php");
-                exit();
-            }
+        foreach ($users as &$user) { 
+	if ($user["Mail"] === $email && $user["Mdp"] === $password) {
+        $user["derniere_connexion"] = date("Y-m-d H:i:s");
+        $_SESSION["user"] = $user;
+        file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+        if ($user["role"] == "client") {
+            header("Location: Acceuil.php");
+        } elseif ($user["role"] == "livreur") {
+            header("Location: Livraison.php");
+        } elseif ($user["role"] == "restaurateur") {
+            header("Location: commandes.php");
+        } elseif ($user["role"] == "administrateur") {
+            header("Location: Admin.php");
         }
+        exit(); 
+    	}
     }
-
     $error = "Email ou mot de passe incorrect";
+}
 }
 ?>
 <?php include 'section/Navigation.php'; ?>
