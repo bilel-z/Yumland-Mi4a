@@ -150,5 +150,29 @@
     "prix": 2.30,
     "categorie": "Boisson",
     "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+  },
+  {
+    "nom": "Menu Classique",
+    "description": "Un menu simple et savoureux avec des incontournables asiatiques.",
+    "prix": 15.30,
+    "categorie": "Menu",
+    "filtres": ["Sel", "Gluten", "Lactose", "Cacahuete", "Mer", "Sucre", "Vegetarien"],
+    "Composition" : ["Raviolis vapeur","Riz Cantonais","Perles de coco","Lipton pêche 33cl"]
+  },
+  {
+    "nom": "Menu Gourmand",
+    "description": "Un menu généreux mêlant croustillant, viande tendre et douceur sucrée.",
+    "prix": 16.30,
+    "categorie": "Menu",
+    "filtres": ["Sucre","Gluten","Vegetarien","Lactose","Cacahuete","Mer"],
+    "Composition" : ["Nems au poulet","Bœuf sauté aux oignons","Beignets de pomme","Lipton pêche 33cl"]
+  },
+  {
+    "nom": "Menu Mer",
+    "description": "Un menu frais et léger mettant en avant les saveurs marines.",
+    "prix": 15.30,
+    "categorie": "Menu",
+    "filtres": ["Sel","Gluten","Lactose","Cacahuete","Mer","Sucre","Vegetarien"],
+    "Composition" : ["Salade de chou sucrée","Poisson vapeur à la cantonaise","Gelée de litchi","Lipton pêche 33cl"]
   }
 ]

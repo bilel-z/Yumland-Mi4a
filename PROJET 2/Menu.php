@@ -23,6 +23,16 @@
                     <?php include 'section/plat.php'; ?>
                 </div>
             </section>
+            <section class="listeMenu">
+                <div class="Titre">
+                    <h1>Presentation des Menus</h1>
+                </div>
+                <section class="Menu">
+                    <div class="MenuGrid">
+                        <?php include 'section/menus.php'; ?>
+                    </div>
+                </section>
+            </section>
         </div>
     </body>
 </html>

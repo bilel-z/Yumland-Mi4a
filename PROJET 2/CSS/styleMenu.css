@@ -116,6 +116,9 @@ section {
     background-color: var(--boutton_acheter_hover);
 }
 
+.listeMenu{
+    margin-bottom: 50px;
+}
 
 @media (max-width: 768px) {
     section {

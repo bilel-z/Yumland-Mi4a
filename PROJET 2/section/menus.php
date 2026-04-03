@@ -6,15 +6,10 @@
 
         $affiche = true;
 
-        if($plat['categorie'] == "Menu"){
+        if($plat['categorie'] != "Menu"){
             $affiche = false;
         }
 
-        if(!empty($_GET['typePlat'])){
-            if($_GET['typePlat'] != $plat['categorie']){
-                $affiche = false;
-            }
-        }
         if(!empty($_GET['Allergene'])){
             if(!(in_array($_GET['Allergene'], $plat['filtres']))){
                 $affiche = false;
@@ -29,11 +24,9 @@
         if($affiche){
             echo '
                 <div class="BoitePlat">
-                    <div class="PlatImage">
-                        <img src="'.$plat["image"].'" alt="Image '.$plat["nom"].'" />
-                    </div>
                     <div class="BoiteContenu">
                         <h3>'.$plat["nom"].'</h3>
+                        <p>- '.$plat["Composition"][0].'<br>- '.$plat["Composition"][1].'<br>- '.$plat["Composition"][2].'<br>- '.$plat["Composition"][3].'</p>
                         <p class="description">'.$plat["description"].'</p>
                         <div class="AjoutPanier">
                             <span class="prix">'.number_format($plat["prix"], 2, ',', '').'</span>
