@@ -17,7 +17,7 @@ body {
 }
 
 section {
-    padding-top: 180px;
+    padding-top: 100px;
     text-align: center;
     color: var(--texte_blanc);
 }
@@ -27,7 +27,7 @@ section {
 }
 
 .Menu {
-    padding-top: 50px; 
+    padding-top: 30px; 
     width: 80%;
     margin: 0 auto; 
 }
@@ -117,6 +117,7 @@ section {
 }
 
 .listeMenu{
+    padding-top: 10px;
     margin-bottom: 50px;
 }
 
