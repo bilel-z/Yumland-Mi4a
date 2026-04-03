@@ -26,5 +26,20 @@
         "role": "administrateur",
         "date_inscription": "2026-04-03",
         "derniere_connexion": []
+    },
+    {
+        "id": 1775239116,
+        "Nom": "Bodsqf",
+        "Prenom": "qefezff",
+        "Mail": "etudiant@yahoo.fr",
+        "Mdp": "azerty",
+        "age": "1950-07-11",
+        "numero": "00608509",
+        "adresse": "Rue de truc",
+        "interphone": "",
+        "role": "client",
+        "date_inscription": "2026-04-03",
+        "derniere_connexion": [],
+        "Commandes": []
     }
 ]

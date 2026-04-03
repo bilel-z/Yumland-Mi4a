@@ -1,5 +1,7 @@
 <?php 
 
+    include_once("section/Fonction/fonction.php");
+
     $menu = json_decode(file_get_contents('section/JSON/plats.json'), true);
 
     foreach($menu as $plat){
@@ -37,8 +39,23 @@
                         <p class="description">'.$plat["description"].'</p>
                         <div class="AjoutPanier">
                             <span class="prix">'.number_format($plat["prix"], 2, ',', '').'</span>
-                            <button class="AjouterPanier">Ajouter</button>
-                        </div>
+                            <form method="post">
+                                <input type="hidden" name="nomAjout" value="'.$plat["nom"].'" >
+                                <input type="hidden" name="prixAjout" value="'.$plat["prix"].'" >
+                                <input type="hidden" name="Ajouter" value="Ajouter" >
+                                <button type="submit" class="AjouterPanier">Ajouter</button>
+                            </form>';
+                            if(in_array(array($plat["nom"],$plat["prix"]),$_SESSION["Panier"])){
+                                echo '
+                                <form method="post">
+                                    <input type="hidden" name="nomSuppr" value="'.$plat["nom"].'" >
+                                    <input type="hidden" name="prixSuppr" value="'.$plat["prix"].'" >
+                                    <input type="hidden" name="Ajouter" value="Supprimer" >
+                                    <button type="submit" class="AjouterPanier">Retirer 1 ('.ComptePanier($_SESSION["Panier"],$plat["nom"]).')</button>
+                                </form>
+                                ';
+                            }
+                        echo '</div>
                     </div>
                 </div>
             ';

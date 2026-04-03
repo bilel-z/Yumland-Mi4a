@@ -1,3 +1,27 @@
+<?php 
+    session_start();
+    include_once("section/Fonction/fonction.php");
+    if (!isset($_SESSION["Panier"])) {
+        $_SESSION["Panier"] = [];
+    }
+    if(isset($_POST["Ajouter"])){
+        if(isset($_SESSION["user"])){
+            if($_POST["Ajouter"] == "Ajouter"){
+                $couple = array($_POST["nomAjout"],$_POST["prixAjout"]);
+                $_SESSION["Panier"][] = $couple;
+                unset($_POST);
+            }
+            else if($_POST["Ajouter"] == "Supprimer"){
+                SupprPanier($_SESSION["Panier"],$_POST["nomSuppr"],$_POST["prixSuppr"]);
+                unset($_POST);
+            }
+        }
+        else{
+            header("Location: Connexion.php");
+            exit;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>

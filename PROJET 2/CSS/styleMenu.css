@@ -91,12 +91,17 @@ section {
 
 .AjoutPanier {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 13px;
     margin-top: auto;
 }
 
+.AjoutPanier form {
+    display: contents; 
+}
+
 .prix {
+    margin-right: auto;
     font-size: 25px;
     font-weight: bold;
     color: var(--texte_or); 
