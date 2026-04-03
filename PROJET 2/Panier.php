@@ -41,7 +41,22 @@
                     <?php include('section/elementPanier.php'); ?>
                 </div>
                 <div class="panierPayer">
-
+                    <div class="espacePaye">
+                        <div class="surPayer">
+                            <div>Nombre d'articles</div>
+                            <div><?php echo count($_SESSION["Panier"]) ?></div>
+                        </div>
+                        <div class="surPayer">
+                            <div><b>Total</b></div>
+                            <div class="prixPanier"><?php echo number_format(total($_SESSION["Panier"]),2,',','').' €'; ?></div>
+                        </div>
+                    </div>
+                    <div class="payer">
+                        <form method="post">
+                            <button type="submit">Commander</button>
+                        </form>
+                        <a href="Menu.php">Continuer les achats</a>
+                    </div>
                 </div>
             </section>
         </div>

@@ -21,15 +21,14 @@
     margin-top: 60px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    gap: 50px;
 }
 
 .panierPlat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 
@@ -79,5 +78,65 @@
 }
 
 .retirerPlatPanier:hover {
+    background-color: var(--boutton_acheter_hover);
+}
+
+.panierPayer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    background-color: var(--fond_boite_menu);
+    border-radius: 15px;
+    width: 330px;
+    height: 400px;
+    font-size: 20px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.panierPayer:hover{
+    border-color: var(--contour_menu); 
+}
+
+.espacePaye{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.surPayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--texte_blanc);
+}
+
+.payer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.payer button, .payer a {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--boutton_acheter); 
+    color: var(--texte_blanc);
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.payer button:hover,.payer a:hover {
     background-color: var(--boutton_acheter_hover);
 }

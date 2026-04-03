@@ -11,7 +11,7 @@
                 </div>
                 <div class="droiteBoitePanier">
                     <div class="prixPlatPanier">x'.$nb.'</div>
-                    <div class="prixPanier">'.number_format($plat["prix"]*$nb,2,',','').'€</div>
+                    <div class="prixPanier">'.number_format($plat["prix"]*$nb,2,',','').' €</div>
                     <form method="post">
                         <input type="hidden" name="nomSuppr" value="'.$plat["nom"].'" >
                         <input type="hidden" name="Ajouter" value="Supprimer" >

@@ -31,4 +31,14 @@
         }
         return $unique;
     }
+
+    function total($liste){
+        if(isset($liste)){
+            $cpt = 0;
+            foreach($liste as $plat){
+                $cpt += $plat[1];
+            }
+        }
+        return $cpt;
+    }
 ?>
