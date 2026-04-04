@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     		}
     		$user["derniere_connexion"] = date("Y-m-d H:i:s");
     		$_SESSION["user"] = $user;
-    		file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    		file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
     		if ($user["role"] == "client") {
         	header("Location: Acceuil.php");
     	} elseif ($user["role"] == "livreur") {
