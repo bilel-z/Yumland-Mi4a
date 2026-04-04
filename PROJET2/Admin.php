@@ -70,11 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
                 </tr>
             </thead>
             <tbody>
-               <?php foreach($users as $user): // Enlève le & (référence inutile et dangereuse ici) ?>
+               <?php foreach($users as $user):  ?>
     <?php $profilData = urlencode(json_encode($user)); ?>
     <tr>
         <td>
-            <a href="Profil.php?id=<?= $user['id'] ?>"> <!-- Passe seulement l'id -->
+            <a href="Profil.php?id=<?= $user['id'] ?>"> 
                 <?= htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]) ?>
             </a>
         </td>
@@ -92,8 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
                     <td><?= htmlspecialchars($user["derniere_connexion"]) ?></td>
         <td>
             <form method="post">
-                <select name="statut" onchange="this.form.submit()"> <!-- name="statut" pas "role" -->
-                    <?php $statut = $user["statut"] ?? "classique"; // Valeur par défaut ?>
+                <select name="statut" onchange="this.form.submit()"> 
+                    <?php $statut = $user["statut"] ?? "classique";  ?>
                     <option value="Classique" <?= $statut==="classique" ? "selected":"" ?>>Classique</option>
                     <option value="Premium"   <?= $statut==="Premium"   ? "selected":"" ?>>Premium</option>
                     <option value="VIP"       <?= $statut==="VIP"       ? "selected":"" ?>>VIP</option>
@@ -120,4 +120,3 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
 </body>
 
 </html>
-

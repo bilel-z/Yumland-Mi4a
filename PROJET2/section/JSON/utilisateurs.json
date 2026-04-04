@@ -10,8 +10,10 @@
         "adresse": "XFSDGEFGFDG",
         "interphone": "353",
         "role": "client",
+        "statut": "Classique",
+        "bloquer": false,
         "date_inscription": "2026-04-03",
-        "derniere_connexion": []
+        "derniere_connexion": "2026-04-04 13:00:01"
     },
     {
         "id": 1775170645,
@@ -24,8 +26,10 @@
         "adresse": "DSFFGZEFGZF",
         "interphone": "465423",
         "role": "administrateur",
+        "statut": "classique",
+        "bloquer": false,
         "date_inscription": "2026-04-03",
-        "derniere_connexion": []
+        "derniere_connexion": "2026-04-03 23:16:45"
     },
     {
         "id": 1775239116,
@@ -38,8 +42,10 @@
         "adresse": "Rue de truc",
         "interphone": "",
         "role": "client",
+        "statut": "classique",
+        "bloquer": false,
         "date_inscription": "2026-04-03",
-        "derniere_connexion": [],
+        "derniere_connexion": "2026-04-04 13:52:38",
         "Commandes": []
     }
 ]
