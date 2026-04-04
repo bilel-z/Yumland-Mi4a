@@ -64,13 +64,13 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
             <h2><?php echo htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]); ?></h2>
 
             <div class="infos-profil">
-                <p><strong>Nom :</strong> <?php echo htmlspecialchars($user["Nom"]); ?></p>
-                <p><strong>Email :</strong> <?php echo htmlspecialchars($user["Mail"]); ?></p>
-                <p><strong>Téléphone :</strong> <?php echo htmlspecialchars($user["numero"]); ?></p>
-                <p><strong>Adresse :</strong> <?php echo htmlspecialchars($user["adresse"]); ?></p>
-                <p><strong>Interphone :</strong> <?php echo htmlspecialchars($user["interphone"]); ?></p>
-                <p><strong>Dernière connexion :</strong> <?php echo htmlspecialchars($user["derniere_connexion"]); ?></p>
-                <p><strong>Age :</strong> <?php echo htmlspecialchars($user["age"]); ?></p><br>
+                <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
+                <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
+                <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
+                <p><strong>Adresse :</strong><?php echo $user["adresse"]?>
+		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?>
+		        <p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
+		        <p><strong>Age:</strong><?php echo $user["age"]?></p></br>
             </div>
 
         </div>

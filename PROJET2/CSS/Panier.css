@@ -140,3 +140,35 @@
 .payer button:hover,.payer a:hover {
     background-color: var(--boutton_acheter_hover);
 }
+
+@media (max-width: 768px) {
+    
+    .TitrePanier {
+        margin-top: 150px;
+    }
+
+    .panierCommande {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        gap: 20px;
+    }
+
+    .boitePlatPanier{
+        width: 95%;
+    }
+
+    .panierPlat {
+        width: 95%;
+    }
+
+    .panierPayer {
+        width: 90%;
+        height: auto;
+    }
+
+
+    .nbPlat {
+        font-size: 22px;
+    }
+}
