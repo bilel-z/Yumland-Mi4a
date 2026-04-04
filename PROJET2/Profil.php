@@ -13,18 +13,15 @@
 </head>
 <body>
 <?php
-session_start();
+include_once("section/Fonction/fonction.php");
 
 if (!isset($_SESSION["user"])) {
     header("Location: Connexion.php");
     exit();
 }
 
-
 if (isset($_GET["id"])) {
-    $file = "section/JSON/utilisateurs.json";
-    $users = json_decode(file_get_contents($file), true);
-    
+    $users = lireJson("section/JSON/utilisateurs.json");
     $user = null;
     foreach ($users as $u) {
         if ($u["id"] == $_GET["id"]) {
@@ -33,15 +30,22 @@ if (isset($_GET["id"])) {
         }
     }
 
-   
     if ($user === null) {
         header("Location: Admin.php");
         exit();
     }
-
 } else {
     $user = $_SESSION["user"];
 }
+
+$commandesUtilisateur = [];
+$commandes = lireJson("section/JSON/commandes.json");
+foreach($commandes as $commande){
+    if(isset($commande['client_id']) && $commande['client_id'] == $user['id']){
+        $commandesUtilisateur[] = $commande;
+    }
+}
+$commandesUtilisateur = array_reverse($commandesUtilisateur);
 ?>
 <?php include 'section/Navigation.php'; ?>
 
@@ -57,16 +61,16 @@ if (isset($_GET["id"])) {
                 <img src="image/pdp.jpeg" alt="Photo de profil">
             </div>
 
-            <h2><?php echo $user["Nom"]?> <?php echo $user["Prenom"]?>n</h2>
+            <h2><?php echo htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]); ?></h2>
 
             <div class="infos-profil">
-                <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
-                <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
-                <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
-                <p><strong>Adresse :</strong><?php echo $user["adresse"]?>
-		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?>
-		        <p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
-		        <p><strong>Age:</strong><?php echo $user["age"]?></p></br>
+                <p><strong>Nom :</strong> <?php echo htmlspecialchars($user["Nom"]); ?></p>
+                <p><strong>Email :</strong> <?php echo htmlspecialchars($user["Mail"]); ?></p>
+                <p><strong>Téléphone :</strong> <?php echo htmlspecialchars($user["numero"]); ?></p>
+                <p><strong>Adresse :</strong> <?php echo htmlspecialchars($user["adresse"]); ?></p>
+                <p><strong>Interphone :</strong> <?php echo htmlspecialchars($user["interphone"]); ?></p>
+                <p><strong>Dernière connexion :</strong> <?php echo htmlspecialchars($user["derniere_connexion"]); ?></p>
+                <p><strong>Age :</strong> <?php echo htmlspecialchars($user["age"]); ?></p><br>
             </div>
 
         </div>
@@ -75,14 +79,23 @@ if (isset($_GET["id"])) {
 
             <div class="bloc-droite">
                 <h3>Anciennes commandes</h3>
-                <p><strong>Commande #245</strong> – 02/02/2025 – 28,90 €</p>
-                <p><strong>Commande #231</strong> – 15/01/2025 – 19,50 €</p>
-                <p><strong>Commande #198</strong> – 05/12/2024 – 22,00 €</p>
+                <?php if(empty($commandesUtilisateur)): ?>
+                    <p>Aucune commande enregistrée pour le moment.</p>
+                <?php else: ?>
+                    <?php foreach($commandesUtilisateur as $commande): ?>
+                        <p>
+                            <strong><?php echo htmlspecialchars($commande['id']); ?></strong>
+                            – <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($commande['date_creation']))); ?>
+                            – <?php echo number_format($commande['total'], 2, ',', ''); ?> €
+                            – <?php echo htmlspecialchars($commande['statut']); ?>
+                        </p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
 
             <div class="bloc-droite">
                 <h3>Compte fidélité</h3>
-		<p><strong> Niveau :</strong><?php echo $user["statut"]?></p>
+                <p><strong>Niveau :</strong> <?php echo htmlspecialchars($user["statut"]); ?></p>
                 <p><strong>Points :</strong> 120 pts</p>
                 <p>Prochaine récompense :</p>
                 <p>-10 % à 150 points</p>

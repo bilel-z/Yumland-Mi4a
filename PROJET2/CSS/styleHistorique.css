@@ -1,0 +1,125 @@
+body {
+    background-image: url(../image/wok.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: var(--police_texte);
+}
+
+.effetNoir {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh - 130px);
+    background-color: var(--fond_transparent);
+    z-index: -1;
+}
+
+.historique-page {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 0 50px 0;
+    color: var(--texte_blanc);
+}
+
+.titre-page {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titre-page h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.titre-page p {
+    font-size: 18px;
+    color: var(--texte_gris);
+    margin: 0;
+}
+
+.tableau-conteneur {
+    background-color: rgba(0, 0, 0, 0.65);
+    border: 1px solid var(--contour_or);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    overflow-x: auto;
+}
+
+.tableau-historique {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.tableau-historique thead tr {
+    background-color: rgba(255, 215, 0, 0.12);
+}
+
+.tableau-historique th,
+.tableau-historique td {
+    padding: 16px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    vertical-align: top;
+}
+
+.tableau-historique th {
+    color: var(--texte_or);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tableau-historique td {
+    color: var(--texte_blanc);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.tableau-historique tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.aucune-commande {
+    text-align: center;
+    color: var(--texte_blanc);
+    padding: 40px 20px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .effetNoir {
+        top: 0;
+        min-height: 100vh;
+    }
+
+    .historique-page {
+        width: 95%;
+        padding: 30px 0 40px 0;
+    }
+
+    .titre-page h1 {
+        font-size: 32px;
+    }
+
+    .titre-page p {
+        font-size: 16px;
+    }
+
+    .tableau-conteneur {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .tableau-historique th,
+    .tableau-historique td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}

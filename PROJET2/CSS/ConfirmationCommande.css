@@ -1,0 +1,78 @@
+.pageConfirmation {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 40px 20px;
+}
+
+.carteConfirmation {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.72);
+    border-radius: 30px;
+    padding: 70px 50px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    margin-top: -30px;
+}
+
+.carteConfirmation h1 {
+    font-size: 72px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.carteConfirmation p {
+    font-size: 34px;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    color: white;
+    text-align: center;
+}
+
+.btnRetourMenu {
+    display: inline-block;
+    background-color: #ff4d3d;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 18px 42px;
+    border-radius: 22px;
+    transition: 0.3s ease;
+    border: none;
+}
+
+.btnRetourMenu:hover {
+    background-color: #e63f30;
+    transform: scale(1.03);
+}
+
+@media screen and (max-width: 768px) {
+    .pageConfirmation {
+        min-height: calc(100vh - 100px);
+        padding: 30px 15px;
+    }
+
+    .carteConfirmation {
+        max-width: 95%;
+        padding: 40px 20px;
+        margin-top: 0;
+    }
+
+    .carteConfirmation h1 {
+        font-size: 42px;
+    }
+
+    .carteConfirmation p {
+        font-size: 24px;
+    }
+
+    .btnRetourMenu {
+        font-size: 22px;
+        padding: 14px 28px;
+    }
+}

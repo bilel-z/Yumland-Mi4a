@@ -1,0 +1,553 @@
+[
+    {
+        "id": "CMD-20260404142924-306",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": "2026-04-08 16:29:00",
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 14:29:24"
+    },
+    {
+        "id": "CMD-20260404171129-387",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 2,
+                "sous_total": 10.8
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 10.8,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:11:29"
+    },
+    {
+        "id": "CMD-20260404173544-461",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:35:44"
+    },
+    {
+        "id": "CMD-20260404173548-574",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:35:48"
+    },
+    {
+        "id": "CMD-20260404173550-180",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:35:50"
+    },
+    {
+        "id": "CMD-20260404173605-989",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:36:05"
+    },
+    {
+        "id": "CMD-20260404173724-275",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            },
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 13.9,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:37:24"
+    },
+    {
+        "id": "CMD-20260404174523-454",
+        "client_id": 1775309858,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            },
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 13.9,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 17:45:23"
+    },
+    {
+        "id": "CMD-20260404192413-807",
+        "client_id": 1775309813,
+        "client_nom": "sch liam",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 2,
+                "sous_total": 10.8
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 10.8,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 19:24:13"
+    },
+    {
+        "id": "CMD-20260404221843-893",
+        "client_id": 1775239116,
+        "client_nom": "qefezff Bodsqf",
+        "articles": [
+            {
+                "nom": "Menu Classique",
+                "prix_unitaire": 15.7,
+                "quantite": 1,
+                "sous_total": 15.7
+            },
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            },
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 3,
+        "total": 29.6,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "Rue de truc",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 22:18:43",
+        "date_mise_a_jour": "2026-04-04 22:31:24",
+        "livreur_id": null,
+        "livreur_nom": ""
+    },
+    {
+        "id": "Eipx6GopqQvm0tZ",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            },
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 13.9,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:01:26"
+    },
+    {
+        "id": "sm8G3GAvZR0d92b",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            },
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 13.9,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:02:04"
+    },
+    {
+        "id": "ScSfM6R7VkJdGYC",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            },
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 2,
+        "total": 13.9,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:03:34"
+    },
+    {
+        "id": "XBWfNmis1jODHGX",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Tofu frit sauce aigre-douce",
+                "prix_unitaire": 5.4,
+                "quantite": 1,
+                "sous_total": 5.4
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 5.4,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:03:59"
+    },
+    {
+        "id": "UcYE0NUBl84fH7u",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:08:24"
+    },
+    {
+        "id": "dzWTWDaT5eHUbNn",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:09:38"
+    },
+    {
+        "id": "CtvUDkMWm2FShPO",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:15:33"
+    },
+    {
+        "id": "kaBsZjMRcVBPr1Z",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:16:07"
+    },
+    {
+        "id": "Go8s2jWwV5u3UuD",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:29:01"
+    },
+    {
+        "id": "FNMb9uDKeuMrgeZ",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-04 23:43:02"
+    },
+    {
+        "id": "1MzC0Dd29ymQD6t",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "complété",
+        "date_creation": "2026-04-04 23:53:03"
+    },
+    {
+        "id": "TKLYIjkcsPHmV6Q",
+        "client_id": 1775311001,
+        "client_nom": "Paul Martin",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "emporter",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "",
+        "commentaire": "",
+        "statut": "à préparer",
+        "paiement_statut": "complété",
+        "date_creation": "2026-04-05 01:14:39"
+    }
+]

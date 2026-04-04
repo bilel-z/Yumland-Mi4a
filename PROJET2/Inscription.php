@@ -11,7 +11,6 @@
     </head>
     <body>
         <?php
-        session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
@@ -27,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "role" => "client",
         "date_inscription" => date("Y-m-d"),
         "derniere_connexion" => date("Y-m-d H:i:s"),
-        "statut" => Classique,
+        "statut" => "Classique",
         "bloquer"=> false,
         "Commandes" => []
     ];
