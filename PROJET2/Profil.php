@@ -20,7 +20,28 @@ if (!isset($_SESSION["user"])) {
     exit();
 }
 
-$user = $_SESSION["user"];
+
+if (isset($_GET["id"])) {
+    $file = "section/JSON/utilisateurs.json";
+    $users = json_decode(file_get_contents($file), true);
+    
+    $user = null;
+    foreach ($users as $u) {
+        if ($u["id"] == $_GET["id"]) {
+            $user = $u;
+            break;
+        }
+    }
+
+   
+    if ($user === null) {
+        header("Location: Admin.php");
+        exit();
+    }
+
+} else {
+    $user = $_SESSION["user"];
+}
 ?>
 <?php include 'section/Navigation.php'; ?>
 
@@ -36,16 +57,16 @@ $user = $_SESSION["user"];
                 <img src="image/pdp.jpeg" alt="Photo de profil">
             </div>
 
-            <h2>Jean Martin</h2>
+            <h2><?php echo $user["Nom"]?> <?php echo $user["Prenom"]?>n</h2>
 
             <div class="infos-profil">
-        <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
-        <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
-        <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
-        <p><strong>Adresse :</strong><?php echo $user["adresse"]?>
-		<p><strong>Interphone :</strong><?php echo $user["interphone"]?>
-		<p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
-		<p><strong>Age:</strong><?php echo $user["age"]?></p></br>
+                <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
+                <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
+                <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
+                <p><strong>Adresse :</strong><?php echo $user["adresse"]?>
+		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?>
+		        <p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
+		        <p><strong>Age:</strong><?php echo $user["age"]?></p></br>
             </div>
 
         </div>
@@ -61,6 +82,7 @@ $user = $_SESSION["user"];
 
             <div class="bloc-droite">
                 <h3>Compte fidélité</h3>
+		<p><strong> Niveau :</strong><?php echo $user["statut"]?></p>
                 <p><strong>Points :</strong> 120 pts</p>
                 <p>Prochaine récompense :</p>
                 <p>-10 % à 150 points</p>
@@ -83,4 +105,3 @@ $user = $_SESSION["user"];
 
 </body>
 </html>
-

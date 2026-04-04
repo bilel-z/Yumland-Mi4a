@@ -28,24 +28,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         foreach ($users as &$user) { 
 	if ($user["Mail"] === $email && $user["Mdp"] === $password) {
-        $user["derniere_connexion"] = date("Y-m-d H:i:s");
-        $_SESSION["user"] = $user;
-        file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
-        if ($user["role"] == "client") {
-            header("Location: Acceuil.php");
-        } elseif ($user["role"] == "livreur") {
-            header("Location: Livraison.php");
-        } elseif ($user["role"] == "restaurateur") {
-            header("Location: commandes.php");
-        } elseif ($user["role"] == "administrateur") {
-            header("Location: Admin.php");
-        }
-        exit(); 
+    		if ($user["bloquer"] === true) {
+        	$error= "Votre compte a été bloqué, veuillez contacter l'administrateur.";
+        	break;
+    		}
+    		$user["derniere_connexion"] = date("Y-m-d H:i:s");
+    		$_SESSION["user"] = $user;
+    		file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    		if ($user["role"] == "client") {
+        	header("Location: Acceuil.php");
+    	} elseif ($user["role"] == "livreur") {
+        	header("Location: Livraison.php");
+    	} elseif ($user["role"] == "restaurateur") {
+        	header("Location: commandes.php");
+    	} elseif ($user["role"] == "administrateur") {
+        	header("Location: Admin.php");
     	}
+    	exit();
+	}
+	if ($user["Mail"] !== $email || $user["Mdp"] !== $password) {
+		$error= "Email ou mot de passe incorrect";
+	}
     }
-    $error = "Email ou mot de passe incorrect";
+	
 }
 }
+
 ?>
 <?php include 'section/Navigation.php'; ?>
 <div class="Teinte"></div>
@@ -65,7 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="password" name="Mdp" placeholder="••••••••" required>
 
             <button type="submit">Se connecter</button>
-
+	<?php if (!empty($error)): ?>
+    <p class="erreur"><?= htmlspecialchars($error) ?></p>
+<?php endif; ?>
             <a href="Inscription.php" class="inscrire">Créer un compte</a>
         </form>
 
