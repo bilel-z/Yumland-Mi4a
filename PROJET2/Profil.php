@@ -60,7 +60,6 @@ if (isset($_GET["id"])) {
             <h2><?php echo $user["Nom"]?> <?php echo $user["Prenom"]?>n</h2>
 
             <div class="infos-profil">
-                <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
                 <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
                 <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
                 <p><strong>Adresse :</strong><?php echo $user["adresse"]?>

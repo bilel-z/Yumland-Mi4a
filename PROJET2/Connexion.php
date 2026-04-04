@@ -13,7 +13,10 @@
 <body>
 
 <?php
-
+if (isset($_SESSION["user"])) {
+    header("Location: Profil.php");
+    exit();
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["Mail"];
