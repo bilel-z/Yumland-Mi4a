@@ -47,7 +47,7 @@ body {
     border: 1px solid var(--contour_or);
     border-radius: 18px;
     padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 30px var(--ombre);
     overflow-x: auto;
 }
 
