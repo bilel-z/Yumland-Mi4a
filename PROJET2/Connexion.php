@@ -1,18 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUNG FOOD - Connexion</title>
-    <link rel="stylesheet" href="CSS/Connexion.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Variable.css">
-    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
-</head>
-<body>
-
 <?php
+session_start();
 if (isset($_SESSION["user"])) {
     header("Location: Profil.php");
     exit();
@@ -58,6 +45,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUNG FOOD - Connexion</title>
+    <link rel="stylesheet" href="CSS/Connexion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="icon" type="image/png" href="image/pandaLogo.png">
+</head>
+<body>
+
 <?php include 'section/Navigation.php'; ?>
 <div class="Teinte"></div>
 

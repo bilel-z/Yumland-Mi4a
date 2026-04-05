@@ -11,7 +11,7 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") 
     <title>Gestion des utilisateurs</title>
     <link rel="stylesheet" href="CSS/styleAdmin+commandes.css">
     <link rel="stylesheet" href="CSS/Variable.css">
-    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
+    <link rel="icon" type="image/png" href="image/pandaLogo.png">
 </head>
 <body>
 
