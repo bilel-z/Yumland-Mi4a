@@ -8,7 +8,7 @@ $api_key = getAPIKey('MI-4_A');
 	$transaction = $commande['id'] ?? genererTransaction(); // ← id de la commande
 	$montant     = $_SESSION['montant_commande'] ?? '0.00';
 	$vendeur     = 'MI-4_A';
-	$retour      = 'http://localhost/Yumland-Mi4av2/PROJET2/retour_paiement.php?session=s';
+	$retour = 'http://localhost:8000/retour_paiement.php?session=s';
 	$api_key     = getAPIKey('MI-4_A');
 $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 ?>
