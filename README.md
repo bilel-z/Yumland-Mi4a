@@ -44,7 +44,7 @@ La phase 2 a consisté à transformer la maquette statique en une véritable app
 
 * **Authentification et Inscription** : Création dynamique de comptes clients et connexion sécurisée avec redirection automatique selon le rôle de l'utilisateur (Client, Livreur, Restaurateur, Administrateur).
 * **Page Menu (`Menu.php`)** : Génération de la carte du restaurant et des menus à partir de la lecture dynamique des fichiers de données.
-* **Page Panier (`Panier.php` / `traitement_panier.php`)** : Ajout et suppression d'articles, calcul du total, gestion du retrait et intégration de l'API de paiement CYBank.
+* **Page Panier (`Panier.php`)** : Ajout et suppression d'articles, calcul du total, gestion du retrait et intégration de l'API de paiement CYBank.
 * **Espace Restaurateur (`Gestion.php` / `commandes.php`)** : Tableau de bord permettant de suivre les commandes en temps réel, de modifier leur statut et de les attribuer à un livreur disponible.
 * **Interface Livreur (`Livraison.php`)** : Affichage des détails de la commande attribuée (adresse, interphone) avec possibilité de clôturer la livraison ou de l'abandonner.
 * **Espace Client (`Historique.php` / `Note.php`)** : Consultation de l'historique des commandes passées et possibilité de noter une commande une fois celle-ci livrée.
