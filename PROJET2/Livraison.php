@@ -8,7 +8,12 @@ if(isset($_POST["Livraison"])){
     $commande = lireJson("section/JSON/commandes.json");
     foreach($commande as &$c){
         if($c["livreur_id"] == $_SESSION["user"]["id"] && $c["statut"] == "en livraison"){
-            $c["statut"] = "livrée";
+            if($_POST["Livraison"]=="oui"){
+                $c["statut"] = "livrée";
+            }
+            else if($_POST["Livraison"]=="non"){
+                $c["statut"] = "abondonnée";
+            }
             $c["date_retrait_livraison"] = date("Y-m-d H:i:s");
             break;
         }
@@ -77,8 +82,17 @@ if(isset($_POST["Livraison"])){
                 if($livraison !== null){
                 echo'
                 <form method="post">
-                    <input type="hidden" name="Livraison" value="">
+                    <input type="hidden" name="Livraison" value="oui">
                     <button type="submit" class="LivraisonTerminee">Livraison terminée</button>
+                </form>
+                '; 
+                }?>
+                <?php 
+                if($livraison !== null){
+                echo'
+                <form method="post">
+                    <input type="hidden" name="Livraison" value="non">
+                    <button type="submit" class="LivraisonTerminee">Livraison abondonnée</button>
                 </form>
                 '; 
                 }?>

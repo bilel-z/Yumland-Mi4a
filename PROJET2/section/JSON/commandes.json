@@ -267,7 +267,7 @@
         "date_retrait_livraison": "2026-04-05 03:32:39",
         "adresse_livraison": "Rue de truc",
         "commentaire": "Attend en bas stp",
-        "statut": "livrée",
+        "statut": "en livraison",
         "paiement_statut": "en attente",
         "date_creation": "2026-04-04 22:18:43",
         "date_mise_a_jour": "2026-04-04 22:31:24",
