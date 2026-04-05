@@ -12,7 +12,7 @@ $cheminUtilisateurs = "section/JSON/utilisateurs.json";
 $messageSucces = '';
 $messageErreur = '';
 
-$statutsDisponibles = ['à préparer', 'en cours', 'à attendre', 'en livraison', 'livrée'];
+$statutsDisponibles = ['à préparer', 'en cours', 'à attendre', 'en livraison', 'livrée', 'abandonnée'];
 
 $utilisateurs = lireJson($cheminUtilisateurs);
 $livreursDisponibles = array_values(array_filter($utilisateurs, function ($user) {
@@ -139,6 +139,7 @@ if ($filtre !== "Tous") {
                     <a href="commandes.php?statut=à attendre" class="filtres-bouton <?php echo ($filtre === 'à attendre') ? 'actif' : ''; ?>">à attendre</a>
                     <a href="commandes.php?statut=en livraison" class="filtres-bouton <?php echo ($filtre === 'en livraison') ? 'actif' : ''; ?>">en livraison</a>
                     <a href="commandes.php?statut=livrée" class="filtres-bouton <?php echo ($filtre === 'livrée') ? 'actif' : ''; ?>">livrée</a>
+                    <a href="commandes.php?statut=abandonnée" class="filtres-bouton <?php echo ($filtre === 'abandonnée') ? 'actif' : ''; ?>">abandonnée</a>
                 </div>
 
                 <div class="table-wrapper">
