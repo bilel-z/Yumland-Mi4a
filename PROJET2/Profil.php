@@ -107,9 +107,7 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
             <button class="btn-modifier">
                 <img src="image/editImage.png" alt="image crayon">
             </button>
-            <button class="btn-deco">
-                <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
-            </button>
+            <a href="section/deconnexion.php" class="btn-deco">Déconnexion</a>
         </div>
 
     </div>

@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "restaurateur") {
+    header('Location: Connexion.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

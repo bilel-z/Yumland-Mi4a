@@ -102,6 +102,7 @@ body {
 }
 
 .btn-deco {
+    text-decoration: none;
     background-color: var(--boutton_rouge);
     color: var(--texte_blanc);
     border: none;
