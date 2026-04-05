@@ -1,105 +1,127 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(rgba(10, 10, 10, 0.62), rgba(10, 10, 10, 0.72)), url('../image/interior.jpg') center/cover no-repeat fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    background: url('../image/muraille.png') center/cover no-repeat fixed;
+    font-family: var(--police_texte);
+    color: var(--texte_noir);
+    overflow-x: hidden;
 }
 
 .overlay-page {
     min-height: calc(100vh - 80px);
-    padding: 40px 24px 56px;
+    padding: 150px 24px 56px;
+    display: flex;
+    justify-content: center;
 }
 
 .contenu-gestion {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
 }
 
-.hero-gestion {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 28px;
-    margin-bottom: 24px;
-}
-
-.sur-titre {
-    margin: 0 0 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.82rem;
-    color: #ffd18b;
-}
-
-.hero-gestion h1 {
-    margin: 0 0 12px;
-    font-size: 2.2rem;
-}
-
-.hero-gestion p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.88);
-}
-
-.grille-stats,
-.grille-actions {
+.grille-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     margin-bottom: 24px;
 }
 
-.carte-stat,
-.carte-action,
-.carte-tableau {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(10px);
-    border-radius: 22px;
-    padding: 22px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
-}
-
-.carte-stat.large {
-    grid-column: span 2;
+.carte-stat {
+    background: var(--fond_blanc);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 8px 32px var(--ombre);
 }
 
 .carte-stat .libelle {
     display: block;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 12px;
+    color: var(--texte_gris_fonce);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .carte-stat strong {
     font-size: 2rem;
+    color: var(--texte_noir);
 }
 
-.carte-action h2,
-.carte-tableau h2 {
+.carte-chiffre {
+    background: var(--fond_blanc);
+    border-radius: 20px;
+    padding: 28px 36px;
+    box-shadow: 0 8px 32px var(--ombre);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.carte-chiffre .libelle {
+    display: block;
+    color: var(--texte_gris_fonce);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.carte-chiffre strong {
+    font-size: 2.4rem;
+    color: var(--texte_noir);
+}
+
+.grille-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.carte-action {
+    background: var(--fond_blanc);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 32px var(--ombre);
+}
+
+.carte-action h2 {
     margin-top: 0;
+    color: var(--texte_noir);
+    font-size: 1.2rem;
 }
 
 .carte-action p {
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.5;
-    margin-bottom: 18px;
+    color: var(--texte_gris_fonce);
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .btn-action {
     display: inline-block;
     text-decoration: none;
-    background: #d62828;
-    color: #fff;
-    padding: 12px 18px;
+    background: var(--boutton_rouge);
+    color: var(--texte_blanc);
+    padding: 12px 22px;
     border-radius: 999px;
     font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.btn-action:hover {
+    background: var(--boutton_rouge_hover);
 }
 
 .btn-action.second {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 2px solid var(--texte_noir);
+    color: var(--texte_noir);
+}
+
+.btn-action.second:hover {
+    background: var(--fond_gris);
+}
+
+.carte-tableau {
+    background: var(--fond_blanc);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 32px var(--ombre);
 }
 
 .entete-tableau {
@@ -110,8 +132,14 @@ body {
     margin-bottom: 18px;
 }
 
+.entete-tableau h2 {
+    margin: 0;
+    color: var(--texte_noir);
+    font-size: 1.2rem;
+}
+
 .entete-tableau a {
-    color: #ffd18b;
+    color: var(--boutton_rouge);
     text-decoration: none;
     font-weight: bold;
 }
@@ -128,25 +156,32 @@ table {
 thead th {
     text-align: left;
     padding: 14px;
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--fond_gris);
+    color: var(--texte_noir);
+    font-weight: bold;
+    border-bottom: 2px solid var(--contour_gris);
 }
 
 tbody td {
     padding: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.92);
+    border-top: 1px solid var(--fond_gris_fonce);
+    color: var(--texte_noir);
+}
+
+tbody tr:hover {
+    background: var(--fond_gris);
 }
 
 @media (max-width: 768px) {
     .overlay-page {
-        padding: 24px 16px 40px;
+        padding: 170px 16px 40px;
     }
 
-    .hero-gestion h1 {
-        font-size: 1.8rem;
+    .grille-stats {
+        grid-template-columns: 1fr;
     }
 
-    .carte-stat.large {
-        grid-column: span 1;
+    .grille-actions {
+        grid-template-columns: 1fr;
     }
 }
