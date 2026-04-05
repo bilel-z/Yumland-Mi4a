@@ -37,15 +37,6 @@ if (isset($_GET["id"])) {
 } else {
     $user = $_SESSION["user"];
 }
-
-$commandesUtilisateur = [];
-$commandes = lireJson("section/JSON/commandes.json");
-foreach($commandes as $commande){
-    if(isset($commande['client_id']) && $commande['client_id'] == $user['id']){
-        $commandesUtilisateur[] = $commande;
-    }
-}
-$commandesUtilisateur = array_reverse($commandesUtilisateur);
 ?>
 <?php include 'section/Navigation.php'; ?>
 
@@ -71,35 +62,6 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
 		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?></p>
 		        <p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
 		        <p><strong>Age:</strong><?php echo $user["age"]?></p></br>
-            </div>
-
-        </div>
-
-        <div class="profil-droite">
-
-            <div class="bloc-droite">
-                <h3>Anciennes commandes</h3>
-                <?php if(empty($commandesUtilisateur)): ?>
-                    <p>Aucune commande enregistrée pour le moment.</p>
-                <?php else: ?>
-                    <?php foreach($commandesUtilisateur as $commande): ?>
-                        <p>
-                            <strong><?php echo htmlspecialchars($commande['id']); ?></strong>
-                            – <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($commande['date_creation']))); ?>
-                            – <?php echo number_format($commande['total'], 2, ',', ''); ?> €
-                            – <?php echo htmlspecialchars($commande['statut']); ?>
-                        </p>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-
-            
-            <div class="bloc-droite">
-                <h3>Compte fidélité</h3>
-                <p><strong>Niveau :</strong> <?php echo htmlspecialchars($user["statut"]); ?></p>
-                <p><strong>Points :</strong> 120 pts</p>
-                <p>Prochaine récompense :</p>
-                <p>-10 % à 150 points</p>
             </div>
 
         </div>
