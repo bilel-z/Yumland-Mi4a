@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
 
                 <?php if ($messageSucces !== ''): ?>
                     <p style="color:green; font-weight:bold;"><?php echo htmlspecialchars($messageSucces); ?></p>
-                    <p><a href="HistoriqueCommandes.php">Retour à mon historique</a></p>
+                    <p><a href="Historique.php">Retour à mon historique</a></p>
                 <?php endif; ?>
 
                 <?php if ($commandeSelectionnee !== null): ?>
@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
                         <?php if (!empty($commandeSelectionnee['note_commande']['commentaire'])): ?>
                             <p><strong>Commentaire :</strong> <?php echo nl2br(htmlspecialchars($commandeSelectionnee['note_commande']['commentaire'])); ?></p>
                         <?php endif; ?>
-                        <p><a href="HistoriqueCommandes.php">Retour à mon historique</a></p>
+                        <p><a href="Historique.php">Retour à mon historique</a></p>
                     <?php elseif ($messageSucces === ''): ?>
                         <form method="post">
                             <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeSelectionnee['id'] ?? ''); ?>">
