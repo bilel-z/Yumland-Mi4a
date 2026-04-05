@@ -668,9 +668,9 @@
         "statut": "à préparer",
         "paiement_statut": "en attente",
         "date_creation": "2026-04-05 07:08:17",
-        "date_mise_a_jour": "2026-04-05 07:17:28",
-        "livreur_id": 1775311002,
-        "livreur_nom": "Lucas Dupont"
+        "date_mise_a_jour": "2026-04-05 19:19:50",
+        "livreur_id": 1775311003,
+        "livreur_nom": "Lea Bernard"
     },
     {
         "id": "JU5ueiENfloJjS7",
@@ -690,15 +690,15 @@
         "total": 5.4,
         "type_service": "livraison",
         "moment_preparation": "immediate",
-        "date_retrait_livraison": null,
+        "date_retrait_livraison": "2026-04-05 19:21:26",
         "adresse_livraison": "12 rue de Rivoli, 75001 Paris",
         "commentaire": "",
-        "statut": "en livraison",
+        "statut": "livrée",
         "paiement_statut": "en attente",
         "date_creation": "2026-04-05 07:32:18",
-        "date_mise_a_jour": "2026-04-05 07:49:42",
-        "livreur_id": 1775311002,
-        "livreur_nom": "Lucas Dupont"
+        "date_mise_a_jour": "2026-04-05 19:20:13",
+        "livreur_id": 1775311003,
+        "livreur_nom": "Lea Bernard"
     },
     {
         "id": "nuOyCYgo5wWMr8e",
@@ -724,5 +724,40 @@
         "statut": "à préparer",
         "paiement_statut": "en attente",
         "date_creation": "2026-04-05 15:02:32"
+    },
+    {
+        "id": "cObE1iEHspdrPVm",
+        "client_id": 1775344462,
+        "client_interphone": "5678",
+        "client_telephone": "0698765432",
+        "client_nom": "Marie Martin",
+        "articles": [
+            {
+                "nom": "Menu Classique",
+                "prix_unitaire": 15.7,
+                "quantite": 1,
+                "sous_total": 15.7
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 15.7,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": "2026-04-05 19:23:45",
+        "adresse_livraison": "5 avenue Montaigne, 75008 Paris",
+        "commentaire": "Pas de cornichon svp",
+        "statut": "livrée",
+        "paiement_statut": "complété",
+        "date_creation": "2026-04-05 19:16:52",
+        "date_mise_a_jour": "2026-04-05 19:19:24",
+        "livreur_id": 1775311002,
+        "livreur_nom": "Lucas Dupont",
+        "note_commande": {
+            "service": 3,
+            "qualite": 5,
+            "ambiance": 3,
+            "commentaire": "ca va",
+            "date_note": "2026-04-05 19:24:28"
+        }
     }
 ]

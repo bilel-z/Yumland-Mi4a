@@ -49,7 +49,7 @@ if (isset($_GET["id"])) {
         <div class="profil-gauche">
 
             <div class="photo-profil">
-                <img src="image/pdp.jpeg" alt="Photo de profil">
+                <img src="image/pdp.png" alt="Photo de profil">
             </div>
 
             <h2><?php echo htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]); ?></h2>
