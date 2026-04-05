@@ -32,7 +32,7 @@ $transaction = genererTransaction();
 $montant = number_format(total($_SESSION["Panier"]), 2, '.', '');
 $vendeur = 'MI-4_A';
 $statut = 'OK';
-$retour = 'http://localhost/Yumland-Mi4av2/PROJET2/ConfirmationCommande?session=s';
+$retour = 'http://localhost/Yumland-Mi4av2/PROJET2/retour_paiement.php?session=s';
 $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 	
 if(isset($_POST['valider_commande'])){
