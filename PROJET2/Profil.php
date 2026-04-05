@@ -109,6 +109,16 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
                 <img src="image/editImage.png" alt="image crayon">
             </button>
             <a href="section/deconnexion.php" class="btn-deco">Déconnexion</a>
+            <?php if ($_SESSION["user"]["role"] === "administrateur"): ?>
+<form method="post">
+    <select name="remise" onchange="this.form.submit()">
+        <option value="10%" <?= ($user["remise"] ?? "") === "10%" ? "selected":"" ?>>Remise 10%</option>
+        <option value="15%" <?= ($user["remise"] ?? "") === "15%" ? "selected":"" ?>>Remise 15%</option>
+        <option value="20%" <?= ($user["remise"] ?? "") === "20%" ? "selected":"" ?>>Remise 20%</option>
+    </select>
+    <input type="hidden" name="user-id" value="<?= $user["id"] ?>">
+</form>
+<?php endif; ?>
         </div>
 
     </div>
