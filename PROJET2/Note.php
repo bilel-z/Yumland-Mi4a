@@ -2,10 +2,7 @@
 session_start();
 include_once("section/Fonction/fonction.php");
 
-if (!isset($_SESSION['user']) || (($_SESSION['user']['role'] ?? '') !== 'client')) {
-    header('Location: Connexion.php');
-    exit();
-}
+$estClient = isset($_SESSION['user']) && (($_SESSION['user']['role'] ?? '') === 'client');
 
 $cheminCommandes = "section/JSON/commandes.json";
 $commandes = lireJson($cheminCommandes);
@@ -15,57 +12,64 @@ $messageErreur = '';
 $messageSucces = '';
 $commandesEligibles = [];
 
-foreach ($commandes as $commande) {
-    $estAuClient = isset($commande['client_id']) && ((string)$commande['client_id'] === (string)($_SESSION['user']['id'] ?? ''));
-    $estLivree = (($commande['statut'] ?? '') === 'livrée');
+if ($estClient) {
+    foreach ($commandes as $commande) {
+        $estAuClient = isset($commande['client_id']) && ((string)$commande['client_id'] === (string)($_SESSION['user']['id'] ?? ''));
+        $estLivree = (($commande['statut'] ?? '') === 'livrée');
 
-    if ($estAuClient && $estLivree) {
-        $commandesEligibles[] = $commande;
-        if ($commandeId !== '' && ($commande['id'] ?? '') === $commandeId) {
-            $commandeSelectionnee = $commande;
-        }
-    }
-}
+        if ($estAuClient && $estLivree) {
+            $commandesEligibles[] = $commande;
 
-if ($commandeId !== '' && $commandeSelectionnee === null) {
-    $messageErreur = "Cette commande est introuvable, ne vous appartient pas, ou n'a pas encore été livrée.";
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
-    $service = (int)($_POST['service'] ?? 0);
-    $qualite = (int)($_POST['qualite'] ?? 0);
-    $ambiance = (int)($_POST['ambiance'] ?? 0);
-    $commentaire = trim($_POST['commentaire'] ?? '');
-
-    if ($commandeSelectionnee === null) {
-        $messageErreur = "Commande invalide.";
-    } elseif (!empty($commandeSelectionnee['note_commande'])) {
-        $messageErreur = "Cette commande a déjà été notée.";
-    } elseif ($service < 1 || $service > 5 || $qualite < 1 || $qualite > 5 || $ambiance < 1 || $ambiance > 5) {
-        $messageErreur = "Merci de sélectionner une note entre 1 et 5 pour chaque critère.";
-    } else {
-        foreach ($commandes as &$commande) {
-            if (($commande['id'] ?? '') === $commandeId && ((string)($commande['client_id'] ?? '') === (string)($_SESSION['user']['id'] ?? ''))) {
-                $commande['note_commande'] = [
-                    'service' => $service,
-                    'qualite' => $qualite,
-                    'ambiance' => $ambiance,
-                    'commentaire' => $commentaire,
-                    'date_note' => date('Y-m-d H:i:s')
-                ];
-                break;
+            if ($commandeId !== '' && ($commande['id'] ?? '') === $commandeId) {
+                $commandeSelectionnee = $commande;
             }
         }
-        unset($commande);
+    }
 
-        if (ecrireJson($cheminCommandes, $commandes) === false) {
-            $messageErreur = "Impossible d'enregistrer la note pour le moment.";
+    if ($commandeId !== '' && $commandeSelectionnee === null) {
+        $messageErreur = "Cette commande est introuvable, ne vous appartient pas, ou n'a pas encore été livrée.";
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
+        $service = (int)($_POST['service'] ?? 0);
+        $qualite = (int)($_POST['qualite'] ?? 0);
+        $ambiance = (int)($_POST['ambiance'] ?? 0);
+        $commentaire = trim($_POST['commentaire'] ?? '');
+
+        if ($commandeSelectionnee === null) {
+            $messageErreur = "Commande invalide.";
+        } elseif (!empty($commandeSelectionnee['note_commande'])) {
+            $messageErreur = "Cette commande a déjà été notée.";
+        } elseif ($service < 1 || $service > 5 || $qualite < 1 || $qualite > 5 || $ambiance < 1 || $ambiance > 5) {
+            $messageErreur = "Merci de sélectionner une note entre 1 et 5 pour chaque critère.";
         } else {
-            $messageSucces = "Merci, votre note a bien été enregistrée.";
-            foreach ($commandes as $commande) {
-                if (($commande['id'] ?? '') === $commandeId) {
-                    $commandeSelectionnee = $commande;
+            foreach ($commandes as &$commande) {
+                if (
+                    ($commande['id'] ?? '') === $commandeId &&
+                    ((string)($commande['client_id'] ?? '') === (string)($_SESSION['user']['id'] ?? ''))
+                ) {
+                    $commande['note_commande'] = [
+                        'service' => $service,
+                        'qualite' => $qualite,
+                        'ambiance' => $ambiance,
+                        'commentaire' => $commentaire,
+                        'date_note' => date('Y-m-d H:i:s')
+                    ];
                     break;
+                }
+            }
+            unset($commande);
+
+            if (ecrireJson($cheminCommandes, $commandes) === false) {
+                $messageErreur = "Impossible d'enregistrer la note pour le moment.";
+            } else {
+                $messageSucces = "Merci, votre note a bien été enregistrée.";
+
+                foreach ($commandes as $commande) {
+                    if (($commande['id'] ?? '') === $commandeId) {
+                        $commandeSelectionnee = $commande;
+                        break;
+                    }
                 }
             }
         }
@@ -83,16 +87,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
 </head>
 <body>
-    <?php include 'section/Navigation.php'; ?>
-    <div class="Teinte"></div>
-    <section>
-        <div class="logoInscription">
-            <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
-            <h2>KUNG FOOD</h2>
-        </div>
+<?php include 'section/Navigation.php'; ?>
+<div class="Teinte"></div>
 
-        <div class="Formulaire">
-            <fieldset>
+<section>
+    <div class="logoInscription">
+        <img src="image/pandaLogo.png" alt="Logo restaurant panda" />
+        <h2>KUNG FOOD</h2>
+    </div>
+
+    <div class="Formulaire">
+        <fieldset>
+
+            <?php if (!$estClient): ?>
+                <h1>Notez-nous</h1>
+                <p>Cette page est réservée aux clients connectés.</p>
+                <p>Connectez-vous avec un compte client pour noter une commande livrée.</p>
+
+            <?php else: ?>
                 <h1>Noter une commande livrée</h1>
 
                 <?php if ($messageErreur !== ''): ?>
@@ -115,10 +127,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
                             Qualité : <?php echo (int)($commandeSelectionnee['note_commande']['qualite'] ?? 0); ?>/5 |
                             Ambiance : <?php echo (int)($commandeSelectionnee['note_commande']['ambiance'] ?? 0); ?>/5
                         </p>
+
                         <?php if (!empty($commandeSelectionnee['note_commande']['commentaire'])): ?>
                             <p><strong>Commentaire :</strong> <?php echo nl2br(htmlspecialchars($commandeSelectionnee['note_commande']['commentaire'])); ?></p>
                         <?php endif; ?>
+
                         <p><a href="Historique.php">Retour à mon historique</a></p>
+
                     <?php elseif ($messageSucces === ''): ?>
                         <form method="post">
                             <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeSelectionnee['id'] ?? ''); ?>">
@@ -168,6 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
 
                 <?php else: ?>
                     <p>Choisissez une commande livrée à noter :</p>
+
                     <?php if (empty($commandesEligibles)): ?>
                         <p>Vous n'avez pas encore de commande livrée à noter.</p>
                     <?php else: ?>
@@ -185,8 +201,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
                         <?php endforeach; ?>
                     <?php endif; ?>
                 <?php endif; ?>
-            </fieldset>
-        </div>
-    </section>
+            <?php endif; ?>
+
+        </fieldset>
+    </div>
+</section>
 </body>
 </html>
