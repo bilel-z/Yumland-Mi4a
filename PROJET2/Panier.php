@@ -32,7 +32,7 @@ $transaction = genererTransaction();
 $montant = number_format(total($_SESSION["Panier"]), 2, '.', '');
 $vendeur = 'MI-4_A';
 $statut = 'OK';
-$retour = 'http://localhost/Yumland-Mi4av2/PROJET2/retour_paiement.php?session=s';
+$retour = 'http://localhost:8000/retour_paiement.php?session=s';
 $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 	
 if(isset($_POST['valider_commande'])){
@@ -223,14 +223,8 @@ if(isset($_POST['valider_commande'])){
                     </form>
                     <?php else: ?>
                     <div class="payer">
-                        <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
-                            <input type="hidden" name="transaction" value="<?= $transaction ?>">
-                            <input type="hidden" name="montant" value="<?= $montant ?>">
-                            <input type="hidden" name="vendeur" value="<?= $vendeur ?>">
-                            <input type="hidden" name="retour" value="<?= $retour ?>">
-                            <input type="hidden" name="control" value="<?= $control ?>">
-                            <button type="submit">Commander</button>
-                        </form>
+                        <p style="text-align: center; margin-bottom: 15px;">Votre panier est vide.</p>
+                        <a href="Menu.php">Continuer les achats</a>
                     </div>
                     <?php endif; ?>
                 </div>
