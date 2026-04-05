@@ -41,8 +41,8 @@ $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vende
         			<input type="hidden" name="control" value="<?= $control ?>">
         			<button type="submit">Veuillez payer</button>
                     </form>
+                </div>
             </div>
-
 
         </section>
     </div>

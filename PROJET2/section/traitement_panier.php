@@ -77,7 +77,7 @@ if(isset($_POST['valider_commande'])){
             }
 
             if($messageErreur === ''){
-                $cheminCommandes = __DIR__ . '/section/JSON/commandes.json';
+                $cheminCommandes = __DIR__ . '/JSON/commandes.json';
                 $commandes = lireJson($cheminCommandes);
 
                 if(!is_array($commandes)){

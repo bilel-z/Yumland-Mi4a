@@ -16,7 +16,7 @@ if ($estLivreur && isset($_POST["Livraison"])) {
             if ($_POST["Livraison"] == "oui") {
                 $c["statut"] = "livrée";
             } elseif ($_POST["Livraison"] == "non") {
-                $c["statut"] = "abondonnée";
+                $c["statut"] = "abandonnée";
             }
 
             $c["date_retrait_livraison"] = date("Y-m-d H:i:s");

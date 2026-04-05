@@ -67,8 +67,8 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
                 <p><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
                 <p><strong>Email :</strong> <?php echo $user["Mail"]?></p>
                 <p><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
-                <p><strong>Adresse :</strong><?php echo $user["adresse"]?>
-		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?>
+                <p><strong>Adresse :</strong><?php echo $user["adresse"]?></p>
+		        <p><strong>Interphone :</strong><?php echo $user["interphone"]?></p>
 		        <p><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p>
 		        <p><strong>Age:</strong><?php echo $user["age"]?></p></br>
             </div>
