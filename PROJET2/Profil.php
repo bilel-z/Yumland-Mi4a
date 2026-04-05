@@ -93,6 +93,7 @@ $commandesUtilisateur = array_reverse($commandesUtilisateur);
                 <?php endif; ?>
             </div>
 
+            
             <div class="bloc-droite">
                 <h3>Compte fidélité</h3>
                 <p><strong>Niveau :</strong> <?php echo htmlspecialchars($user["statut"]); ?></p>
