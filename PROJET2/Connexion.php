@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (file_exists($file)) {
         $users = json_decode(file_get_contents($file), true);
+        $error = "Email ou mot de passe incorrect";
 
         foreach ($users as &$user) { 
             if ($user["Mail"] === $email && $user["Mdp"] === $password) {
@@ -35,10 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: Admin.php");
                 }
                 exit();
-            }
-
-            if ($user["Mail"] !== $email || $user["Mdp"] !== $password) {
-                $error = "Email ou mot de passe incorrect";
             }
         }
     }
