@@ -759,5 +759,40 @@
             "commentaire": "ca va",
             "date_note": "2026-04-05 19:24:28"
         }
+    },
+    {
+        "id": "PQ7qcWgSYdobo4Q",
+        "client_id": 1775416372,
+        "client_interphone": "2344",
+        "client_telephone": "09387364",
+        "client_nom": "Benlakehal Wassin",
+        "articles": [
+            {
+                "nom": "Menu Classique",
+                "prix_unitaire": 15.7,
+                "quantite": 1,
+                "sous_total": 15.7
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 15.7,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": "2026-04-05 21:16:34",
+        "adresse_livraison": "12 rue des jonquilles, Paris 75001",
+        "commentaire": "Pas de cornichon",
+        "statut": "livrée",
+        "paiement_statut": "complété",
+        "date_creation": "2026-04-05 21:13:41",
+        "date_mise_a_jour": "2026-04-05 21:15:36",
+        "livreur_id": 1775311002,
+        "livreur_nom": "Lucas Dupont",
+        "note_commande": {
+            "service": 5,
+            "qualite": 5,
+            "ambiance": 5,
+            "commentaire": "Le livreur c'etait grave un bg",
+            "date_note": "2026-04-05 21:17:19"
+        }
     }
 ]

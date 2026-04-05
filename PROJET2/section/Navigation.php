@@ -16,10 +16,21 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
         <ul>
             <li><a href="Acceuil.php">ACCUEIL</a></li>
             <li><a href="Menu.php">MENU</a></li>
-            <li><a href="Connexion.php">CONNEXION</a></li>
-            <li><a href="Profil.php">PROFIL</a></li>
-            <li><a href="Livraison.php">LIVRAISON</a></li>
-            <li><a href="Note.php">NOTEZ-NOUS</a></li>
+            <?php if (!isset($_SESSION["user"])): ?>
+                <li><a href="Connexion.php">CONNEXION</a></li>
+            <?php endif; ?>
+            
+            <?php if (isset($_SESSION["user"])): ?>
+                <li><a href="Profil.php">PROFIL</a></li>
+            <?php endif; ?>
+
+            <?php if ($role === "livreur"): ?>
+                <li><a href="Livraison.php">LIVRAISON</a></li>
+            <?php endif; ?>
+
+            <?php if ($role === "client"): ?>
+                <li><a href="Note.php">NOTEZ-NOUS</a></li>
+            <?php endif; ?>
 
             <?php if ($role === "client"): ?>
                 <li><a href="Historique.php">HISTORIQUE</a></li>

@@ -102,6 +102,7 @@ body {
     .historique-page {
         width: 95%;
         padding: 30px 0 40px 0;
+        margin-top: 300px;
     }
 
     .titre-page h1 {
