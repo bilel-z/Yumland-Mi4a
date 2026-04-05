@@ -18,26 +18,40 @@ body {
     padding-top: 130px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
+
 .carte-blanche {
-    width: 900px;
+    width: 500px;
+    min-height: 600px;
     padding: 50px;
     background-color: var(--fond_blanc);
     border-radius: 20px;
     box-shadow: 0 20px 50px var(--ombre);
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profil-global {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .profil-gauche {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-profil {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .photo-profil img {
@@ -46,7 +60,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 20px;
-    margin-left: 130px;
+    display: block;
 }
 
 .profil-gauche h2 {
@@ -54,27 +68,16 @@ body {
     margin-bottom: 30px;
 }
 
+.infos-profil {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .infos-profil p {
     margin-bottom: 15px;
 }
 
-.profil-droite {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-.bloc-droite h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.bloc-droite p {
-    margin-bottom: 12px;
-}
-
 .actions-profil {
-    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +124,7 @@ body {
     .centrage {
         padding: 20px;
         margin-top: 20px;
+        min-height: auto;
     }
 
     .carte-blanche {
@@ -128,13 +132,7 @@ body {
         max-width: 600px;
         min-height: 650px;
         padding: 60px 40px;
-        margin-top: 30px;
         border-radius: 15px;
-    }
-
-    .profil-global {
-        grid-template-columns: 1fr;
-        row-gap: 40px;
     }
 
     .actions-profil {
@@ -144,8 +142,9 @@ body {
 
     .btn-deco {
         width: 100%;
+        text-align: center;
     }
-    
+
     .photo-profil {
         display: flex;
         justify-content: center;
@@ -155,5 +154,4 @@ body {
         margin: 0 auto;
         display: block;
     }
-
 }
