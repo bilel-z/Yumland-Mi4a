@@ -87,6 +87,8 @@ if(isset($_POST['valider_commande'])){
                 $commande = [
                     'id' => $transaction,
                     'client_id' => $_SESSION['user']['id'],
+                    'client_interphone' => $_SESSION['user']['interphone'] ?? '',
+                    'client_telephone' => $_SESSION['user']['numero'],
                     'client_nom' => trim($_SESSION['user']['Prenom'] . ' ' . $_SESSION['user']['Nom']),
                     'articles' => convertirPanierEnArticles($_SESSION['Panier']),
                     'nombre_articles' => count($_SESSION['Panier']),

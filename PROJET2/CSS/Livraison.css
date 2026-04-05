@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: var(--police_texte);
-    background-image: url("../image/marchéChinois.jpeg");
+    background-image: url("../image/marcheChinois.jpeg");
     background-size: cover;
     background-position: center;
 }

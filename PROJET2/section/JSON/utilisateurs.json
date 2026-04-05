@@ -166,7 +166,7 @@
         "bloquer": false,
         "disponible_livraison": true,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-04 14:12:00"
+        "derniere_connexion": "2026-04-05 02:23:21"
     },
     {
         "id": 1775311004,
@@ -178,7 +178,7 @@
         "numero": "0600000010",
         "adresse": "1 rue du Serveur",
         "interphone": "",
-        "role": "administrateur",
+        "role": "restaurateur",
         "statut": "Classique",
         "bloquer": false,
         "date_inscription": "2026-04-05",
