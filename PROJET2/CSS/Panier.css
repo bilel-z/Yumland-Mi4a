@@ -20,6 +20,7 @@ body {
     grid-template-columns: 1.35fr 0.9fr;
     gap: 50px;
     align-items: start;
+    margin-top: 80px;
 }
 
 .colonneGauchePanier {
