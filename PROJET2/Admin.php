@@ -1,5 +1,5 @@
 <?php session_start(); 
-if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "restaurateur") {
+if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") {
     header('Location: Connexion.php');
     exit();
 }
@@ -30,6 +30,7 @@ $users = json_decode($json, true);
 if ($users === null) {
     die("Erreur : JSON invalide — " . json_last_error_msg());
 }
+
 if ($_SERVER["REQUEST_METHOD"] ==="POST"){
 	$userId = $_POST["user-id"];
 	foreach($users as &$user){
@@ -50,18 +51,29 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
 	header("location: Admin.php");
 	exit();
 }
+
+$filtre = $_GET["role"] ?? "tous";
+
+if ($filtre !== "tous") {
+    $users = array_filter($users, function($user) use ($filtre) {
+        return isset($user["role"]) && $user["role"] === $filtre;
+    });
+}
 ?>
 
+    <div style="position: fixed; top: 20px; right: 30px; z-index: 1000;">
+        <a href="section/deconnexion.php" class="Envoi" style="text-decoration: none;">🔓 Déconnexion</a>
+    </div>
+
     <main class="contenu">
-        <h1>Menu Administrateur</h1>
+        <h1 style="color: white;">Menu Administrateur</h1>
 
         <div class="filtres">
-            <button class="filtres-bouton actif">Tous</button>
-            <button class="filtres-bouton">Administrateurs</button>
-            <button class="filtres-bouton">restaurateurs</button>
-            <button class="filtres-bouton">Livreurs</button>
-            <button class="filtres-bouton">Clients</button>
-
+            <a href="Admin.php?role=tous" class="filtres-bouton <?= $filtre === "tous" ? "actif" : "" ?>">Tous</a>
+            <a href="Admin.php?role=administrateur" class="filtres-bouton <?= $filtre === "administrateur" ? "actif" : "" ?>">Administrateurs</a>
+            <a href="Admin.php?role=restaurateur" class="filtres-bouton <?= $filtre === "restaurateur" ? "actif" : "" ?>">restaurateurs</a>
+            <a href="Admin.php?role=livreur" class="filtres-bouton <?= $filtre === "livreur" ? "actif" : "" ?>">Livreurs</a>
+            <a href="Admin.php?role=client" class="filtres-bouton <?= $filtre === "client" ? "actif" : "" ?>">Clients</a>
         </div>
 
 <table>
@@ -86,10 +98,10 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
                     <td> 
                         <form method="post">
                             <select name="role" onchange="this.form.submit()">
-                               <option value="client" <?= $user["role"]==="client" ? "selected":""?>>Client</option>
-                                <option value="livreur" <?= $user["role"]==="livreur" ? "selected":""?>>livreur</option>
-                                <option value="restaurateur" <?= $user["role"]==="restaurateur" ? "selected":""?>>restaurateur</option>
-                                <option value="administrateur" <?= $user["role"]==="administrateur" ? "selected":""?>>administrateur</option>
+                               <option value="client" <?= $user["role"]==="client" ? "selected":"" ?>>Client</option>
+                                <option value="livreur" <?= $user["role"]==="livreur" ? "selected":"" ?>>livreur</option>
+                                <option value="restaurateur" <?= $user["role"]==="restaurateur" ? "selected":"" ?>>restaurateur</option>
+                                <option value="administrateur" <?= $user["role"]==="administrateur" ? "selected":"" ?>>administrateur</option>
                             </select>
                             <input type="hidden" name="user-id" value="<?=$user["id"]?>">
                         </form>
@@ -98,8 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST"){
         <td>
             <form method="post">
                 <select name="statut" onchange="this.form.submit()"> 
-                    <?php $statut = $user["statut"] ?? "classique";  ?>
-                    <option value="Classique" <?= $statut==="classique" ? "selected":"" ?>>Classique</option>
+                    <?php $statut = $user["statut"] ?? "Classique";  ?>
+                    <option value="Classique" <?= $statut==="Classique" ? "selected":"" ?>>Classique</option>
                     <option value="Premium"   <?= $statut==="Premium"   ? "selected":"" ?>>Premium</option>
                     <option value="VIP"       <?= $statut==="VIP"       ? "selected":"" ?>>VIP</option>
                 </select>

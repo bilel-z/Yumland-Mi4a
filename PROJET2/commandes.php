@@ -66,7 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mettre_a_jour_command
 
                     if ($livreurSelectionne !== null) {
                         $commande['livreur_id'] = $livreurSelectionne['id'];
-                        $commande['livreur_nom'] = trim(($livreurSelectionne['Prenom'] ?? '') . ' ' . ($livreurSelectionne['Nom'] ?? ''));
+                        $prenom = $livreurSelectionne['Prenom'] ?? $livreurSelectionne['prenom'] ?? '';
+                        $nom = $livreurSelectionne['Nom'] ?? $livreurSelectionne['nom'] ?? '';
+                        $commande['livreur_nom'] = trim($prenom . ' ' . $nom);
                     } elseif ($livreurId === '') {
                         $commande['livreur_id'] = null;
                         $commande['livreur_nom'] = '';
@@ -117,7 +119,7 @@ if ($filtre !== "Tous") {
             <section class="hero-commandes">
                 <h1>Gestion des commandes</h1>
                 <p class="intro-page">
-                    Voici les coommandes actuelles
+                    Voici les commandes actuelles
                 </p>
             </section>
 
@@ -254,9 +256,9 @@ if ($filtre !== "Tous") {
                                                         </label>
 
                                                         <?php if (empty($livreursDisponibles)): ?>
-                                                            <p class="info-phase">Aucun livreur disponible pour le moment. L'affichage reste prêt pour la phase 3.</p>
+                                                            <p class="info-phase">Aucun livreur disponible pour le moment.</p>
                                                         <?php else: ?>
-                                                            <p class="info-phase">L'attribution du livreur est enregistrée et affichée côté restaurateur. L'action complète côté livraison sera finalisée en phase 3.</p>
+                                                            <p class="info-phase">Sélectionnez un livreur et un statut puis cliquez sur Enregistrer.</p>
                                                         <?php endif; ?>
 
                                                         <button type="submit" name="mettre_a_jour_commande" class="Envoi">Enregistrer</button>

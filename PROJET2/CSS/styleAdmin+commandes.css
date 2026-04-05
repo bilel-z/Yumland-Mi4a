@@ -144,12 +144,12 @@ td:nth-child(1) {
 
 th:nth-child(2),
 td:nth-child(2) {
-    width: 28%;
+    width: 26%;
 }
 
 th:nth-child(3),
 td:nth-child(3) {
-    width: 10%;
+    width: 12%;
 }
 
 th:nth-child(4),
@@ -303,4 +303,7 @@ details[open] summary::after {
     .detail-grid {
         grid-template-columns: 1fr;
     }
+}
+main.contenu h1 {
+    color: white !important;
 }

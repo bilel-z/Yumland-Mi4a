@@ -11,7 +11,7 @@
         "interphone": "1234",
         "role": "client",
         "date_inscription": "2026-04-05",
-        "derniere_connexion": "2026-04-05 01:13:36",
+        "derniere_connexion": "2026-04-05 07:27:56",
         "statut": "Classique",
         "bloquer": false,
         "Commandes": []
@@ -85,40 +85,6 @@
         "Commandes": []
     },
     {
-        "id": 1775309813,
-        "Nom": "liam",
-        "Prenom": "sch",
-        "Mail": "liam.sch@gmail.com",
-        "Mdp": "123",
-        "age": "2005-02-16",
-        "numero": "0769491837",
-        "adresse": "12 rue de Pekin",
-        "interphone": "4567",
-        "role": "client",
-        "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-04 19:17:26",
-        "statut": "Classique",
-        "bloquer": false,
-        "Commandes": []
-    },
-    {
-        "id": 1775309858,
-        "Nom": "liam",
-        "Prenom": "sch",
-        "Mail": "ll.ll@gmail.com",
-        "Mdp": "123",
-        "age": "2026-04-09",
-        "numero": "0695887799",
-        "adresse": "12 rue de pekin",
-        "interphone": "3333",
-        "role": "client",
-        "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-04 13:37:51",
-        "statut": "Classique",
-        "bloquer": false,
-        "Commandes": []
-    },
-    {
         "id": 1775311001,
         "Nom": "Martin",
         "Prenom": "Paul",
@@ -132,7 +98,7 @@
         "statut": "Classique",
         "bloquer": false,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-04 22:30:39"
+        "derniere_connexion": "2026-04-05 07:57:06"
     },
     {
         "id": 1775311002,
@@ -149,7 +115,7 @@
         "bloquer": false,
         "disponible_livraison": true,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-04 14:11:00"
+        "derniere_connexion": "2026-04-05 07:50:05"
     },
     {
         "id": 1775311003,
@@ -166,7 +132,7 @@
         "bloquer": false,
         "disponible_livraison": true,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-05 03:48:39"
+        "derniere_connexion": "2026-04-05 07:20:18"
     },
     {
         "id": 1775311004,
@@ -178,7 +144,24 @@
         "numero": "0600000010",
         "adresse": "1 rue du Serveur",
         "interphone": "",
-        "role": "restaurateur",
+        "role": "administrateur",
+        "statut": "Classique",
+        "bloquer": false,
+        "date_inscription": "2026-04-05",
+        "derniere_connexion": "2026-04-05 10:06:40",
+        "Commandes": []
+    },
+    {
+        "id": 1775311005,
+        "Nom": "Admin",
+        "Prenom": "Lucas",
+        "Mail": "admin1@yumland.fr",
+        "Mdp": "admin123",
+        "age": "1989-05-10",
+        "numero": "0600000011",
+        "adresse": "2 rue du Serveur",
+        "interphone": "",
+        "role": "administrateur",
         "statut": "Classique",
         "bloquer": false,
         "date_inscription": "2026-04-05",
