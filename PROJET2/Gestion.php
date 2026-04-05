@@ -1,97 +1,126 @@
-<?php 
+<?php
 session_start();
 include_once("section/Fonction/fonction.php");
 
-if (!isset($_SESSION['user']) || (($_SESSION['user']['role'] ?? '') !== 'restaurateur')) {
+if (
+    !isset($_SESSION['user']) ||
+    !isset($_SESSION['user']['role']) ||
+    $_SESSION['user']['role'] !== 'restaurateur'
+) {
     header('Location: Connexion.php');
     exit();
 }
 
-$commandes = lireJson("section/JSON/commandes.json");
-$plats = lireJson("section/JSON/plats.json");
-$utilisateurs = lireJson("section/JSON/utilisateurs.json");
+$listeCommandes = lireJson("section/JSON/commandes.json");
+$listePlats = lireJson("section/JSON/plats.json");
+$listeUtilisateurs = lireJson("section/JSON/utilisateurs.json");
 
-$nbCommandes = count($commandes);
-$nbCommandesActives = 0;
+$nombreCommandes = count($listeCommandes);
+$nombreCommandesActives = 0;
 $chiffreAffaires = 0;
-$nbPlats = count($plats);
-$nbLivreursDisponibles = 0;
+$nombrePlats = count($listePlats);
+$nombreLivreursDisponibles = 0;
 
-foreach ($commandes as $commande) {
-    $statut = $commande['statut'] ?? '';
-    if (!in_array($statut, ['livrée', 'annulée'], true)) {
-        $nbCommandesActives++;
-    }
-    if ($statut === 'livrée') {
-        $chiffreAffaires += (float)($commande['total'] ?? 0);
-    }
-}
+foreach ($listeCommandes as $commande) {
+    $statutCommande = '';
 
-foreach ($utilisateurs as $utilisateur) {
-    if (($utilisateur['role'] ?? '') === 'livreur' && (($utilisateur['bloquer'] ?? false) === false)) {
-        if (!isset($utilisateur['disponible_livraison']) || $utilisateur['disponible_livraison']) {
-            $nbLivreursDisponibles++;
+    if (isset($commande['statut'])) {
+        $statutCommande = $commande['statut'];
+    }
+
+    if ($statutCommande !== 'livrée' && $statutCommande !== 'annulée') {
+        $nombreCommandesActives++;
+    }
+
+    if ($statutCommande === 'livrée') {
+        if (isset($commande['total'])) {
+            $chiffreAffaires += (float) $commande['total'];
         }
     }
 }
 
-$dernieresCommandes = array_reverse($commandes);
+foreach ($listeUtilisateurs as $utilisateur) {
+    $estLivreur = false;
+    $estBloque = false;
+    $estDisponible = true;
+
+    if (isset($utilisateur['role']) && $utilisateur['role'] === 'livreur') {
+        $estLivreur = true;
+    }
+
+    if (isset($utilisateur['bloquer']) && $utilisateur['bloquer'] === true) {
+        $estBloque = true;
+    }
+
+    if (isset($utilisateur['disponible_livraison']) && $utilisateur['disponible_livraison'] === false) {
+        $estDisponible = false;
+    }
+
+    if ($estLivreur && !$estBloque && $estDisponible) {
+        $nombreLivreursDisponibles++;
+    }
+}
+
+$dernieresCommandes = array_reverse($listeCommandes);
 $dernieresCommandes = array_slice($dernieresCommandes, 0, 5);
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KUNG FOOD - Gestion</title>
+
     <link rel="stylesheet" href="CSS/styleGestion.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
     <link rel="stylesheet" href="CSS/Variable.css">
-    <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
+    <link rel="icon" type="image/png" href="image/pandaLogo.png">
 </head>
 <body>
-    <?php include 'section/Navigation.php'; ?>
+
+    <?php include("section/Navigation.php"); ?>
 
     <div class="overlay-page">
         <main class="contenu-gestion">
-            <section class="hero-gestion">
-                <p class="sur-titre">Espace restaurateur</p>
-                <h1>Gestion du restaurant</h1>
-            </section>
 
             <section class="grille-stats">
                 <article class="carte-stat">
                     <span class="libelle">Commandes totales</span>
-                    <strong><?php echo (int)$nbCommandes; ?></strong>
+                    <strong><?php echo $nombreCommandes; ?></strong>
                 </article>
+
                 <article class="carte-stat">
                     <span class="libelle">Commandes actives</span>
-                    <strong><?php echo (int)$nbCommandesActives; ?></strong>
+                    <strong><?php echo $nombreCommandesActives; ?></strong>
                 </article>
+
                 <article class="carte-stat">
                     <span class="libelle">Plats au menu</span>
-                    <strong><?php echo (int)$nbPlats; ?></strong>
+                    <strong><?php echo $nombrePlats; ?></strong>
                 </article>
+
                 <article class="carte-stat">
                     <span class="libelle">Livreurs disponibles</span>
-                    <strong><?php echo (int)$nbLivreursDisponibles; ?></strong>
+                    <strong><?php echo $nombreLivreursDisponibles; ?></strong>
                 </article>
-                <article class="carte-stat large">
-                    <span class="libelle">Chiffre d'affaires livré</span>
-                    <strong><?php echo number_format($chiffreAffaires, 2, ',', ' '); ?> €</strong>
-                </article>
+            </section>
+
+            <section class="carte-chiffre">
+                <span class="libelle">Chiffre d'affaires livré</span>
+                <strong><?php echo number_format($chiffreAffaires, 2, ',', ' '); ?> €</strong>
             </section>
 
             <section class="grille-actions">
                 <article class="carte-action">
-                    <h2>Suivi des commandes</h2>
-                    <p>Consultez les commandes en cours, changez leur statut et assignez un livreur.</p>
+                    <h2>Accès rapide</h2>
+                    <p>Consultez et gérez toutes les commandes en cours.</p>
                     <a href="commandes.php" class="btn-action">Ouvrir les commandes</a>
                 </article>
 
                 <article class="carte-action">
                     <h2>Profil</h2>
-                    <p>Accédez rapidement à votre profil restaurateur et à vos informations de compte.</p>
+                    <p>Accédez à votre profil et vos informations de compte.</p>
                     <a href="Profil.php" class="btn-action second">Voir mon profil</a>
                 </article>
             </section>
@@ -113,25 +142,64 @@ $dernieresCommandes = array_slice($dernieresCommandes, 0, 5);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (empty($dernieresCommandes)): ?>
+                            <?php if (empty($dernieresCommandes)) { ?>
                                 <tr>
                                     <td colspan="4">Aucune commande enregistrée pour le moment.</td>
                                 </tr>
-                            <?php else: ?>
-                                <?php foreach ($dernieresCommandes as $commande): ?>
+                            <?php } else { ?>
+                                <?php foreach ($dernieresCommandes as $commande) { ?>
                                     <tr>
-                                        <td><?php echo htmlspecialchars($commande['id'] ?? '—'); ?></td>
-                                        <td><?php echo htmlspecialchars($commande['client_nom'] ?? 'Client inconnu'); ?></td>
-                                        <td><?php echo htmlspecialchars($commande['statut'] ?? 'inconnu'); ?></td>
-                                        <td><?php echo number_format((float)($commande['total'] ?? 0), 2, ',', ' '); ?> €</td>
+                                        <td>
+                                            <?php
+                                            if (isset($commande['id'])) {
+                                                echo htmlspecialchars($commande['id']);
+                                            } else {
+                                                echo '—';
+                                            }
+                                            ?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            if (isset($commande['client_nom'])) {
+                                                echo htmlspecialchars($commande['client_nom']);
+                                            } else {
+                                                echo 'Client inconnu';
+                                            }
+                                            ?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            if (isset($commande['statut'])) {
+                                                echo htmlspecialchars($commande['statut']);
+                                            } else {
+                                                echo 'inconnu';
+                                            }
+                                            ?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            $totalCommande = 0;
+
+                                            if (isset($commande['total'])) {
+                                                $totalCommande = (float) $commande['total'];
+                                            }
+
+                                            echo number_format($totalCommande, 2, ',', ' ') . ' €';
+                                            ?>
+                                        </td>
                                     </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+                                <?php } ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
             </section>
+
         </main>
     </div>
+
 </body>
 </html>
