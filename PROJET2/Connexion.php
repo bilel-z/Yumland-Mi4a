@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("section/Fonction/fonction.php");
 if (isset($_SESSION["user"])) {
     header("Location: Profil.php");
     exit();

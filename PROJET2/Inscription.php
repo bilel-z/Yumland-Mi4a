@@ -1,4 +1,5 @@
 <?php session_start(); 
+include_once("section/Fonction/fonction.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $file = "section/JSON/utilisateurs.json";
 
     if (file_exists($file)) {
-        $users = json_decode(file_get_contents($file), true);
+        $users = lireJson($file);
     } else {
         $users = [];
     }
