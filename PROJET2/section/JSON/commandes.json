@@ -699,5 +699,30 @@
         "date_mise_a_jour": "2026-04-05 07:49:42",
         "livreur_id": 1775311002,
         "livreur_nom": "Lucas Dupont"
+    },
+    {
+        "id": "nuOyCYgo5wWMr8e",
+        "client_id": 1775344416,
+        "client_interphone": "1234",
+        "client_telephone": "0612345678",
+        "client_nom": "Lucas Dupont",
+        "articles": [
+            {
+                "nom": "Riz Cantonais",
+                "prix_unitaire": 8.5,
+                "quantite": 1,
+                "sous_total": 8.5
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 8.5,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "12 rue de Rivoli, 75001 Paris",
+        "commentaire": "efzczvevezef",
+        "statut": "à préparer",
+        "paiement_statut": "en attente",
+        "date_creation": "2026-04-05 15:02:32"
     }
 ]
