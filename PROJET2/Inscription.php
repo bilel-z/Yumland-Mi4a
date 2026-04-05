@@ -1,16 +1,4 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>KUNG FOOD - Inscription</title>
-        <link rel="stylesheet" href="CSS/styleInscription.css">
-        <link rel="stylesheet" href="CSS/BarreNav.css">
-        <link rel="stylesheet" href="CSS/Variable.css">
-        <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
-    </head>
-    <body>
-        <?php
+<?php session_start(); 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
@@ -47,6 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>KUNG FOOD - Inscription</title>
+        <link rel="stylesheet" href="CSS/styleInscription.css">
+        <link rel="stylesheet" href="CSS/BarreNav.css">
+        <link rel="stylesheet" href="CSS/Variable.css">
+        <link rel="icon" type="CSS/image/png" href="image/pandaLogo.png">
+    </head>
+    <body>
+
 
 <?php include 'section/Navigation.php'; ?>
         <section>
