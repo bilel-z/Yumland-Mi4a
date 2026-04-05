@@ -2,7 +2,7 @@
 
     include_once("section/Fonction/fonction.php");
 
-    $menu = json_decode(file_get_contents('section/JSON/plats.json'), true);
+    $menu = lireJson('section/JSON/plats.json');
 
     foreach($menu as $plat){
 

@@ -106,7 +106,7 @@
   {
     "nom": "Bœuf sauté aux oignons",
     "description": "Bœuf tendre sauté avec oignons et sauce soja.",
-    "image": "image/Plats/BoeufSauté.jpeg",
+    "image": "image/Plats/BoeufSaute.jpeg",
     "prix": 12.00,
     "categorie": "Plat",
     "filtres": ["Gras", "Lactose", "Cacahuete", "Mer"]

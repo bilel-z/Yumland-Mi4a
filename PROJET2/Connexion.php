@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $file = "section/JSON/utilisateurs.json";
 
     if (file_exists($file)) {
-        $users = json_decode(file_get_contents($file), true);
+        $users = lireJson($file);
         $error = "Email ou mot de passe incorrect";
 
         foreach ($users as &$user) { 
