@@ -1,8 +1,8 @@
-<form action="Menu.php" method="get">
+<div class="BarreRecherche">
     <div class="Recherche">
             <label for="rechercheFor"></label>
             <input id="rechercheFor" name="recherche" placeholder="Recherchez un plat !">
-            <button type="submit" title="Boutton Recherche">
+            <button type="button" id="btnRecherche" title="Boutton Recherche">
                 <img src="image/Loupe.png" alt="LogoRecherche">
             </button>
     </div>
@@ -38,4 +38,4 @@
             </select>
         </div>
     </div>
-</form>
+</div>

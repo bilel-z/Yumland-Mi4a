@@ -1,6 +1,10 @@
 <?php 
+    session_start();
     include_once("section/Fonction/fonction.php");
     $menu = lireJson('section/JSON/plats.json');
+    if (!isset($_SESSION["Panier"])) {
+        $_SESSION["Panier"] = [];
+    }
 
     foreach($menu as $plat){
 

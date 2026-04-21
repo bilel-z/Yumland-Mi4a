@@ -1,7 +1,9 @@
 <?php 
-
+    session_start();
     include_once("section/Fonction/fonction.php");
-
+    if (!isset($_SESSION["Panier"])) {
+        $_SESSION["Panier"] = [];
+    }
     $menu = lireJson('section/JSON/plats.json');
 
     foreach($menu as $plat){
