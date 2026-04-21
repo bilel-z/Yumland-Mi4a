@@ -30,6 +30,13 @@
             }
         }
 
+        if(!empty($_GET['recherche'])){
+            $resultat = strtolower(trim($_GET['recherche']));
+            if(strpos(strtolower($plat['nom']), $resultat) === false){
+                $affiche = false;
+            }
+        }
+
         if($affiche){
             echo '
                 <div class="BoitePlat">

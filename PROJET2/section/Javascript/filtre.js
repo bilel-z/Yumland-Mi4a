@@ -4,9 +4,10 @@ let Saveur = document.getElementById('LabelSaveur');
 let boutton = document.getElementById('btnRecherche');
 let boitePlat = document.getElementById('grillePlat');
 let boiteMenu = document.getElementById('grilleMenu');
+let recherche = document.getElementById('rechercheFor');
 
 function appliqueFiltre(){
-    let url = "?typePlat="+encodeURIComponent(typePlat.value)+"&Allergene="+encodeURIComponent(Allergene.value)+"&typeSaveur="+encodeURIComponent(Saveur.value);
+    let url = "?&recherche="+encodeURIComponent(recherche.value)+"&typePlat="+encodeURIComponent(typePlat.value)+"&Allergene="+encodeURIComponent(Allergene.value)+"&typeSaveur="+encodeURIComponent(Saveur.value);
     fetch("section/plat.php"+url)
     .then((response) => {
         if(!response){
@@ -38,7 +39,11 @@ function appliqueFiltre(){
     });
 }
 
-
+document.getElementById('rechercheFor').addEventListener('keydown', (touche) => {
+    if (touche.key == 'Enter'){
+        appliqueFiltre();
+    }
+});
 boutton.addEventListener('click', appliqueFiltre);
 
 typePlat.addEventListener("change",appliqueFiltre);

@@ -105,9 +105,11 @@
                 </div>
             </div>
         </section>
-            <section class="PosBarre">
-                    <?php include 'section/BarreMenu.php'; ?>
-            </section>
+            <form action="Menu.php" method="get">
+                <section class="PosBarre">
+                        <?php include 'section/BarreMenu.php'; ?>
+                </section>
+            </form>
         <footer>
             <div>Ⓒ COPYRIGHTY 2026 - Mentions légales</div>
         </footer>

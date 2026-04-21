@@ -1,8 +1,10 @@
+<?php
+echo '
 <div class="BarreRecherche">
     <div class="Recherche">
             <label for="rechercheFor"></label>
             <input id="rechercheFor" name="recherche" placeholder="Recherchez un plat !">
-            <button type="button" id="btnRecherche" title="Boutton Recherche">
+            <button type="'.((basename($_SERVER['PHP_SELF'])=="Acceuil.php") ? "submit" : "button").'" id="btnRecherche" title="Boutton Recherche">
                 <img src="image/Loupe.png" alt="LogoRecherche">
             </button>
     </div>
@@ -39,3 +41,5 @@
         </div>
     </div>
 </div>
+'
+;?>
