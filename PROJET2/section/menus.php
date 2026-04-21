@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    include_once("section/Fonction/fonction.php");
-    $menu = lireJson('section/JSON/plats.json');
+    include_once(__DIR__ . "/Fonction/fonction.php");
+    $menu = lireJson(__DIR__ . "/JSON/plats.json");
     if (!isset($_SESSION["Panier"])) {
         $_SESSION["Panier"] = [];
     }

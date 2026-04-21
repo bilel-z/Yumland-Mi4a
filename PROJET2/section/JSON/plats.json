@@ -172,7 +172,7 @@
     "description": "Un menu frais et léger mettant en avant les saveurs marines.",
     "prix": 16.00,
     "categorie": "Menu",
-    "filtres": ["Sel","Gluten","Lactose","Cacahuete","Mer","Sucre","Vegetarien"],
+    "filtres": ["Sel","Gluten","Lactose","Cacahuete","Sucre","Vegetarien"],
     "Composition" : ["Salade de chou sucrée","Poisson vapeur à la cantonaise","Gelée de litchi","Lipton pêche 33cl"]
   }
 ]

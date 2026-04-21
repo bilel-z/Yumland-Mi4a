@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="CSS/Recherche.css">
         <link rel="stylesheet" href="CSS/Variable.css">
         <link rel="icon" type="image/png" href="image/pandaLogo.png">
+        <script src="section/Javascript/filtre.js" defer></script>
     </head>
     <body>
         <?php include 'section/Navigation.php'; ?>
@@ -45,7 +46,7 @@
                     <?php include 'section/BarreMenu.php'; ?>
             </section>
             <section class="Menu">
-                <div class="MenuGrid">
+                <div class="MenuGrid" id="grillePlat">
                     <?php include 'section/plat.php'; ?>
                 </div>
             </section>
@@ -54,7 +55,7 @@
                     <h1>Presentation des Menus</h1>
                 </div>
                 <section class="Menu">
-                    <div class="MenuGrid">
+                    <div class="MenuGrid" id="grilleMenu">
                         <?php include 'section/menus.php'; ?>
                     </div>
                 </section>
