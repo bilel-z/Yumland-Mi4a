@@ -83,8 +83,9 @@ if ($estClient) {
     <title>Notez votre commande</title>
     <link rel="stylesheet" href="CSS/styleNotation.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
 <?php include 'section/Navigation.php'; ?>

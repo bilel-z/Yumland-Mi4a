@@ -51,8 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>KUNG FOOD - Connexion</title>
     <link rel="stylesheet" href="CSS/Connexion.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
 

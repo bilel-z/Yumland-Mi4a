@@ -10,6 +10,7 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
 <nav>
     <div class="logo">
         <img src="image/pandaLogo.png" alt="Logo restaurant panda">
+        <button id="bouttonTheme" onclick="changerTheme();">Mode clair ☀️</button>
     </div>
 
     <div class="navigation">

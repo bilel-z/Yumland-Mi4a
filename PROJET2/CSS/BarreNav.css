@@ -10,10 +10,32 @@ nav {
    font-family: var(--police_texte);
 }
 
+div.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
 div.logo img{
     padding-left: 50px;
     height: 100px;
     width: auto;
+}
+
+#bouttonTheme {
+   background-color: var(--boutton_theme); 
+   color: var(--texte_theme);
+   padding: 10px 20px;
+   border: 1px solid var(--contour_or);
+   border-radius: 25px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+#bouttonTheme:hover {
+   background-color: var(--boutton_theme_hover); 
 }
 
 .navigation ul {

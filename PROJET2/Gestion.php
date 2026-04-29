@@ -74,8 +74,9 @@ $dernieresCommandes = array_slice($dernieresCommandes, 0, 5);
 
     <link rel="stylesheet" href="CSS/styleGestion.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
 

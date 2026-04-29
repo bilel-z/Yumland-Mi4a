@@ -132,9 +132,10 @@ if(isset($_POST['valider_commande'])){
     <title>KUNG FOOD - Panier</title>
     <link rel="stylesheet" href="CSS/styleMenu.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="stylesheet" href="CSS/Panier.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
     <?php include 'section/Navigation.php'; ?>

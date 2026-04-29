@@ -43,8 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>KUNG FOOD - Inscription</title>
         <link rel="stylesheet" href="CSS/styleInscription.css">
         <link rel="stylesheet" href="CSS/BarreNav.css">
-        <link rel="stylesheet" href="CSS/Variable.css">
+        <link rel="stylesheet" id="theme" href="CSS/Variable.css">
         <link rel="icon" type="image/png" href="image/pandaLogo.png">
+        <script src="section/Javascript/theme.js" defer></script>
     </head>
     <body>
 

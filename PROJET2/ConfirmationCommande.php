@@ -19,10 +19,11 @@ $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vende
     <title>KUNG FOOD - Confirmation</title>
     <link rel="stylesheet" href="CSS/styleMenu.css">
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="stylesheet" href="CSS/Panier.css">
     <link rel="stylesheet" href="CSS/ConfirmationCommande.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
     <?php include 'section/Navigation.php'; ?>

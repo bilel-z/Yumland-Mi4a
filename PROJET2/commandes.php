@@ -107,8 +107,9 @@ if ($filtre !== "Tous") {
     <title>Gestion des commandes</title>
     <link rel="stylesheet" href="CSS/styleAdmin+commandes.css?v=2">
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
 

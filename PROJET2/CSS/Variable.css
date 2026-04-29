@@ -33,6 +33,8 @@
     --boutton_gris: #ddd;
     --boutton_gris_hover: #1abc9c;
     --boutton_vert: #2ecc71;
+    --boutton_theme: rgba(255, 255, 255, 0.1);
+    --boutton_theme_hover: rgba(255, 255, 255, 0.25);
 
     --contour_menu: rgb(207, 83, 83);
     --contour_or: rgb(218, 187, 14);
@@ -50,5 +52,6 @@
     --texte_or: rgb(255, 223, 42);
     --texte_secondaire: #666;
     --texte_badge_statut: #5a4100;
+    --texte_theme: rgb(255, 255, 255);
 
 }
