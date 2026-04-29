@@ -43,7 +43,7 @@ body {
 }
 
 .tableau-conteneur {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: var(--fond_carte_panier);
     border: 1px solid var(--contour_or);
     border-radius: 18px;
     padding: 25px;
@@ -58,14 +58,14 @@ body {
 }
 
 .tableau-historique thead tr {
-    background-color: rgba(255, 215, 0, 0.12);
+    background-color: var(--fond_thead_historique);
 }
 
 .tableau-historique th,
 .tableau-historique td {
     padding: 16px 14px;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid var(--contour_transparent);
     vertical-align: top;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .tableau-historique tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--fond_ligne_survol_clair);
 }
 
 .aucune-commande {

@@ -9,6 +9,16 @@
     --fond_gris_fonce: #ecf0f1;
     --fond_transparent: rgba(0, 0, 0, 0.553);
     --fond_boite_menu: rgba(0, 0, 0, 0.7);
+    --fond_carte_admin: rgb(255, 255, 255);
+    --fond_succes: rgba(46, 139, 87, 0.92);
+    --fond_erreur: rgba(192, 57, 43, 0.92);
+    --fond_ligne_survol: rgba(0, 0, 0, 0.025);
+    --fond_badge_statut: #f3efe2;
+    --fond_detail: #faf7f0;
+    --voile_panier: rgba(0, 0, 0, 0.45);
+    --fond_carte_panier: rgba(0, 0, 0, 0.75);
+    --fond_thead_historique: rgba(255, 215, 0, 0.12);
+    --fond_ligne_survol_clair: rgba(255, 255, 255, 0.05);
 
     --boutton_acheter: rgb(247, 71, 55);
     --boutton_acheter_hover: rgb(201, 68, 50);
@@ -28,11 +38,14 @@
     --contour_transparent: rgba(255, 255, 255, 0.2);
     --ombre: rgba(0,0,0,0.3);
     --invisible: rgba(255, 255, 255, 0);
+    --contour_detail: #eadfcb;
 
     --texte_blanc: rgb(255,255,255);
     --texte_noir: rgb(0,0,0);
     --texte_gris: rgb(218, 218, 218);
     --texte_gris_fonce: #555;
     --texte_or: rgb(255, 223, 42);
+    --texte_secondaire: #666;
+    --texte_badge_statut: #5a4100;
 
 }

@@ -9,19 +9,19 @@
 .carteConfirmation {
     width: 100%;
     max-width: 900px;
-    background: rgba(0, 0, 0, 0.72);
+    background: var(--fond_carte_panier);
     border-radius: 30px;
     padding: 70px 50px;
     text-align: center;
-    color: white;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    color: var(--texte_blanc);
+    box-shadow: 0 8px 30px var(--ombre);
     margin-top: -30px;
 }
 
 .carteConfirmation h1 {
     font-size: 72px;
     margin-bottom: 30px;
-    color: white;
+    color: var(--texte_blanc);
     text-align: center;
 }
 
@@ -29,14 +29,14 @@
     font-size: 34px;
     line-height: 1.6;
     margin-bottom: 45px;
-    color: white;
+    color: var(--texte_blanc);
     text-align: center;
 }
 
 .btnRetourMenu {
     display: inline-block;
-    background-color: #ff4d3d;
-    color: white;
+    background-color: var(--boutton_acheter);
+    color: var(--texte_blanc);
     text-decoration: none;
     font-size: 28px;
     font-weight: bold;
@@ -47,7 +47,7 @@
 }
 
 .btnRetourMenu:hover {
-    background-color: #e63f30;
+    background-color: var(--boutton_acheter_hover);
     transform: scale(1.03);
 }
 

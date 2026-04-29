@@ -43,7 +43,7 @@ body {
     margin: 0 auto;
     font-size: 18px;
     line-height: 1.6;
-    color: #f3f3f3;
+    color: var(--texte_gris);
 }
 
 .message-flash {
@@ -52,28 +52,28 @@ body {
     margin: 0 auto 20px auto;
     padding: 14px 18px;
     border-radius: 12px;
-    color: white;
+    color: var(--texte_blanc);
     font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 25px var(--ombre);
     box-sizing: border-box;
 }
 
 .message-flash.succes {
-    background: rgba(46, 139, 87, 0.92);
+    background: var(--fond_succes);
 }
 
 .message-flash.erreur {
-    background: rgba(192, 57, 43, 0.92);
+    background: var(--fond_erreur);
 }
 
 .bloc-commandes {
     width: 100%;
     max-width: 1700px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--fond_carte_admin);
     border-radius: 22px;
     padding: 30px;
-    box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+    box-shadow: 0 18px 50px var(--ombre);
     box-sizing: border-box;
 }
 
@@ -87,11 +87,11 @@ body {
 .filtres-bouton {
     padding: 10px 18px;
     border: none;
-    background-color: #e7e7e7;
+    background-color: var(--boutton_gris);
     cursor: pointer;
     border-radius: 999px;
     text-decoration: none;
-    color: #222;
+    color: var(--texte_noir);
     display: inline-block;
     font-weight: 600;
     transition: 0.25s ease;
@@ -113,7 +113,7 @@ table {
     width: 100%;
     min-width: 1400px;
     border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: var(--fond_carte_admin);
     border-radius: 16px;
     overflow: hidden;
     table-layout: fixed;
@@ -122,19 +122,19 @@ table {
 th, td {
     padding: 16px 14px;
     text-align: left;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid var(--contour_gris);
     vertical-align: top;
     word-wrap: break-word;
 }
 
 th {
-    background-color: #111111;
+    background-color: var(--fond_noir);
     color: var(--texte_blanc);
     font-size: 17px;
 }
 
 tr:hover td {
-    background-color: rgba(0, 0, 0, 0.025);
+    background-color: var(--fond_ligne_survol);
 }
 
 th:nth-child(1),
@@ -168,7 +168,7 @@ td:nth-child(5) {
 
 .commande-id,
 .texte-secondaire {
-    color: #666;
+    color: var(--texte_secondaire);
     font-size: 0.92rem;
 }
 
@@ -176,15 +176,15 @@ td:nth-child(5) {
     display: inline-block;
     padding: 7px 12px;
     border-radius: 999px;
-    background: #f3efe2;
-    color: #5a4100;
+    background: var(--fond_badge_statut);
+    color: var(--texte_badge_statut);
     font-weight: 700;
 }
 
 details summary {
     cursor: pointer;
     font-weight: 700;
-    color: #111;
+    color: var(--texte_noir);
     list-style: none;
 }
 
@@ -204,8 +204,8 @@ details[open] summary::after {
 .bloc-detail {
     margin-top: 14px;
     padding: 18px;
-    background: #faf7f0;
-    border: 1px solid #eadfcb;
+    background: var(--fond_detail);
+    border: 1px solid var(--contour_detail);
     border-radius: 16px;
 }
 
@@ -244,16 +244,16 @@ details[open] summary::after {
     display: grid;
     gap: 6px;
     font-weight: 700;
-    color: #222;
+    color: var(--texte_noir);
 }
 
 .form-action-commande select {
     padding: 12px;
     border-radius: 10px;
-    border: 1px solid #d5d5d5;
+    border: 1px solid var(--contour_gris);
     font-family: inherit;
     font-size: 15px;
-    background: white;
+    background: var(--fond_blanc);
     width: 100%;
     box-sizing: border-box;
 }
@@ -261,7 +261,7 @@ details[open] summary::after {
 .info-phase {
     margin: 0;
     font-size: 0.95rem;
-    color: #555;
+    color: var(--texte_gris_fonce);
     line-height: 1.5;
 }
 
@@ -305,5 +305,5 @@ details[open] summary::after {
     }
 }
 main.contenu h1 {
-    color: white !important;
+    color: var(--texte_blanc) !important;
 }
