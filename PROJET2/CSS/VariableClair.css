@@ -1,0 +1,54 @@
+:root{
+
+    --police_titre: 'Dancing Script', cursive;
+    --police_texte: Arial, Helvetica, sans-serif;
+
+    --fond_navigation: rgb(0,0,0); 
+    --fond_select_filtre: rgb(245, 245, 245);
+    --fond_th_admin: rgb(0,0,0);
+    --fond_formulaire: rgb(255,255,255);
+    --fond_gris: #f4f6f9;
+    --fond_gris_fonce: #ecf0f1;
+    --fond_transparent: rgba(243, 240, 236, 0.85);
+    --fond_boite_menu: rgba(255, 255, 255, 0.85);
+    --fond_carte_admin: rgb(255, 255, 255);
+    --fond_succes: rgba(46, 139, 87, 0.92);
+    --fond_erreur: rgba(192, 57, 43, 0.92);
+    --fond_ligne_survol: rgba(0, 0, 0, 0.025);
+    --fond_badge_statut: #f3efe2;
+    --fond_detail: #faf7f0;
+    --voile_panier: rgba(255, 255, 255, 0.55);
+    --fond_carte_panier: rgba(255, 255, 255, 0.92);
+    --fond_thead_historique: rgba(218, 187, 14, 0.15);
+    --fond_ligne_survol_clair: rgba(0, 0, 0, 0.05);
+
+    --boutton_acheter: rgb(247, 71, 55);
+    --boutton_acheter_hover: rgb(201, 68, 50);
+    --boutton_bleu: #1877f2;
+    --boutton_bleu_hover: #145fd1;
+    --boutton_noir: rgb(0,0,0);
+    --boutton_noir_hover: rgb(128,128,128);
+    --boutton_rouge: #d63031;
+    --boutton_rouge_hover: #b02324;
+    --boutton_gris: #ddd;
+    --boutton_gris_hover: #1abc9c;
+    --boutton_vert: #2ecc71;
+
+    --contour_menu: rgb(207, 83, 83);
+    --contour_or: rgb(218, 187, 14);
+    --contour_gris: #ccc;
+    --contour_transparent: rgba(0, 0, 0, 0.15);
+    --ombre: rgba(0,0,0,0.3);
+    --invisible: rgba(255, 255, 255, 0);
+    --contour_detail: #eadfcb;
+
+    --texte_blanc: rgb(35, 35, 35);
+    --texte_navigation: rgb(255,255,255);
+    --texte_noir: rgb(0,0,0);
+    --texte_gris: rgb(80, 80, 80);
+    --texte_gris_fonce: #555;
+    --texte_or: rgb(199, 174, 31);
+    --texte_secondaire: #666;
+    --texte_badge_statut: #5a4100;
+
+}

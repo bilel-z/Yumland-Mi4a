@@ -10,7 +10,7 @@
     height: 50px;
     display: flex;
     justify-content: center;
-    background-color: var(--fond_blanc);
+    background-color: var(--fond_formulaire);
     border: 2px solid var(--contour_gris);
     border-radius: 5px;
     padding: 15px;
@@ -56,7 +56,7 @@ button img {
 
 div.filtre select{
     color: var(--texte_blanc);
-    background-color: var(--fond_noir);
+    background-color: var(--fond_select_filtre);
     border: none;
     width: auto;
     height: 50px;

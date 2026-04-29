@@ -25,7 +25,7 @@ body {
     width: 500px;
     min-height: 600px;
     padding: 50px;
-    background-color: var(--fond_blanc);
+    background-color: var(--fond_formulaire);
     border-radius: 20px;
     box-shadow: 0 20px 50px var(--ombre);
     display: flex;

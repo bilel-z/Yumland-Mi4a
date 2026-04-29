@@ -23,7 +23,7 @@ body {
 }
 
 .carte-blanche {
-    background-color: var(--fond_blanc);
+    background-color: var(--fond_formulaire);
     width: 500px;
     padding: 50px;
     border-radius: 20px;

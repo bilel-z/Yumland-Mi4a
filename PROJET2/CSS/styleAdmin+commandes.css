@@ -128,7 +128,7 @@ th, td {
 }
 
 th {
-    background-color: var(--fond_noir);
+    background-color: var(--fond_th_admin);
     color: var(--texte_blanc);
     font-size: 17px;
 }
@@ -253,7 +253,7 @@ details[open] summary::after {
     border: 1px solid var(--contour_gris);
     font-family: inherit;
     font-size: 15px;
-    background: var(--fond_blanc);
+    background: var(--fond_formulaire);
     width: 100%;
     box-sizing: border-box;
 }

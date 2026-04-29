@@ -27,7 +27,7 @@ body {
 }
 
 .carte-stat {
-    background: var(--fond_blanc);
+    background: var(--fond_formulaire);
     border-radius: 20px;
     padding: 24px 20px;
     box-shadow: 0 8px 32px var(--ombre);
@@ -46,7 +46,7 @@ body {
 }
 
 .carte-chiffre {
-    background: var(--fond_blanc);
+    background: var(--fond_formulaire);
     border-radius: 20px;
     padding: 28px 36px;
     box-shadow: 0 8px 32px var(--ombre);
@@ -74,7 +74,7 @@ body {
 }
 
 .carte-action {
-    background: var(--fond_blanc);
+    background: var(--fond_formulaire);
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 8px 32px var(--ombre);
@@ -118,7 +118,7 @@ body {
 }
 
 .carte-tableau {
-    background: var(--fond_blanc);
+    background: var(--fond_formulaire);
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 8px 32px var(--ombre);

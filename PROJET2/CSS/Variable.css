@@ -3,8 +3,10 @@
     --police_titre: 'Dancing Script', cursive;
     --police_texte: Arial, Helvetica, sans-serif;
 
-    --fond_noir: rgb(0,0,0);
-    --fond_blanc: rgb(255,255,255);
+    --fond_navigation: rgb(0,0,0);
+    --fond_select_filtre: rgb(0,0,0);
+    --fond_th_admin: rgb(0,0,0);
+    --fond_formulaire: rgb(255,255,255);
     --fond_gris: #f4f6f9;
     --fond_gris_fonce: #ecf0f1;
     --fond_transparent: rgba(0, 0, 0, 0.553);
@@ -41,6 +43,7 @@
     --contour_detail: #eadfcb;
 
     --texte_blanc: rgb(255,255,255);
+    --texte_navigation: rgb(255,255,255);
     --texte_noir: rgb(0,0,0);
     --texte_gris: rgb(218, 218, 218);
     --texte_gris_fonce: #555;

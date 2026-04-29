@@ -35,7 +35,7 @@ section{
 }
 
 .BoiteForm{
-    background-color: var(--fond_blanc);
+    background-color: var(--fond_formulaire);
     width: 65%;
     padding: 40px;
     box-shadow: 0 0 15px var(--contour_transparent);
