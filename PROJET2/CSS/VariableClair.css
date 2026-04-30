@@ -9,7 +9,7 @@
     --fond_formulaire: rgb(255,255,255);
     --fond_gris: #f4f6f9;
     --fond_gris_fonce: #ecf0f1;
-    --fond_transparent: rgba(243, 240, 236, 0.85);
+    --fond_transparent: rgba(243, 240, 236, 0.352);
     --fond_boite_menu: rgba(255, 255, 255, 0.85);
     --fond_carte_admin: rgb(255, 255, 255);
     --fond_succes: rgba(46, 139, 87, 0.92);
@@ -44,7 +44,7 @@
     --invisible: rgba(255, 255, 255, 0);
     --contour_detail: #eadfcb;
 
-    --texte_blanc: rgb(35, 35, 35);
+    --texte_blanc: rgb(0, 0, 0);
     --texte_navigation: rgb(255,255,255);
     --texte_noir: rgb(0,0,0);
     --texte_gris: rgb(80, 80, 80);
