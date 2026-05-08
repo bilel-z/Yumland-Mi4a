@@ -1,5 +1,6 @@
 <?php
 session_start();
+$error = "";
 include_once("section/Fonction/fonction.php");
 if (isset($_SESSION["user"])) {
     header("Location: Profil.php");
@@ -75,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Se connecter</button>
 
             <?php if (!empty($error)): ?>
-                <p class="erreur"><?= htmlspecialchars($error) ?></p>
+                <b><p class="erreur"><?= htmlspecialchars($error) ?></p></b>
             <?php endif; ?>
 
             <a href="Inscription.php" class="inscrire">Créer un compte</a>

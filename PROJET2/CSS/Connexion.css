@@ -145,6 +145,10 @@ a.inscrire {
     color: var(--texte_noir);
 }
 
+.erreur {
+    font-size: 18px;
+}
+
 @media (max-width: 768px) {
 
     nav {

@@ -1,5 +1,6 @@
 <?php session_start(); 
 include_once("section/Fonction/fonction.php");
+$doublonMail = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $newUser = [
@@ -27,13 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $users = [];
     }
+    foreach($users as $element){
+        if($element["Mail"] === $_POST["Mail"]){
+            $doublonMail = 1;
+            break;
+        }
+    }
 
-    $users[] = $newUser;
-
-    file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
-
-    header("Location: Acceuil.php");
-    exit();
+    if(!$doublonMail){
+        $users[] = $newUser;
+        file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+        header("Location: Acceuil.php");
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -96,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="envoi">
                         <input class="StyleEnvoi" type="submit" name="Boutton envoi" value="Envoyer">
                     </div>
+                    <?php if($doublonMail){echo '<b><p class="erreur">Erreur : Le compte associé à cette adresse mail existe déjà.</p></b>';} ?>
                 </form>
             </div>
         </section>
