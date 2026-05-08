@@ -39,6 +39,7 @@
     --contour_menu: rgb(207, 83, 83);
     --contour_or: rgb(218, 187, 14);
     --contour_gris: #ccc;
+    --contour_rouge:red; 
     --contour_transparent: rgba(255, 255, 255, 0.2);
     --ombre: rgba(0,0,0,0.3);
     --invisible: rgba(255, 255, 255, 0);

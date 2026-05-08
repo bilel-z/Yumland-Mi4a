@@ -59,30 +59,37 @@ if (isset($_GET["id"])) {
                 <p id="champsPrenom" class="lecture"><strong>Prenom :</strong> <?php echo $user["Prenom"]?></p>
                 <label class="edition" for="changerPrenom">Prenom :</label>
                 <input class="edition champsEdition" id="changerPrenom" type="text" value="<?php echo $user["Prenom"] ?>">
+                <span class="messageErreur" id="prenomErreur"></span>
 
                 <p id="champsNom" class="lecture"><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
                 <label class="edition" for="changerNom">Nom :</label>
                 <input class="edition champsEdition" id="changerNom" type="text" value="<?php echo $user["Nom"] ?>">
+                <span class="messageErreur" id="nomErreur"></span>
 
                 <p id="champsMail" class="lecture"><strong>Email :</strong> <?php echo $user["Mail"]?></p>
                 <label class="edition" for="changerMail">Email :</label>
                 <input class="edition champsEdition" id="changerMail" type="email" value="<?php echo $user["Mail"] ?>">
+                <span class="messageErreur" id="mailErreur"></span>
 
                 <p id="champsNum" class="lecture"><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
                 <label class="edition" for="changerNumero">Téléphone :</label>
                 <input class="edition champsEdition" id="changerNumero" type="tel" value="<?php echo $user["numero"] ?>">
+                <span class="messageErreur" id="numErreur"></span>
 
                 <p id="champsAdresse" class="lecture"><strong>Adresse :</strong><?php echo $user["adresse"]?></p>
                 <label class="edition" for="changerAdresse">Adresse :</label>
                 <input class="edition champsEdition" id="changerAdresse" type="text" value="<?php echo $user["adresse"] ?>">
+                <span class="messageErreur" id="adresseErreur"></span>
 
                 <p id="champsInterphone" class="lecture"><strong>Interphone :</strong><?php echo $user["interphone"]?></p>
                 <label class="edition" for="changerInterphone">Interphone :</label>
                 <input class="edition champsEdition" id="changerInterphone" type="text" value="<?php echo $user["interphone"] ?>">
+                <span class="messageErreur" id="interphoneErreur"></span>
 
                 <p id="champsAge" class="lecture"><strong>Date de naissance:</strong><?php echo $user["age"]?></p>
                 <label class="edition" for="changerAge">Date de naissance :</label>
                 <input class="edition champsEdition" id="changerAge" type="date" value="<?php echo $user["age"] ?>">
+                <span class="messageErreur" id="ageErreur"></span>
 
                 <p class="lecture"><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p></br>
 
