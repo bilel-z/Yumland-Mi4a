@@ -1,21 +1,33 @@
 CHARTE GRAPHIQUE
-
 1. IDENTITÉ
 - Thème : Sombre, Asiatique
+- Modes d'affichage : Mode sombre (par défaut) et mode clair (bascule via bouton)
 
 2. POLICES
 - Nom du restaurant : Dancing Script, cursive -> --police_titre
 - Textes : Arial, Helvetica, sans-serif -> --police_texte
 
-3. VARIABLES COULEURS
+3. VARIABLES COULEURS (MODE SOMBRE)
 
 FONDS
-- Fond noir : Noir rgb(0,0,0) -> --fond_noir
-- Fond formulaires : Blanc rgb(255,255,255) -> --fond_blanc
+- Barre de navigation : Noir rgb(0,0,0) -> --fond_navigation
+- Select filtre : Noir rgb(0,0,0) -> --fond_select_filtre
+- Entête tableau admin : Noir rgb(0,0,0) -> --fond_th_admin
+- Fond formulaires : Blanc rgb(255,255,255) -> --fond_formulaire
 - Fond admin : Gris clair #f4f6f9 -> --fond_gris
 - Tableau admin : Gris foncé #ecf0f1 -> --fond_gris_fonce
 - Effet vitre : Noir transparent moyen rgba(0,0,0,0.553) -> --fond_transparent
 - Cartes menu : Noir moins transparent rgba(0,0,0,0.7) -> --fond_boite_menu
+- Carte admin : Blanc rgb(255,255,255) -> --fond_carte_admin
+- Message succès : Vert transparent rgba(46,139,87,0.92) -> --fond_succes
+- Message erreur : Rouge transparent rgba(192,57,43,0.92) -> --fond_erreur
+- Survol ligne sur fond clair : Noir très transparent rgba(0,0,0,0.025) -> --fond_ligne_survol
+- Badge statut commande : Crème #f3efe2 -> --fond_badge_statut
+- Zones de détail : Beige clair #faf7f0 -> --fond_detail
+- Voile panier : Noir transparent rgba(0,0,0,0.45) -> --voile_panier
+- Carte panier : Noir moins transparent rgba(0,0,0,0.75) -> --fond_carte_panier
+- Entête tableau historique : Or transparent rgba(255,215,0,0.12) -> --fond_thead_historique
+- Survol ligne sur fond foncé : Blanc très transparent rgba(255,255,255,0.05) -> --fond_ligne_survol_clair
 
 BOUTONS
 - Achat : Rouge corail rgb(247,71,55) -> --boutton_acheter
@@ -29,18 +41,48 @@ BOUTONS
 - Survol filtre Admin : Turquoise #1abc9c -> --boutton_gris_hover
 - Boutton noir : Noir rgb(0,0,0) -> --boutton_noir
 - Survol boutton noir : Gris rgb(128,128,128) -> --boutton_noir_hover
+- Boutton bascule mode : Blanc transparent rgba(255,255,255,0.1) -> --boutton_theme
+- Survol boutton bascule mode : Blanc moins transparent rgba(255,255,255,0.25) -> --boutton_theme_hover
 
 BORDURES ET OMBRES
 - Survol cartes : Rouge rgb(207,83,83) -> --contour_menu
 - Séparation barre navigation : Or rgb(218,187,14) -> --contour_or
 - Champs : Gris #ccc -> --contour_gris
-- Discret : Transpareent rgba(255,255,255,0.2) -> --contour_transparent
+- Erreur formulaire : Rouge red -> --contour_rouge
+- Discret : Transparent rgba(255,255,255,0.2) -> --contour_transparent
 - Ombre : Noir très transparent rgba(0,0,0,0.3) -> --ombre
 - Invisible : Invisible rgba(255,255,255,0) -> --invisible
+- Zones de détail : Beige #eadfcb -> --contour_detail
 
 TEXTES
-- Sur fond foncé : Blanc rgb(255,255,255) -> --texte_blanc
+- Sur fond foncé (thématique) : Blanc rgb(255,255,255) -> --texte_blanc
+- Barre de navigation : Blanc rgb(255,255,255) -> --texte_navigation
 - Sur fond clair : Noir rgb(0,0,0) -> --texte_noir
 - Descriptions : Gris rgb(218,218,218) -> --texte_gris
 - Sous-titres : Gris foncé #555 -> --texte_gris_fonce
 - Prix : Or rgb(255,223,42) -> --texte_or
+- Texte secondaire : Gris #666 -> --texte_secondaire
+- Texte badge statut : Or foncé #5a4100 -> --texte_badge_statut
+- Boutton bascule mode : Blanc rgb(255,255,255) -> --texte_theme
+
+4. VARIANTES MODE CLAIR
+Seules les variables ci-dessous changent de valeur lors du passage en mode clair. Toutes les autres variables conservent leurs valeurs du mode sombre.
+
+FONDS
+- Select filtre : Gris très clair rgb(245,245,245) -> --fond_select_filtre
+- Effet vitre : Beige transparent rgba(243,240,236,0.352) -> --fond_transparent
+- Cartes menu : Blanc transparent rgba(255,255,255,0.85) -> --fond_boite_menu
+- Voile panier : Blanc transparent rgba(255,255,255,0.55) -> --voile_panier
+- Carte panier : Blanc moins transparent rgba(255,255,255,0.92) -> --fond_carte_panier
+- Entête tableau historique : Or transparent rgba(218,187,14,0.15) -> --fond_thead_historique
+- Survol ligne sur fond foncé : Noir très transparent rgba(0,0,0,0.05) -> --fond_ligne_survol_clair
+
+BORDURES
+- Discret : Noir transparent rgba(0,0,0,0.15) -> --contour_transparent
+
+TEXTES
+- Sur fond foncé (thématique) : Noir rgb(0,0,0) -> --texte_blanc
+- Descriptions : Gris foncé rgb(80,80,80) -> --texte_gris
+- Prix : Or foncé rgb(199,174,31) -> --texte_or
+
+La barre de navigation reste volontairement noire dans les deux modes
