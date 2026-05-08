@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="ChampsInscription">
                         <label for="NumFor">Numéro de téléphone</label>
-                        <input id="NumFor" name="Num" placeholder="06••••••••" required="required">
+                        <input type="tel" id="NumFor" name="Num" placeholder="06••••••••" required="required">
                     </div>
                     <div class="ChampsInscription">
                         <label for="AdresseFor">Adresse</label>
