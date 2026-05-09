@@ -12,12 +12,12 @@ const checkIfBlocked = async () => {
 
         if (data.bloque) {
             clearInterval(checkInterval); // stop polling
-            window.location.href = "section/deconnexion.php"; // redirect to logout
+            window.location.href = "section/deconnexion.php"; 
         }
 
     } catch (err) {
         console.warn("Vérification du blocage échouée :", err);
-        // silent fail — don't disturb the user on a network hiccup
+        
     }
 };
 
