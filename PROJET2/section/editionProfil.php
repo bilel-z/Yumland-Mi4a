@@ -4,16 +4,23 @@
     include_once(__DIR__ . "/Fonction/fonction.php");
     $requete = json_decode(file_get_contents("php://input"),true);
     if($requete === null || !isset($requete["Prenom"]) || !isset($requete["Nom"]) || !isset($requete["Mail"]) || !isset($requete["Num"]) || !isset($requete["Adresse"]) || !isset($requete["Interphone"]) || !isset($requete["Age"])) {
-        echo json_encode(["succes" => false, "message" => "Erreur avec les données"]);
+        echo json_encode(["succes" => false, "message" => "Erreur avec les données", "code" => "Corrompu"]);
         exit();
     }
     $utilisateurs = lireJson(__DIR__ . "/JSON/utilisateurs.json");
     if (!isset($_SESSION["user"])) {
-        echo json_encode(["succes" => false, "message" => "L'utilisateur n'est pas connecté"]);
+        echo json_encode(["succes" => false, "message" => "L'utilisateur n'est pas connecté", "code" => "NonConnection"]);
         exit();
     }
     
     $id_actuel = $_SESSION["user"]["id"];
+
+    foreach($utilisateurs as $user){
+        if($user["id"] != $id_actuel && $user["Mail"] == $requete["Mail"]){
+            echo json_encode(["succes" => false, "message" => "Cette adresse mail est déjà utilisée par un autre compte", "code" => "MailDoublon"]);
+            exit();
+        }
+    }
 
     $_SESSION["user"]["Prenom"] = $requete["Prenom"];
     $_SESSION["user"]["Nom"] = $requete["Nom"];

@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Email ou mot de passe incorrect";
 
         foreach ($users as &$user) { 
-            if ($user["Mail"] === $email && $user["Mdp"] === $password) {
+            if ($user["Mail"] === $email && password_verify($password, $user["Mdp"])) {
                 if ($user["bloquer"] === true) {
                     $error = "Votre compte a été bloqué, veuillez contacter l'administrateur.";
                     break;

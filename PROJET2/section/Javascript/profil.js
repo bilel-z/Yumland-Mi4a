@@ -87,6 +87,11 @@ function modifierProfil(){
             }
             else{
                 console.log(contenu.message);
+                if(contenu.code == "MailDoublon"){
+                    changerMail.style.border = "1px solid var(--contour_rouge)";
+                    mailErreur.innerHTML = "Cette adresse mail est déjà utilisée par un autre compte";
+                    mailErreur.style.display = "block";
+                }
             }
         })
         .catch((error) => {

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "Nom" => $_POST["Nom"],
         "Prenom" => $_POST["Prenom"],
         "Mail" => $_POST["Mail"],
-        "Mdp" => $_POST["Mdp"],
+        "Mdp" => password_hash($_POST["Mdp"], PASSWORD_DEFAULT),
         "age" => $_POST["Age"],
         "numero" => $_POST["Num"],
         "adresse" => $_POST["Adresse"],
