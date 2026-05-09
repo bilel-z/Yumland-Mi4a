@@ -16,7 +16,6 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") 
 </head>
 <body>
 
-
 <?php
 
 $file = "section/JSON/utilisateurs.json";
@@ -32,25 +31,34 @@ if ($users === null) {
     die("Erreur : JSON invalide — " . json_last_error_msg());
 }
 
-if ($_SERVER["REQUEST_METHOD"] ==="POST"){
-	$userId = $_POST["user-id"];
-	foreach($users as &$user){
-		if ($user["id"] == $userId) {
-			if (isset($_POST["role"])){
-				$user["role"] =$_POST["role"];
-			}
-			if (isset($_POST["statut"])){
-				$user["statut"] =$_POST["statut"];
-			}
-			if (isset($_POST["bloque"])){
-				$user["bloquer"] =(bool)intval($_POST["bloque"]);
-			}
-			break;
-		}
-	}
-	file_put_contents($file,json_encode($users, JSON_PRETTY_PRINT));
-	header("location: Admin.php");
-	exit();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $userId = $_POST["user-id"];
+    $userTrouve = null;
+
+    foreach ($users as &$user) {
+        if ($user["id"] == $userId) {
+            if (isset($_POST["role"]))   $user["role"]    = $_POST["role"];
+            if (isset($_POST["statut"])) $user["statut"]  = $_POST["statut"];
+            if (isset($_POST["bloque"])) $user["bloquer"] = (bool)intval($_POST["bloque"]);
+            $userTrouve = $user;
+            break;
+        }
+    }
+    unset($user);
+
+    file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+
+    if (isset($_POST["bloque"])) {
+        header('Content-Type: application/json');
+        echo json_encode([
+            "success" => true,
+            "bloque"  => $userTrouve["bloquer"] ?? false
+        ]);
+        exit();
+    }
+
+    header("Location: Admin.php");
+    exit();
 }
 
 $filtre = $_GET["role"] ?? "tous";
@@ -77,7 +85,7 @@ if ($filtre !== "tous") {
             <a href="Admin.php?role=client" class="filtres-bouton <?= $filtre === "client" ? "actif" : "" ?>">Clients</a>
         </div>
 
-<table>
+        <table>
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -88,14 +96,13 @@ if ($filtre !== "tous") {
                 </tr>
             </thead>
             <tbody>
-               <?php foreach($users as $user):  ?>
-    <?php $profilData = urlencode(json_encode($user)); ?>
-    <tr>
-        <td>
-            <a href="Profil.php?id=<?= $user['id'] ?>"> 
-                <?= htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]) ?>
-            </a>
-        </td>
+               <?php foreach($users as $user): ?>
+                <tr>
+                    <td>
+                        <a href="Profil.php?id=<?= $user['id'] ?>"> 
+                            <?= htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]) ?>
+                        </a>
+                    </td>
                     <td> 
                         <form method="post">
                             <select name="role" onchange="this.form.submit()">
@@ -108,26 +115,25 @@ if ($filtre !== "tous") {
                         </form>
                     </td>
                     <td><?= htmlspecialchars($user["derniere_connexion"]) ?></td>
-        <td>
-            <form method="post">
-                <select name="statut" onchange="this.form.submit()"> 
-                    <?php $statut = $user["statut"] ?? "Classique";  ?>
-                    <option value="Classique" <?= $statut==="Classique" ? "selected":"" ?>>Classique</option>
-                    <option value="Premium"   <?= $statut==="Premium"   ? "selected":"" ?>>Premium</option>
-                    <option value="VIP"       <?= $statut==="VIP"       ? "selected":"" ?>>VIP</option>
-                </select>
-                <input type="hidden" name="user-id" value="<?= $user["id"] ?>">
-            </form>
-        </td>
                     <td>
-                       <form method="post">
-    <input type="hidden" name="user-id" value="<?= $user["id"] ?>">
-    <input type="hidden" name="bloque" value="<?= $user["bloquer"] ? 0 : 1 ?>">
-    <button type="submit" class="Envoi">
-    <?= $user["bloquer"] ? "🔓 Débloquer" : "🔒 Bloquer" ?>
-</button>
-        
-</form>
+                        <form method="post">
+                            <select name="statut" onchange="this.form.submit()"> 
+                                <?php $statut = $user["statut"] ?? "Classique"; ?>
+                                <option value="Classique" <?= $statut==="Classique" ? "selected":"" ?>>Classique</option>
+                                <option value="Premium"   <?= $statut==="Premium"   ? "selected":"" ?>>Premium</option>
+                                <option value="VIP"       <?= $statut==="VIP"       ? "selected":"" ?>>VIP</option>
+                            </select>
+                            <input type="hidden" name="user-id" value="<?= $user["id"] ?>">
+                        </form>
+                    </td>
+                    <td>
+                        <button
+                            class="Envoi btn-bloque"
+                            data-user-id="<?= $user["id"] ?>"
+                            data-bloque="<?= $user["bloquer"] ? '1' : '0' ?>"
+                        >
+                            <?= $user["bloquer"] ? "🔓 Débloquer" : "🔒 Bloquer" ?>
+                        </button>
                     </td>
                 </tr>
                <?php endforeach; ?>
@@ -135,6 +141,46 @@ if ($filtre !== "tous") {
         </table>
     </main>
 
-</body>
+<script>
+    const toggleBloquer = async (btn) => {
+        const userId  = btn.dataset.userId;
+        const estBloque = btn.dataset.bloque === '1';   // état actuel
+        const nouvelEtat = estBloque ? 0 : 1;           // on inverse
 
+        btn.disabled = true;
+
+        try {
+            const formData = new FormData();
+            formData.append('user-id', userId);
+            formData.append('bloque', nouvelEtat);
+
+            const response = await fetch('Admin.php', {
+	    method: 'POST',
+	    body: formData
+            });
+
+            if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
+
+            const text = await response.text();
+		const data = JSON.parse(text.match(/\{.*\}/s)[0]);
+
+            if (data.success) {
+                // Mise à jour du bouton sans rechargement de page
+                btn.dataset.bloque  = data.bloque ? '1' : '0';
+                btn.textContent     = data.bloque ? '🔓 Débloquer' : '🔒 Bloquer';
+            }
+        } 
+        } finally {
+            btn.disabled = false;
+        }
+    };
+
+    // Délégation d'événement sur le tableau entier
+    document.querySelector('table').addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-bloque');
+        if (btn) toggleBloquer(btn);
+    });
+</script>
+
+</body>
 </html>

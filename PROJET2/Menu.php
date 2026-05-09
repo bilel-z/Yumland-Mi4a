@@ -33,6 +33,7 @@
         <script src="section/Javascript/filtre.js" defer></script>
         <script src="section/Javascript/theme.js" defer></script>
     </head>
+    <script src="section/Javascript/check_bloque.js" defer></script>
     <body>
         <?php include 'section/Navigation.php'; ?>
 

@@ -25,6 +25,7 @@ $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vende
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
 </head>
+<script src="section/Javascript/check_bloque.js" defer></script>
 <body>
     <?php include 'section/Navigation.php'; ?>
 

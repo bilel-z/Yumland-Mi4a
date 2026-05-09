@@ -13,6 +13,7 @@
     <script src="section/Javascript/theme.js" defer></script>
     <script src="section/Javascript/profil.js" defer></script>
 </head>
+<script src="section/Javascript/check_bloque.js" defer></script>
 <body>
 <?php
 include_once("section/Fonction/fonction.php");
