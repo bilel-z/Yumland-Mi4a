@@ -132,7 +132,7 @@ textarea {
 
 input[type="submit"] {
     background-color: var(--boutton_noir);
-    color: var(--texte_blanc);
+    color: var(--texte_vrai_blanc);
     font-size: 18px;
     border: none;
     padding: 12px 30px;

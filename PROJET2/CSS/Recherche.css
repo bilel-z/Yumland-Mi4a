@@ -24,6 +24,11 @@
     font-size: 28px;
 }
 
+label {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
 .Recherche button {
     height: 50px;
     width: auto;

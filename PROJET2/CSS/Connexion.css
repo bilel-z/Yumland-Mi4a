@@ -39,7 +39,7 @@ div.logo img {
     height: 100px;
 }
 
-#bouttonTheme {
+#bouttonTheme, #bouttonVisibilite{
    background-color: var(--boutton_theme); 
    color: var(--texte_theme);
    padding: 10px 20px;
@@ -49,7 +49,7 @@ div.logo img {
    cursor: pointer;
 }
 
-#bouttonTheme:hover {
+#bouttonTheme:hover, #bouttonVisibilite:hover{
    background-color: var(--boutton_theme_hover); 
 }
 

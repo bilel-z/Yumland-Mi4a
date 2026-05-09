@@ -11,6 +11,7 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
     <div class="logo">
         <img src="image/pandaLogo.png" alt="Logo restaurant panda">
         <button id="bouttonTheme" onclick="changerTheme();">Mode clair ☀️</button>
+        <button id="bouttonVisibilite" onclick="changerVisibilite();">Visibilité</button>
     </div>
 
     <div class="navigation">

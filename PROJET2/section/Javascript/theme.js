@@ -48,4 +48,8 @@ function themeChargement(){
     }
 }
 
+function changerVisibilite(){
+    document.body.classList.toggle("modeGras");
+}
+
 themeChargement();

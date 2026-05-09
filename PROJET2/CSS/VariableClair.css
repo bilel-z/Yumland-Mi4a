@@ -46,6 +46,7 @@
     --contour_detail: #eadfcb;
 
     --texte_blanc: rgb(0, 0, 0);
+    --texte_vrai_blanc: rgb(255,255,255);
     --texte_navigation: rgb(255,255,255);
     --texte_noir: rgb(0,0,0);
     --texte_gris: rgb(80, 80, 80);
@@ -54,5 +55,8 @@
     --texte_secondaire: #666;
     --texte_badge_statut: #5a4100;
     --texte_theme: white;
+}
 
+.modeGras * {
+    font-weight: bold !important;
 }

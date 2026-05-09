@@ -43,7 +43,9 @@ body {
     margin: 0 auto;
     font-size: 18px;
     line-height: 1.6;
-    color: var(--texte_gris);
+    color: var(--texte_noir);
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 .message-flash {

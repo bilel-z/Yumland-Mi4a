@@ -22,7 +22,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--texte_blanc);
+    color: var(--texte_vrai_blanc);
     font-size: 30px;
     font-family: var(--police_titre);
     font-weight: bold;
@@ -67,7 +67,7 @@ section{
 
 .StyleEnvoi{
     background-color: var(--boutton_noir);
-    color: var(--texte_blanc);
+    color: var(--texte_vrai_blanc);
     font-size: 18px;
     border: none;
     padding: 12px;

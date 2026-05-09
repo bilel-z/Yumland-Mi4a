@@ -828,5 +828,33 @@
         "date_mise_a_jour": "2026-04-29 15:20:18",
         "livreur_id": 1775311002,
         "livreur_nom": "Lucas Dupont"
+    },
+    {
+        "id": "0Zc71KcwmOhWJ2c",
+        "client_id": 1775344416,
+        "client_interphone": "1234",
+        "client_telephone": "0612345678",
+        "client_nom": "Lucas Dupont",
+        "articles": [
+            {
+                "nom": "Nouilles chinoises",
+                "prix_unitaire": 9.8,
+                "quantite": 1,
+                "sous_total": 9.8
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 9.8,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": "2026-05-09 16:23:09",
+        "adresse_livraison": "12 rue de Rivoli, 75001 Paris",
+        "commentaire": "sdfsdgfzsrtgeztg",
+        "statut": "abandonnée",
+        "paiement_statut": "complété",
+        "date_creation": "2026-05-09 16:17:35",
+        "date_mise_a_jour": "2026-05-09 16:22:34",
+        "livreur_id": 1775311002,
+        "livreur_nom": "Lucas Dupont"
     }
 ]
