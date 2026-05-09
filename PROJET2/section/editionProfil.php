@@ -4,7 +4,7 @@
     include_once(__DIR__ . "/Fonction/fonction.php");
     $requete = json_decode(file_get_contents("php://input"),true);
     if($requete === null || !isset($requete["Prenom"]) || !isset($requete["Nom"]) || !isset($requete["Mail"]) || !isset($requete["Num"]) || !isset($requete["Adresse"]) || !isset($requete["Interphone"]) || !isset($requete["Age"])) {
-        echo json_encode(["succes" => false, "message" => "Erreur avec les données", "code" => "Corrompu"]);
+        echo json_encode(["succes" => false, "message" => "Erreur avec les données", "code" => "DonneeCorrompu"]);
         exit();
     }
     $utilisateurs = lireJson(__DIR__ . "/JSON/utilisateurs.json");
@@ -21,6 +21,7 @@
             exit();
         }
     }
+
 
     $_SESSION["user"]["Prenom"] = $requete["Prenom"];
     $_SESSION["user"]["Nom"] = $requete["Nom"];
