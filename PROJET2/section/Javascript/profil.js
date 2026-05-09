@@ -5,6 +5,7 @@ let numErreur = document.getElementById("numErreur");
 let adresseErreur = document.getElementById("adresseErreur");
 let interphoneErreur = document.getElementById("interphoneErreur");
 let ageErreur = document.getElementById("ageErreur");
+let mdpErreur = document.getElementById("mdpErreur");
 
 function modeEdition(){
     let listeLecture = document.querySelectorAll(".lecture");
@@ -38,15 +39,20 @@ function modifierProfil(){
     let changerAdresse = document.getElementById("changerAdresse");
     let changerInterphone = document.getElementById("changerInterphone");
     let changerAge = document.getElementById("changerAge");
+    let changerAncienMDP = document.getElementById("changerAncienMDP");
+    let changerNouveauMDP = document.getElementById("changerNouveauMDP");
+    let changerConfirmeMDP = document.getElementById("changerConfirmeMDP");
 
     let donnees = {
-        Prenom: document.getElementById("changerPrenom").value,
-        Nom: document.getElementById("changerNom").value,
-        Mail: document.getElementById("changerMail").value,
-        Num: document.getElementById("changerNumero").value,
-        Adresse: document.getElementById("changerAdresse").value,
-        Interphone: document.getElementById("changerInterphone").value,
-        Age: document.getElementById("changerAge").value
+        Prenom: changerPrenom.value,
+        Nom: changerNom.value,
+        Mail: changerMail.value,
+        Num: changerNumero.value,
+        Adresse: changerAdresse.value,
+        Interphone: changerInterphone.value,
+        Age: changerAge.value,
+        AncienMDP: changerAncienMDP.value,
+        NouveauMDP: changerNouveauMDP.value 
     };
     let v1 = verificationChampNormal(changerPrenom, prenomErreur);
     let v2 = verificationChampNormal(changerNom, nomErreur);
@@ -54,7 +60,8 @@ function modifierProfil(){
     let v4 = verificationNumero(changerNumero, numErreur);
     let v5 = verificationChampNormal(changerAdresse, adresseErreur);
     let v6 = verificationChampNormal(changerAge, ageErreur);
-    if(v1 && v2 && v3 && v4 && v5 && v6){
+    let v7 = verifChangementMDP(changerAncienMDP,changerNouveauMDP,changerConfirmeMDP,mdpErreur);
+    if(v1 && v2 && v3 && v4 && v5 && v6 && v7){
         fetch("section/editionProfil.php", {method : "POST", body : JSON.stringify(donnees), headers : {"Content-Type": "application/json"}})
         .then((response) => {
             if(!response){
@@ -82,7 +89,10 @@ function modifierProfil(){
                 champsInterphone.innerHTML = "<strong>Interphone :</strong> " + donnees.Interphone;
                 champsAge.innerHTML = "<strong>Date de naissance :</strong> " + donnees.Age;
                 Titre.innerHTML = donnees.Prenom + " " + donnees.Nom;
-
+                changerAncienMDP.value = "";
+                changerNouveauMDP.value = "";
+                changerConfirmeMDP.value = "";
+                
                 modeLecture();
             }
             else{
@@ -91,6 +101,11 @@ function modifierProfil(){
                     changerMail.style.border = "1px solid var(--contour_rouge)";
                     mailErreur.innerHTML = "Cette adresse mail est déjà utilisée par un autre compte";
                     mailErreur.style.display = "block";
+                }
+                else if(contenu.code == "ErreurMDP"){
+                    changerAncienMDP.style.border = "1px solid var(--contour_rouge)";
+                    mdpErreur.innerHTML = contenu.message;
+                    mdpErreur.style.display = "block";
                 }
             }
         })
@@ -173,4 +188,39 @@ function verificationNumero(champ,message){
     }
     return verif;
 
+}
+
+
+
+function verificationMDP(champ,message){
+    //A faire
+}
+
+function verifChangementMDP(ancien,nouveau,confirmation,message){
+    let verif = true;
+    message.style.display = "none";
+    ancien.style.border = "1px solid var(--contour_gris)";
+    nouveau.style.border = "1px solid var(--contour_gris)";
+    confirmation.style.border = "1px solid var(--contour_gris)";
+    if(nouveau.value.trim() != ""){
+        if(ancien.value.trim() == ""){
+            message.innerHTML = "Veuillez saisir votre mot de passe actuel";
+            message.style.display = "block";
+            ancien.style.border = "1px solid var(--contour_rouge)";
+            verif = false;
+        } else if(nouveau.value != confirmation.value){
+            message.innerHTML = "Les nouveaux mots de passe ne correspondent pas.";
+            message.style.display = "block";
+            nouveau.style.border = "1px solid var(--contour_rouge)";
+            confirmation.style.border = "1px solid var(--contour_rouge)";
+            verif = false;
+        }
+    }
+    else if(ancien.value.trim() != ""){
+        message.innerHTML = "Veuillez entrer un nouveau mot de passe.";
+        message.style.display = "block";
+        nouveau.style.border = "1px solid var(--contour_rouge)";
+        verif = false;
+    }
+    return verif;
 }

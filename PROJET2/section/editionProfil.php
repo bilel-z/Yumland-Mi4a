@@ -15,6 +15,25 @@
     
     $id_actuel = $_SESSION["user"]["id"];
 
+    $VerifChangementMDP = false;
+    if (isset($requete["NouveauMDP"]) && trim($requete["NouveauMDP"]) != ""){
+        
+        if (empty($requete["AncienMDP"])){
+            echo json_encode(["succes" => false, "code" => "ErreurMDP", "message" => "Entrez l'ancien mot de passe"]);
+            exit();
+        }
+        if (!password_verify($requete["AncienMDP"], $_SESSION["user"]["Mdp"])){
+            echo json_encode(["succes" => false, "code" => "ErreurMDP", "message" => "Mot de passe incorrect"]);
+            exit();
+        }
+        
+        $VerifChangementMDP = true;
+        $nouveauMDP = password_hash($requete["NouveauMDP"], PASSWORD_DEFAULT);
+    }
+    if ($VerifChangementMDP){
+        $_SESSION["user"]["Mdp"] = $nouveauMDP;
+    }
+
     foreach($utilisateurs as $user){
         if($user["id"] != $id_actuel && $user["Mail"] == $requete["Mail"]){
             echo json_encode(["succes" => false, "message" => "Cette adresse mail est déjà utilisée par un autre compte", "code" => "MailDoublon"]);
@@ -40,6 +59,9 @@
             $user["adresse"] = $requete["Adresse"];
             $user["interphone"] = $requete["Interphone"];
             $user["age"] = $requete["Age"];
+            if ($VerifChangementMDP) {
+                $user["Mdp"] = $nouveauMDP;
+            }
             break;
         }
     }

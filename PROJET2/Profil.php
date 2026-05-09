@@ -82,7 +82,7 @@ if (isset($_GET["id"])) {
                 <span class="messageErreur" id="adresseErreur"></span>
 
                 <p id="champsInterphone" class="lecture"><strong>Interphone :</strong><?php echo $user["interphone"]?></p>
-                <label class="edition" for="changerInterphone">Interphone :</label>
+                <label class="edition" for="changerInterphone">Interphone (optionnel) :</label>
                 <input class="edition champsEdition" id="changerInterphone" type="text" value="<?php echo $user["interphone"] ?>">
                 <span class="messageErreur" id="interphoneErreur"></span>
 
@@ -90,6 +90,19 @@ if (isset($_GET["id"])) {
                 <label class="edition" for="changerAge">Date de naissance :</label>
                 <input class="edition champsEdition" id="changerAge" type="date" value="<?php echo $user["age"] ?>">
                 <span class="messageErreur" id="ageErreur"></span>
+
+                <br class="edition">
+                <h3 class="edition" >Modifier le mot de passe (optionnel)</h3>
+
+                <label class="edition" for="changerAncienMDP">Ancien mot de passe :</label>
+                <input class="edition champsEdition" id="changerAncienMDP" type="text" value="" placeholder="••••••••">
+                
+                <label class="edition" for="changerNouveauMDP">Nouveau mot de passe :</label>
+                <input class="edition champsEdition" id="changerNouveauMDP" type="text" value="" placeholder="••••••••">
+                
+                <label class="edition" for="changerConfirmeMDP">Confirmation du nouveau mot de passe :</label>
+                <input class="edition champsEdition" id="changerConfirmeMDP" type="text" value="" placeholder="••••••••">
+                <span class="messageErreur" id="mdpErreur"></span>
 
                 <p class="lecture"><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p></br>
 
