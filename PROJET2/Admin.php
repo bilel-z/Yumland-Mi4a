@@ -155,26 +155,25 @@ if ($filtre !== "tous") {
             formData.append('bloque', nouvelEtat);
 
             const response = await fetch('Admin.php', {
-	    method: 'POST',
-	    body: formData
+                method: 'POST',
+                body: formData
             });
 
             if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
 
             const text = await response.text();
-		const data = JSON.parse(text.match(/\{.*\}/s)[0]);
+            const data = JSON.parse(text.match(/\{.*\}/s)[0]);
 
             if (data.success) {
-                // Mise à jour du bouton sans rechargement de page
-                btn.dataset.bloque  = data.bloque ? '1' : '0';
-                btn.textContent     = data.bloque ? '🔓 Débloquer' : '🔒 Bloquer';
+                btn.dataset.bloque = data.bloque ? '1' : '0';
+                btn.textContent    = data.bloque ? '🔓 Débloquer' : '🔒 Bloquer';
             }
-        } 
+        } catch (err) {
+            console.error('Erreur blocage :', err);
         } finally {
             btn.disabled = false;
         }
     };
-
     // Délégation d'événement sur le tableau entier
     document.querySelector('table').addEventListener('click', (e) => {
         const btn = e.target.closest('.btn-bloque');

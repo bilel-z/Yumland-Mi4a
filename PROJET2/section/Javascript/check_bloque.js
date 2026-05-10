@@ -1,6 +1,6 @@
-const CHECK_INTERVAL_MS = 5000; // check every 5 seconds
+const CHECK_INTERVAL_MS = 5000;
 
-const checkIfBlocked = async () => {
+const checksiBloque = async () => {
     try {
 	const response = await fetch('section/check_bloque.php', {
     	method: 'GET'
@@ -22,10 +22,10 @@ const checkIfBlocked = async () => {
 };
 
 // Start polling
-const checkInterval = setInterval(checkIfBlocked, CHECK_INTERVAL_MS);
+const checkInterval = setInterval(checksiBloque, CHECK_INTERVAL_MS);
 
 // Also check immediately on page load
-checkIfBlocked();
+checksiBloque();
 
 function changerVisibilite(){
     document.body.classList.toggle("modeGras");
