@@ -96,13 +96,16 @@ if (isset($_GET["id"])) {
                 <h3 class="edition" >Modifier le mot de passe (optionnel)</h3>
 
                 <label class="edition" for="changerAncienMDP">Ancien mot de passe :</label>
-                <input class="edition champsEdition" id="changerAncienMDP" type="text" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerAncienMDP" type="password" value="" placeholder="••••••••">
+                <button type="button" id="togglePassword" class="edition">👁️</button>
                 
                 <label class="edition" for="changerNouveauMDP">Nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerNouveauMDP" type="text" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerNouveauMDP" type="password" value="" placeholder="••••••••">
+                <button type="button" id="togglePassword1" class="edition">👁️</button>
                 
                 <label class="edition" for="changerConfirmeMDP">Confirmation du nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerConfirmeMDP" type="text" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerConfirmeMDP" type="password" value="" placeholder="••••••••">
+                <button type="button" id="togglePassword2" class="edition">👁️</button>
                 <span class="messageErreur" id="mdpErreur"></span>
 
                 <p class="lecture"><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p></br>
@@ -123,6 +126,52 @@ if (isset($_GET["id"])) {
     </div>
 
 </div>
+<script>
+ const originalInput = document.getElementById('changerAncienMDP');
+const togglePassword = document.getElementById('togglePassword');
 
+togglePassword.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    if (originalInput.type === 'password') {  
+        originalInput.type = 'text';
+        togglePassword.textContent = '🙈';
+    } else {
+        originalInput.type = 'password';
+        togglePassword.textContent = '👁️';
+    }
+});
+
+const mdpInput = document.getElementById('changerNouveauMDP');
+const togglePassword1 = document.getElementById('togglePassword1');
+
+togglePassword1.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    if (mdpInput.type === 'password') {  
+        mdpInput.type = 'text';
+        togglePassword1.textContent = '🙈';
+    } else {
+        mdpInput.type = 'password';
+        togglePassword1.textContent = '👁️';
+    }
+});
+
+
+const confirmInput = document.getElementById('changerConfirmeMDP');
+const togglePassword2 = document.getElementById('togglePassword2');
+
+togglePassword2.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    if (confirmInput.type === 'password') {  
+        confirmInput.type = 'text';
+        togglePassword2.textContent = '🙈';
+    } else {
+        confirmInput.type = 'password';
+        togglePassword2.textContent = '👁️';
+    }
+});
+</script>
 </body>
 </html>

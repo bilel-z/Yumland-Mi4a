@@ -68,11 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form method="POST" action="">
             <label>Email</label>
-            <input type="email" name="Mail" placeholder="exemple@email.com" required>
+            <input type="email" name="Mail" id="email" placeholder="exemple@email.com" required>
+            <span class="messageErreur" id="erreurEmail"></span>
 
             <label>Mot de passe</label>
-            <input type="password" name="Mdp" placeholder="••••••••" required>
-
+            <input type="password" name="Mdp" id="mdp" placeholder="••••••••" required>
+            <button type="button" id="togglePassword">👁️</button>
+            <span class="messageErreur" id="erreurMdp"></span>
             <button type="submit">Se connecter</button>
 
             <?php if (!empty($error)): ?>
@@ -83,6 +85,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </main>
+<script src="section/Javascript/validation.js"></script>
+<script>
+    const mdpInput = document.getElementById('mdp');
+    const emailInput = document.getElementById('email');
+    const loginForm = document.getElementById('loginForm');
+    const togglePassword = document.getElementById('togglePassword');
+    // Validation en temps réel
+    mdpInput.addEventListener('input', function () {
+        verificationMDP(this, document.getElementById('erreurMdp'));
+    });
+    
+    emailInput.addEventListener('input', function () {
+        verificationMail(this, document.getElementById('erreurEmail'));
+    });
+    
+    // Validation au submit
+    loginForm.addEventListener('submit', function(e) {
+        let emailValid = verificationMail(emailInput, document.getElementById('erreurEmail'));
+        let mdpValid = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
+        
+        if (!emailValid || !mdpValid) {
+            e.preventDefault(); // Empêcher l'envoi
+        }
+    });
 
+
+togglePassword.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    if (mdpInput.type === 'password') {  
+        mdpInput.type = 'text';
+        togglePassword.textContent = '🙈';
+    } else {
+        mdpInput.type = 'password';
+        togglePassword.textContent = '👁️';
+    }
+});
+
+</script>
 </body>
 </html>
