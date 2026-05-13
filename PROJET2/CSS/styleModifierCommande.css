@@ -1,0 +1,198 @@
+body {
+    background: var(--fond_noir);
+    color: var(--texte_blanc);
+    padding-top: 1px;
+}
+
+.modifier-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    padding-top: 150px;
+}
+
+.modifier-page h1 {
+    color: var(--texte_or);
+    margin-bottom: 10px;
+}
+
+.modifier-page h2 {
+    color: var(--texte_or);
+    margin: 30px 0 10px;
+}
+
+.info-commande {
+    color: var(--texte_gris);
+    margin-bottom: 20px;
+}
+
+.article-ligne {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--fond_boite_menu);
+    border: 1px solid var(--contour_transparent);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+}
+
+.article-nom {
+    flex: 1;
+    font-weight: bold;
+}
+
+.article-prix {
+    width: 70px;
+    color: var(--texte_or);
+}
+
+.article-qte {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-qte {
+    background: var(--boutton_rouge);
+    color: var(--texte_blanc);
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-qte:hover {
+    background: var(--boutton_rouge_hover);
+}
+
+.btn-suppr {
+    background: none;
+    border: 1px solid var(--boutton_rouge);
+    color: var(--boutton_rouge);
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.btn-suppr:hover {
+    background: var(--boutton_rouge);
+    color: var(--texte_vrai_blanc);
+}
+
+/* Grille des plats à ajouter */
+.grille-ajout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.carte-ajout {
+    background: var(--fond_boite_menu);
+    border: 1px solid var(--contour_transparent);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carte-ajout img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+.carte-ajout p {
+    padding: 6px;
+    font-size: 13px;
+    color: var(--texte_gris);
+}
+
+.carte-ajout .prix-plat {
+    color: var(--texte_or);
+    font-weight: bold;
+}
+
+.btn-ajouter-plat {
+    background: var(--boutton_acheter);
+    color: var(--texte_vrai_blanc);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-ajouter-plat:hover {
+    background: var(--boutton_acheter_hover);
+}
+
+/* Bloc total */
+.bloc-total {
+    background: var(--fond_boite_menu);
+    border: 1px solid var(--contour_or);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+#nouveauTotal {
+    color: var(--texte_or);
+    font-size: 20px;
+}
+
+#messageDiff {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Boutons bas de page */
+.actions-bas {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.btn-valider {
+    background: var(--boutton_vert);
+    color: var(--texte_noir);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-valider:hover {
+    opacity: 0.85;
+}
+
+.btn-annuler {
+    color: var(--texte_gris);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#messageRetour {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    display: none;
+}
+
+#messageRetour.succes {
+    background: var(--fond_succes);
+    display: block;
+}
+
+#messageRetour.erreur {
+    background: var(--fond_erreur);
+    display: block;
+}

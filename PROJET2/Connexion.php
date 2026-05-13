@@ -7,27 +7,21 @@ if (isset($_SESSION["user"])) {
     exit();
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $email = $_POST["Mail"];
     $password = $_POST["Mdp"];
-
     $file = "section/JSON/utilisateurs.json";
-
     if (file_exists($file)) {
         $users = lireJson($file);
         $error = "Email ou mot de passe incorrect";
-
         foreach ($users as &$user) { 
             if ($user["Mail"] === $email && password_verify($password, $user["Mdp"])) {
                 if ($user["bloquer"] === true) {
                     $error = "Votre compte a été bloqué, veuillez contacter l'administrateur.";
                     break;
                 }
-
                 $user["derniere_connexion"] = date("Y-m-d H:i:s");
                 $_SESSION["user"] = $user;
                 file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
-
                 if ($user["role"] == "client") {
                     header("Location: Acceuil.php");
                 } elseif ($user["role"] == "livreur") {
@@ -42,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,72 +50,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="section/Javascript/theme.js" defer></script>
 </head>
 <body>
-
 <?php include 'section/Navigation.php'; ?>
 <div class="Teinte"></div>
-
 <main class="login-wrapper">
     <div class="login-box">
         <h2 class="titre-principal">Bienvenue</h2>
         <p class="sous-titre">Connectez-vous pour accéder à votre espace</p>
-
-        <form method="POST" action="">
+        <form method="POST" action="" id="loginForm">
             <label>Email</label>
-            <input type="email" name="Mail" id="email" placeholder="exemple@email.com" required>
+            <input type="email" name="Mail" id="email" placeholder="exemple@email.com" maxlength="100" data-compteur="compteur-mail" required>
+            <span id="compteur-mail" class="compteur-texte"></span>
             <span class="messageErreur" id="erreurEmail"></span>
 
             <label>Mot de passe</label>
-            <input type="password" name="Mdp" id="mdp" placeholder="••••••••" required>
+            <input type="password" name="Mdp" id="mdp" placeholder="••••••••" maxlength="30" data-compteur="compteur-mdp" required>
             <button type="button" id="togglePassword">👁️</button>
+            <span id="compteur-mdp" class="compteur-texte"></span>
             <span class="messageErreur" id="erreurMdp"></span>
-            <button type="submit">Se connecter</button>
 
+            <button type="submit">Se connecter</button>
             <?php if (!empty($error)): ?>
                 <b><p class="erreur"><?= htmlspecialchars($error) ?></p></b>
             <?php endif; ?>
-
             <a href="Inscription.php" class="inscrire">Créer un compte</a>
         </form>
     </div>
 </main>
+<script src="section/Javascript/compteur.js"></script>
 <script src="section/Javascript/validation.js"></script>
 <script>
-    const mdpInput = document.getElementById('mdp');
-    const emailInput = document.getElementById('email');
-    const loginForm = document.getElementById('loginForm');
+    const mdpInput       = document.getElementById('mdp');
+    const emailInput     = document.getElementById('email');
+    const loginForm      = document.getElementById('loginForm');
     const togglePassword = document.getElementById('togglePassword');
+
     // Validation en temps réel
     mdpInput.addEventListener('input', function () {
         verificationMDP(this, document.getElementById('erreurMdp'));
     });
-    
+
     emailInput.addEventListener('input', function () {
         verificationMail(this, document.getElementById('erreurEmail'));
     });
-    
+
     // Validation au submit
     loginForm.addEventListener('submit', function(e) {
         let emailValid = verificationMail(emailInput, document.getElementById('erreurEmail'));
-        let mdpValid = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
-        
+        let mdpValid   = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
         if (!emailValid || !mdpValid) {
-            e.preventDefault(); // Empêcher l'envoi
+            e.preventDefault();
         }
     });
 
-
-togglePassword.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    if (mdpInput.type === 'password') {  
-        mdpInput.type = 'text';
-        togglePassword.textContent = '🙈';
-    } else {
-        mdpInput.type = 'password';
-        togglePassword.textContent = '👁️';
-    }
-});
-
+    // Bouton afficher/masquer mot de passe
+    togglePassword.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (mdpInput.type === 'password') {
+            mdpInput.type = 'text';
+            togglePassword.textContent = '🙈';
+        } else {
+            mdpInput.type = 'password';
+            togglePassword.textContent = '👁️';
+        }
+    });
 </script>
 </body>
 </html>

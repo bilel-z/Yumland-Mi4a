@@ -5,14 +5,12 @@ body {
     margin: 0;
     font-family: var(--police_texte);
 }
-
 .Teinte {
     position: fixed;
     inset: 0;
     background-color: var(--fond_transparent);
     z-index: -1;
 }
-
 nav {
    background-color: var(--fond_navigation);
    position: fixed;
@@ -25,7 +23,6 @@ nav {
    justify-content: space-between;
    font-family: var(--police_texte);
 }
-
 div.logo{
     display: flex;
     flex-direction: row;
@@ -33,12 +30,10 @@ div.logo{
     justify-content: center;
     gap: 50px;
 }
-
 div.logo img {
     padding-left: 50px;
     height: 100px;
 }
-
 #bouttonTheme, #bouttonVisibilite{
    background-color: var(--boutton_theme); 
    color: var(--texte_theme);
@@ -48,30 +43,24 @@ div.logo img {
    font-weight: bold;
    cursor: pointer;
 }
-
 #bouttonTheme:hover, #bouttonVisibilite:hover{
    background-color: var(--boutton_theme_hover); 
 }
-
 .navigation {
     padding-right: 50px;
 }
-
 .navigation ul {
     display: flex;
     list-style: none;
     margin: 0;
 }
-
 li {
     border-right: 1px solid var(--contour_or);
     padding: 15px 25px;
 }
-
 li:last-child {
     border-right: none;
 }
-
 li a {
     text-decoration: none;
     color: var(--texte_navigation);
@@ -80,12 +69,10 @@ li a {
     border-bottom: 2px solid transparent;
     padding: 10px 0;
 }
-
 li a:hover {
     border-top: 1px solid var(--contour_or);
     border-bottom: 1px solid var(--contour_or);
 }
-
 .login-wrapper {
     min-height: calc(100vh - 130px);
     padding-top: 10px; 
@@ -94,7 +81,6 @@ li a:hover {
     align-items: center;
     margin-top: 50px;
 }
-
 .login-box {
     background-color: var(--fond_formulaire);
     width: 360px;
@@ -104,18 +90,15 @@ li a:hover {
     text-align: center;
     margin-top: 50px;
 }
-
 .login-box h2 {
     margin-bottom: 25px;
 }
-
 .login-box label {
     display: block;
     text-align: left;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
 .login-box input {
     width: 100%;
     padding: 10px;
@@ -123,7 +106,6 @@ li a:hover {
     border-radius: 6px;
     border: 1px solid var(--contour_gris);
 }
-
 .login-box button {
     width: 100%;
     padding: 12px;
@@ -134,23 +116,35 @@ li a:hover {
     font-size: 16px;
     cursor: pointer;
 }
-
 .login-box button:hover {
     background-color: var(--boutton_bleu_hover);
 }
-
 a.inscrire {
     margin-top: 20px;
     display: inline-block;
     color: var(--texte_noir);
 }
-
 .erreur {
     font-size: 18px;
 }
-
+.compteur-texte {
+    font-size: 11px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+    transition: color 0.3s;
+}
+.compteur-ok { 
+    color: var(--texte_compteur_ok); 
+}
+.compteur-attention { 
+    color: var(--texte_compteur_attention); 
+}
+.compteur-critique  { 
+    color: var(--texte_compteur_critique); 
+}
 @media (max-width: 768px) {
-
     nav {
         height: auto;
         flex-direction: column;
@@ -159,30 +153,25 @@ a.inscrire {
         padding: 20px 0;
         position: relative;
     }
-
     .logo {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-
     div.logo img {
         height: 70px;
         padding-left: 0;
     }
-
     .navigation {
         width: 100%;
         padding-right: 0;
     }
-
     .navigation ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
         margin-top: 15px;
     }
-
     li {
         border-right: none;
         border-bottom: 1px solid var(--contour_or);
@@ -190,21 +179,17 @@ a.inscrire {
         text-align: center;
         padding: 12px;
     }
-
     li:last-child {
         border-bottom: none;
     }
-
     li a:hover{
         border-top: 1px solid transparent;
         border-bottom: 1px solid transparent;
     }
-
     .login-wrapper {
         padding: 20px;
         margin-top: 20px;
     }
-
     .login-box {
         width: 95%;
         max-width: 600px;
@@ -212,11 +197,9 @@ a.inscrire {
         padding: 60px 40px;
         margin-top: 30px;
     }
-
     .login-box input,
     .login-box button {
         width: 100%;
         font-size: 16px;
     }
-
 }

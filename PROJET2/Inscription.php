@@ -56,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
 
-
 <?php include 'section/Navigation.php'; ?>
         <section>
             <div class="logoInscription">
@@ -64,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>KUNG FOOD</h2>
             </div>
             <div class="BoiteForm">
-                <form method="post">
+                <form method="post" id="inscriptionForm">
                     <div class="TitreInscription">
                         <h4>INSCRIPTION</h4>
                     </div>
@@ -80,13 +79,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="ChampsInscription">
                         <label for="MailFor">Email</label>
-                        <input type="email" id="MailFor" name="Mail" placeholder="exemple@email.com" required="required">
+                        <input type="email" id="MailFor" name="Mail" placeholder="exemple@email.com" maxlength="100" data-compteur="compteur-mail" required="required">
+                        <span id="compteur-mail" class="compteur-texte"></span>
                         <span class="messageErreur" id="erreurEmail"></span>
                     </div>
                     <div class="ChampsInscription">
                         <label for="MdpFor">Mot de passe</label>
-                        <input type="password" id="MdpFor" name="Mdp" placeholder="••••••••" required="required">
+                        <input type="password" id="MdpFor" name="Mdp" placeholder="••••••••" maxlength="30" data-compteur="compteur-mdp" required="required">
                         <button type="button" id="togglePassword">👁️</button>
+                        <span id="compteur-mdp" class="compteur-texte"></span>
                         <span class="messageErreur" id="erreurMdp"></span>
                     </div>
                     <div class="ChampsInscription">
@@ -95,7 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="ChampsInscription">
                         <label for="NumFor">Numéro de téléphone</label>
-                        <input type="tel" id="NumFor" name="Num" placeholder="06••••••••" required="required">
+                        <input type="tel" id="NumFor" name="Num" placeholder="06••••••••" maxlength="10" data-compteur="compteur-num" required="required">
+                        <span id="compteur-num" class="compteur-texte"></span>
                         <span class="messageErreur" id="erreurNum"></span>
                     </div>
                     <div class="ChampsInscription">
@@ -118,17 +120,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <footer>
             <div>Ⓒ COPYRIGHTY 2026 - Mentions légales</div>
         </footer>
-        <script src="section/Javascript/validation.js"></script>
-       <script>
-    const mdpInput = document.getElementById('MdpFor');
-    const emailInput = document.getElementById('MailFor');
-    const prenomInput = document.getElementById('PrenomFor');
-    const nomInput = document.getElementById('NomFor');
-    const NumInput = document.getElementById('NumFor');
-    const AdresseInput = document.getElementById('AdresseFor');
+    <script src="section/Javascript/compteur.js"></script>
+    <script src="section/Javascript/validation.js"></script>
+    <script>
+    const mdpInput        = document.getElementById('MdpFor');
+    const emailInput      = document.getElementById('MailFor');
+    const prenomInput     = document.getElementById('PrenomFor');
+    const nomInput        = document.getElementById('NomFor');
+    const NumInput        = document.getElementById('NumFor');
+    const AdresseInput    = document.getElementById('AdresseFor');
     const interphoneInput = document.getElementById('InterphoneFor');
-    const loginForm = document.getElementById('loginForm');
-    
+    const inscriptionForm = document.getElementById('inscriptionForm');
+    const togglePassword  = document.getElementById('togglePassword');
+
     // Validation en temps réel
     mdpInput.addEventListener('input', function () {
         verificationMDP(this, document.getElementById('erreurMdp'));
@@ -136,43 +140,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     prenomInput.addEventListener('input', function () {
         verificationChampNormal(this, document.getElementById('erreurPrenom'));
     });
-     nomInput.addEventListener('input', function () {
+    nomInput.addEventListener('input', function () {
         verificationChampNormal(this, document.getElementById('erreurNom'));
     });
-      NumInput.addEventListener('input', function () {
+    NumInput.addEventListener('input', function () {
         verificationNumero(this, document.getElementById('erreurNum'));
     });
-    
     AdresseInput.addEventListener('input', function () {
         verificationChampNormal(this, document.getElementById('erreurAdresse'));
     });
     interphoneInput.addEventListener('input', function () {
         verificationChampNormal(this, document.getElementById('erreurInterphone'));
     });
-    
+
     // Validation au submit
-    t.addEventListener('input', function () {
-        let emailValide = verificationMail(emailInput, document.getElementById('erreurEmail'));
-        let mdpValide = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
-        let nomValide = verificationChampNormal(this, document.getElementById('erreurPrenom'));
-        let prenomValide = verificationChampNormal(this, document.getElementById('erreurNom'));
-        let numValide = verificationNumero(this, document.getElementById('erreurNum'));
-        let AdresseValid = verificationChampNormal(this, document.getElementById('erreurAdresse'));
-        if (!emailValide || !mdpValide  || !nomValide || !prenomValidValide  || !numValide || !AdresseValide) {
-            e.preventDefault(); // Empêcher l'envoi
+    inscriptionForm.addEventListener('submit', function (e) {
+        let emailValide   = verificationMail(emailInput, document.getElementById('erreurEmail'));
+        let mdpValide     = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
+        let nomValide     = verificationChampNormal(nomInput, document.getElementById('erreurNom'));
+        let prenomValide  = verificationChampNormal(prenomInput, document.getElementById('erreurPrenom'));
+        let numValide     = verificationNumero(NumInput, document.getElementById('erreurNum'));
+        let adresseValide = verificationChampNormal(AdresseInput, document.getElementById('erreurAdresse'));
+        if (!emailValide || !mdpValide || !nomValide || !prenomValide || !numValide || !adresseValide) {
+            e.preventDefault();
         }
     });
+
+    // Bouton afficher/masquer mot de passe
     togglePassword.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    if (mdpInput.type === 'password') {  
-        mdpInput.type = 'text';
-        togglePassword.textContent = '🙈';
-    } else {
-        mdpInput.type = 'password';
-        togglePassword.textContent = '👁️';
-    }
-});
-</script>
+        e.preventDefault();
+        if (mdpInput.type === 'password') {
+            mdpInput.type = 'text';
+            togglePassword.textContent = '🙈';
+        } else {
+            mdpInput.type = 'password';
+            togglePassword.textContent = '👁️';
+        }
+    });
+    </script>
     </body>
 </html>

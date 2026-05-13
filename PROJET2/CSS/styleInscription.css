@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 section{
     display: flex;
     padding-top: 180px;
@@ -12,12 +11,10 @@ section{
     align-items: center;
     gap: 10px;
 }
-
 .logoInscription img{
     height:250px;
     width: auto;
 }
-
 .logoInscription{
     display: flex;
     flex-direction: column;
@@ -27,13 +24,11 @@ section{
     font-family: var(--police_titre);
     font-weight: bold;
 }
-
 .TitreInscription{
     grid-column: span 2;
     text-align: center;
     font-size: 40px;
 }
-
 .BoiteForm{
     background-color: var(--fond_formulaire);
     width: 65%;
@@ -41,30 +36,25 @@ section{
     box-shadow: 0 0 15px var(--contour_transparent);
     border-radius: 12px;
 }
-
 .BoiteForm form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-
 .ChampsInscription {
     display: flex;
     flex-direction: column;
 }
-
 .ChampsInscription label{
     margin-bottom: 7px;
     font-weight: bold;
 }
-
 .ChampsInscription input{
     width: 100%;
     padding: 12px;
     border: 1px solid var(--contour_gris);
     box-sizing: border-box;
 }
-
 .StyleEnvoi{
     background-color: var(--boutton_noir);
     color: var(--texte_vrai_blanc);
@@ -74,20 +64,16 @@ section{
     cursor: pointer;
     border-radius: 6px;
 }
-
 .StyleEnvoi:hover{
     background-color: var(--boutton_noir_hover);
 }
-
 .envoi {
     grid-column: span 2;
     text-align: center;
 }
-
 .erreur {
     font-size: 18px;
 }
-
 footer{
     color: var(--texte_blanc);
     font-size: 20px;
@@ -95,31 +81,39 @@ footer{
     padding-bottom: 15px;
     padding-left: 15px;
 }
-
+.compteur-texte {
+    font-size: 11px;
+    margin-top: 3px;
+    display: block;
+    transition: color 0.3s;
+}
+.compteur-ok { 
+    color: var(--texte_compteur_ok); 
+}
+.compteur-attention { 
+    color: var(--texte_compteur_attention); 
+}
+.compteur-critique { 
+    color: var(--texte_compteur_critique);
+}
 @media (max-width: 768px) {
-
     section {
         padding-top: 100px;
     }
-
     .logoInscription{
         width: 50px;
         height: auto;
     }
-
     .BoiteForm {
         padding: 20px;
         width: 90%;
     }
-
     .BoiteForm form {
         grid-template-columns: 1fr;
     }
-
     .TitreInscription {
         grid-column: span 1;
     }
-
     .envoi {
         grid-column: span 1;
     }
