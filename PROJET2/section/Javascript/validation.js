@@ -296,14 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Profil 
 
-let prenomErreur = document.getElementById("prenomErreur");
-let nomErreur = document.getElementById("nomErreur");
-let mailErreur = document.getElementById("mailErreur");
-let numErreur = document.getElementById("numErreur");
-let adresseErreur = document.getElementById("adresseErreur");
-let interphoneErreur = document.getElementById("interphoneErreur");
-let ageErreur = document.getElementById("ageErreur");
-let mdpErreur = document.getElementById("mdpErreur");
+
 
 function modeEdition(){
     let listeLecture = document.querySelectorAll(".lecture");
@@ -330,6 +323,16 @@ function modeLecture(){
 }
 
 function modifierProfil(){
+    
+    let prenomErreur = document.getElementById("prenomErreur");
+let nomErreur = document.getElementById("nomErreur");
+let mailErreur = document.getElementById("mailErreur");
+let numErreur = document.getElementById("numErreur");
+let adresseErreur = document.getElementById("adresseErreur");
+let interphoneErreur = document.getElementById("interphoneErreur");
+let ageErreur = document.getElementById("ageErreur");
+let mdpErreur = document.getElementById("mdpErreur");
+
     let changerPrenom = document.getElementById("changerPrenom");
     let changerNom = document.getElementById("changerNom");
     let changerMail = document.getElementById("changerMail");
