@@ -13,7 +13,7 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") 
     <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
-    <script src="section/Javascript/function.js" defer></script>
+    <script src="section/Javascript/fonction.js" defer></script>
 </head>
 <body>
 
