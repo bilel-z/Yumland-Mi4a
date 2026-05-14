@@ -13,6 +13,7 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") 
     <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
+    <script src="section/Javascript/function.js" defer></script>
 </head>
 <body>
 
@@ -140,46 +141,6 @@ if ($filtre !== "tous") {
             </tbody>
         </table>
     </main>
-
-<script>
-    const toggleBloquer = async (btn) => {
-        const userId  = btn.dataset.userId;
-        const estBloque = btn.dataset.bloque === '1';   // état actuel
-        const nouvelEtat = estBloque ? 0 : 1;           // on inverse
-
-        btn.disabled = true;
-
-        try {
-            const formData = new FormData();
-            formData.append('user-id', userId);
-            formData.append('bloque', nouvelEtat);
-
-            const response = await fetch('Admin.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
-
-            const text = await response.text();
-            const data = JSON.parse(text.match(/\{.*\}/s)[0]);
-
-            if (data.success) {
-                btn.dataset.bloque = data.bloque ? '1' : '0';
-                btn.textContent    = data.bloque ? '🔓 Débloquer' : '🔒 Bloquer';
-            }
-        } catch (err) {
-            console.error('Erreur blocage :', err);
-        } finally {
-            btn.disabled = false;
-        }
-    };
-    // Délégation d'événement sur le tableau entier
-    document.querySelector('table').addEventListener('click', (e) => {
-        const btn = e.target.closest('.btn-bloque');
-        if (btn) toggleBloquer(btn);
-    });
-</script>
 
 </body>
 </html>

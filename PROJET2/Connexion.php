@@ -48,7 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
+	
+	<script src="section/Javascript/validation.js"></script>
 </head>
+
 <body>
 <?php include 'section/Navigation.php'; ?>
 <div class="Teinte"></div>
@@ -75,44 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="Inscription.php" class="inscrire">Créer un compte</a>
         </form>
     </div>
-</main>
 <script src="section/Javascript/compteur.js"></script>
-<script src="section/Javascript/validation.js"></script>
-<script>
-    const mdpInput       = document.getElementById('mdp');
-    const emailInput     = document.getElementById('email');
-    const loginForm      = document.getElementById('loginForm');
-    const togglePassword = document.getElementById('togglePassword');
+</main>
 
-    // Validation en temps réel
-    mdpInput.addEventListener('input', function () {
-        verificationMDP(this, document.getElementById('erreurMdp'));
-    });
-
-    emailInput.addEventListener('input', function () {
-        verificationMail(this, document.getElementById('erreurEmail'));
-    });
-
-    // Validation au submit
-    loginForm.addEventListener('submit', function(e) {
-        let emailValid = verificationMail(emailInput, document.getElementById('erreurEmail'));
-        let mdpValid   = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
-        if (!emailValid || !mdpValid) {
-            e.preventDefault();
-        }
-    });
-
-    // Bouton afficher/masquer mot de passe
-    togglePassword.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (mdpInput.type === 'password') {
-            mdpInput.type = 'text';
-            togglePassword.textContent = '🙈';
-        } else {
-            mdpInput.type = 'password';
-            togglePassword.textContent = '👁️';
-        }
-    });
-</script>
 </body>
 </html>

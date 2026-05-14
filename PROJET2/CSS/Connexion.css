@@ -106,7 +106,7 @@ li a:hover {
     border-radius: 6px;
     border: 1px solid var(--contour_gris);
 }
-.login-box button {
+.login-box button[type="submit"] {
     width: 100%;
     padding: 12px;
     background-color: var(--boutton_bleu);
@@ -116,7 +116,7 @@ li a:hover {
     font-size: 16px;
     cursor: pointer;
 }
-.login-box button:hover {
+.login-box button[type="submit"]:hover {
     background-color: var(--boutton_bleu_hover);
 }
 a.inscrire {

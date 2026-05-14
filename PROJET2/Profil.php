@@ -11,12 +11,15 @@
     <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
-    <script src="section/Javascript/profil.js" defer></script>
+   <script src="section/Javascript/validation.js"></script>
 </head>
 <script src="section/Javascript/check_bloque.js" defer></script>
+
+
 <body>
 <?php
 include_once("section/Fonction/fonction.php");
+
 
 if (!isset($_SESSION["user"])) {
     header("Location: Connexion.php");
@@ -60,16 +63,19 @@ if (isset($_GET["id"])) {
                 <p id="champsPrenom" class="lecture"><strong>Prenom :</strong> <?php echo $user["Prenom"]?></p>
                 <label class="edition" for="changerPrenom">Prenom :</label>
                 <input class="edition champsEdition" id="changerPrenom" type="text" value="<?php echo $user["Prenom"] ?>">
+		<span id="compteur-prenom" class="compteur-texte"></span>
                 <span class="messageErreur" id="prenomErreur"></span>
 
                 <p id="champsNom" class="lecture"><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
                 <label class="edition" for="changerNom">Nom :</label>
                 <input class="edition champsEdition" id="changerNom" type="text" value="<?php echo $user["Nom"] ?>">
+		<span id="compteur-nom" class="compteur-texte"></span>
                 <span class="messageErreur" id="nomErreur"></span>
 
                 <p id="champsMail" class="lecture"><strong>Email :</strong> <?php echo $user["Mail"]?></p>
                 <label class="edition" for="changerMail">Email :</label>
-                <input class="edition champsEdition" id="changerMail" type="email" value="<?php echo $user["Mail"] ?>">
+                <input class="edition champsEdition" id="changerMail" type="email" value="<?php echo $user["Mail"] ?>"maxlength="100" data-compteur="compteur-mail">
+		<span id="compteur-mail" class="edition champsEdition" class="compteur-texte"></span>
                 <span class="messageErreur" id="mailErreur"></span>
 
                 <p id="champsNum" class="lecture"><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
@@ -96,17 +102,20 @@ if (isset($_GET["id"])) {
                 <h3 class="edition" >Modifier le mot de passe (optionnel)</h3>
 
                 <label class="edition" for="changerAncienMDP">Ancien mot de passe :</label>
-                <input class="edition champsEdition" id="changerAncienMDP" type="password" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerAncienMDP" type="password" maxlength="30" data-compteur="compteur-ancien-mdp" value="" placeholder="••••••••">
+		<span id="compteur-ancien-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword" class="edition">👁️</button>
                 
                 <label class="edition" for="changerNouveauMDP">Nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerNouveauMDP" type="password" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerNouveauMDP" type="password" maxlength="30" data-compteur="compteur-nouveau-mdp" value="" placeholder="••••••••">
+		<span id="compteur-nouveau-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword1" class="edition">👁️</button>
                 
                 <label class="edition" for="changerConfirmeMDP">Confirmation du nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerConfirmeMDP" type="password" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerConfirmeMDP" type="password" maxlength="30" data-compteur="compteur-confirmation-mdp" value="" placeholder="••••••••">
+		<span id="compteur-confirmation-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword2" class="edition">👁️</button>
-                <span class="messageErreur" id="mdpErreur"></span>
+                <span id="mdpErreur" class="messageErreur edition"></span>
 
                 <p class="lecture"><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p></br>
 
@@ -126,52 +135,6 @@ if (isset($_GET["id"])) {
     </div>
 
 </div>
-<script>
- const originalInput = document.getElementById('changerAncienMDP');
-const togglePassword = document.getElementById('togglePassword');
-
-togglePassword.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    if (originalInput.type === 'password') {  
-        originalInput.type = 'text';
-        togglePassword.textContent = '🙈';
-    } else {
-        originalInput.type = 'password';
-        togglePassword.textContent = '👁️';
-    }
-});
-
-const mdpInput = document.getElementById('changerNouveauMDP');
-const togglePassword1 = document.getElementById('togglePassword1');
-
-togglePassword1.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    if (mdpInput.type === 'password') {  
-        mdpInput.type = 'text';
-        togglePassword1.textContent = '🙈';
-    } else {
-        mdpInput.type = 'password';
-        togglePassword1.textContent = '👁️';
-    }
-});
-
-
-const confirmInput = document.getElementById('changerConfirmeMDP');
-const togglePassword2 = document.getElementById('togglePassword2');
-
-togglePassword2.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    if (confirmInput.type === 'password') {  
-        confirmInput.type = 'text';
-        togglePassword2.textContent = '🙈';
-    } else {
-        confirmInput.type = 'password';
-        togglePassword2.textContent = '👁️';
-    }
-});
-</script>
+<script src="section/Javascript/compteur.js"></script>
 </body>
 </html>
