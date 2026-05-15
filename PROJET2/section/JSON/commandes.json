@@ -856,5 +856,30 @@
         "date_mise_a_jour": "2026-05-09 16:22:34",
         "livreur_id": 1775311002,
         "livreur_nom": "Lucas Dupont"
+    },
+    {
+        "id": "vx9OkzBwwqTucQy",
+        "client_id": 1775344416,
+        "client_interphone": "1234",
+        "client_telephone": "0612345678",
+        "client_nom": "Lucas Dupont",
+        "articles": [
+            {
+                "nom": "Bœuf sauté aux oignons",
+                "prix_unitaire": 12,
+                "quantite": 1,
+                "sous_total": 12
+            }
+        ],
+        "nombre_articles": 1,
+        "total": 12,
+        "type_service": "livraison",
+        "moment_preparation": "immediate",
+        "date_retrait_livraison": null,
+        "adresse_livraison": "12 rue de Rivoli, 75001 Paris",
+        "commentaire": "rqsderzsedr",
+        "statut": "à préparer",
+        "paiement_statut": "complété",
+        "date_creation": "2026-05-15 17:27:43"
     }
 ]
