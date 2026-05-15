@@ -2,23 +2,22 @@ Comptes test :
 
 --- CLIENT ---
 Email : lucas.dupont@gmail.com
-Mot de passe : lucas123
- 
+Mot de passe : Lucas@2003
+
 --- LIVREUR ---
 Email : livreur1@yumland.fr
-Mot de passe : 123
- 
+Mot de passe : Livreur@1999
+
 --- RESTAURATEUR ---
 Email : restaurateur@yumland.fr
-Mot de passe : 123
- 
+Mot de passe : Resto@1988
+
 --- ADMINISTRATEUR ---
 Email : admin1@yumland.fr
-Mot de passe : admin123
+Mot de passe : Admin@1989
 
-Carte Bancaire essaie (marche tout le temps) :
-
+Carte Bancaire essai (marche tout le temps) :
 Titulaire : Marie Curie
-• Numéro de carte : 5555 1234 5678 9000
-• Cryptogramme : 555
-• Date d’expiration : 02/27
+- Numéro de carte : 5555 1234 5678 9000
+- Cryptogramme : 555
+- Date d'expiration : 02/27

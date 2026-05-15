@@ -110,8 +110,17 @@ if(isset($_POST['valider_commande'])){
                         ($momentPreparation === 'immediate'
                             ? "Elle peut être préparée tout de suite."
                             : "Elle a bien été planifiée pour plus tard.");
-
-                    $_SESSION['Panier'] = [];
+                    $jsonPlats = lireJson(__DIR__ .'/section/JSON/plats.json');
+                    foreach($_SESSION['Panier'] as $choix){
+                        foreach($jsonPlats as &$element){
+                            if($element['nom'] == $choix[0]){
+                                $element['commandes']++;
+                                break;
+                            }
+                        }
+                        unset($element);
+                    }
+                    ecrireJson(__DIR__ . '/section/JSON/plats.json', $jsonPlats);
                     $_SESSION['commande_en_cours'] = $commande;
                     $_SESSION['montant_commande'] = number_format($commande['total'], 2, '.', '');
                     $_SESSION['Panier'] = [];
