@@ -27,7 +27,7 @@
 
         if($affiche){
             echo '
-                <div class="BoitePlat">
+                <div class="BoitePlat" data-prix="'.$plat["prix"].'" data-nbcommande="'.($plat["commandes"] ?? 0).'">
                     <div class="BoiteContenu">
                         <h3>'.$plat["nom"].'</h3>
                         <p>- '.$plat["Composition"][0].'<br>- '.$plat["Composition"][1].'<br>- '.$plat["Composition"][2].'<br>- '.$plat["Composition"][3].'</p>

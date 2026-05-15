@@ -9,11 +9,11 @@
   },
   {
     "nom": "Tofu frit sauce aigre-douce",
-    "description": "Tofu frit croustillant, nappé d’une sauce aigre‑douce parfumée et équilibrée.",
+    "description": "Tofu frit croustillant, nappé d'une sauce aigre‑douce parfumée et équilibrée.",
     "image": "image/Plats/TofuAigreDouce.jpg",
     "prix": 5.40,
     "categorie": "Entree",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Beignets de pomme",
@@ -21,7 +21,7 @@
     "image": "image/Plats/beignetPomme.jpg",
     "prix": 3.30,
     "categorie": "Dessert",
-    "filtres": ["Gras", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Gras", "Vegetarien", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Nouilles chinoises",
@@ -29,7 +29,7 @@
     "image": "image/Plats/NouilleChinoisAuPoulet.jpeg",
     "prix": 9.80,
     "categorie": "Plat",
-    "filtres": ["Sel", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sel", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Raviolis vapeur",
@@ -37,7 +37,7 @@
     "image": "image/Plats/RavioVapeur.jpg",
     "prix": 6.50,
     "categorie": "Entree",
-    "filtres": ["Sel", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sel", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Poisson vapeur à la cantonaise",
@@ -45,15 +45,15 @@
     "image": "image/Plats/PoisonAlaCantonaise.jpg",
     "prix": 10.80,
     "categorie": "Plat",
-    "filtres": ["Sel", "Gluten", "Lactose", "Cacahuete"]
+    "filtres": ["Sel", "Gluten", "Halal", "Lactose", "Cacahuete"]
   },
   {
     "nom": "Poulet caramel",
-    "description": "Poulet tendre nappé d’une sauce sucrée parfumée.",
+    "description": "Poulet tendre nappé d'une sauce sucrée parfumée.",
     "image": "image/Plats/pouletCaramel.jpg",
     "prix": 11.20,
     "categorie": "Plat",
-    "filtres": ["Sucre", "Gluten", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Gelée de litchi",
@@ -61,15 +61,15 @@
     "image": "image/Plats/geleeLitchi.jpg",
     "prix": 4.00,
     "categorie": "Dessert",
-    "filtres": ["Sel", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Riz sauté aux fruits de mer",
-    "description": "Riz sauté aux fruits de mer, wok parfumé mêlant crevettes, calamars et légumes croquants. ",
+    "description": "Riz sauté aux fruits de mer, wok parfumé mêlant crevettes, calamars et légumes croquants.",
     "image": "image/Plats/RizFruitDeMer.jpg",
     "prix": 8.50,
     "categorie": "Plat",
-    "filtres": ["Sel", "Gluten", "Lactose", "Cacahuete"]
+    "filtres": ["Sel", "Gluten", "Halal", "Lactose", "Cacahuete"]
   },
   {
     "nom": "Riz au lait vegan",
@@ -77,15 +77,15 @@
     "image": "image/Plats/RizAuLait.jpg",
     "prix": 3.20,
     "categorie": "Dessert",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Nougat chinois",
-    "description": "Nougat chinois croustillant, caramel léger et éclats d’amandes.",
+    "description": "Nougat chinois croustillant, caramel léger et éclats d'amandes.",
     "image": "image/Plats/NougatChinois.jpg",
     "prix": 3.20,
     "categorie": "Dessert",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Halal", "Lactose", "Mer"]
   },
   {
     "nom": "Nems au poulet",
@@ -93,7 +93,7 @@
     "image": "image/Plats/nemPoulet.jpeg",
     "prix": 5.50,
     "categorie": "Entree",
-    "filtres": ["Gras", "Gluten", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Gras", "Gluten", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Perles de coco",
@@ -101,7 +101,7 @@
     "image": "image/Plats/perleCoco.jpeg",
     "prix": 3.30,
     "categorie": "Dessert",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Bœuf sauté aux oignons",
@@ -109,7 +109,7 @@
     "image": "image/Plats/BoeufSaute.jpeg",
     "prix": 12.00,
     "categorie": "Plat",
-    "filtres": ["Gras", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Gras", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
     "nom": "Salade de chou sucrée",
@@ -117,7 +117,7 @@
     "image": "image/Plats/SaladeChou.jpg",
     "prix": 5.00,
     "categorie": "Entree",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Brochettes de bœuf",
@@ -125,54 +125,54 @@
     "image": "image/Plats/brochetteBoeuf.jpg",
     "prix": 7.00,
     "categorie": "Entree",
-    "filtres": ["Gras", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Gras", "Halal", "Lactose", "Cacahuete", "Mer"]
   },
   {
-    "nom": "Coca-Cola 33cl" ,
-    "description": "Rouge éclatante, promet une explosion de fraîcheur pétillante dès qu’on l’ouvre.",
+    "nom": "Coca-Cola 33cl",
+    "description": "Rouge éclatante, promet une explosion de fraîcheur pétillante dès qu'on l'ouvre.",
     "image": "image/Plats/coca.jpg",
     "prix": 2.30,
     "categorie": "Boisson",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
-    "nom": "Lipton pêche 33cl" ,
+    "nom": "Lipton pêche 33cl",
     "description": "Un Lipton pêche, doux et rafraîchissant.",
     "image": "image/Plats/lipton.jpg",
     "prix": 2.30,
     "categorie": "Boisson",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
-    "nom": "Fanta 33cl" ,
+    "nom": "Fanta 33cl",
     "description": "Un Fanta orange, pétillant et fruité.",
     "image": "image/Plats/fanta.jpeg",
     "prix": 2.30,
     "categorie": "Boisson",
-    "filtres": ["Sucre", "Gluten", "Vegetarien", "Lactose", "Cacahuete", "Mer"]
+    "filtres": ["Sucre", "Gluten", "Vegetarien", "Vegan", "Halal", "Lactose", "Cacahuete", "Mer", "Oeuf"]
   },
   {
     "nom": "Menu Classique",
     "description": "Un menu simple et savoureux avec des incontournables asiatiques.",
     "prix": 15.70,
     "categorie": "Menu",
-    "filtres": ["Sel", "Gluten", "Lactose", "Cacahuete", "Mer", "Sucre", "Vegetarien"],
-    "Composition" : ["Raviolis vapeur","Riz Cantonais","Perles de coco","Lipton pêche 33cl"]
+    "filtres": ["Sel", "Gluten", "Lactose", "Cacahuete", "Mer", "Sucre"],
+    "Composition": ["Raviolis vapeur", "Riz Cantonais", "Perles de coco", "Lipton pêche 33cl"]
   },
   {
     "nom": "Menu Gourmand",
     "description": "Un menu généreux mêlant croustillant, viande tendre et douceur sucrée.",
     "prix": 16.30,
     "categorie": "Menu",
-    "filtres": ["Sucre","Gluten","Vegetarien","Lactose","Cacahuete","Mer"],
-    "Composition" : ["Nems au poulet","Bœuf sauté aux oignons","Beignets de pomme","Lipton pêche 33cl"]
+    "filtres": ["Sucre", "Gluten", "Halal", "Lactose", "Cacahuete", "Mer"],
+    "Composition": ["Nems au poulet", "Bœuf sauté aux oignons", "Beignets de pomme", "Lipton pêche 33cl"]
   },
   {
     "nom": "Menu Mer",
     "description": "Un menu frais et léger mettant en avant les saveurs marines.",
     "prix": 16.00,
     "categorie": "Menu",
-    "filtres": ["Sel","Gluten","Lactose","Cacahuete","Sucre","Vegetarien"],
-    "Composition" : ["Salade de chou sucrée","Poisson vapeur à la cantonaise","Gelée de litchi","Lipton pêche 33cl"]
+    "filtres": ["Sel", "Gluten", "Halal", "Lactose", "Cacahuete", "Sucre"],
+    "Composition": ["Salade de chou sucrée", "Poisson vapeur à la cantonaise", "Gelée de litchi", "Lipton pêche 33cl"]
   }
 ]

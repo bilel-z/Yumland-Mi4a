@@ -26,9 +26,3 @@ const checkInterval = setInterval(checksiBloque, CHECK_INTERVAL_MS);
 
 // Also check immediately on page load
 checksiBloque();
-
-function changerVisibilite(){
-    document.body.classList.toggle("modeGras");
-}
-
-themeChargement();

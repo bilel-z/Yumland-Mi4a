@@ -48,8 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" id="theme" href="CSS/Variable.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
-	
-	<script src="section/Javascript/validation.js"></script>
+	<script src="section/Javascript/validation.js" defer></script>
 </head>
 
 <body>

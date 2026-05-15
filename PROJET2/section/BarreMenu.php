@@ -24,8 +24,11 @@ echo '
             <select name="Allergene" id="LabelAllergene">
                 <option value="" selected>Pas de régime</option>
                 <option value="Vegetarien">Végétarien</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Halal">Halal</option>
                 <option value="Gluten">Sans gluten</option>
                 <option value="Lactose">Sans lactose</option>
+                <option value="Oeuf">Sans œuf</option>
                 <option value="Cacahuete">Sans arachide</option>
                 <option value="Mer">Sans fruit de mer</option>
             </select>
@@ -36,9 +39,19 @@ echo '
                 <option value="" selected>Tout</option>
                 <option value="Sucre">Sucrée</option>
                 <option value="Sel">Salé</option>
+                <option value="Epice">Épicé</option>
                 <option value="Gras">Gras</option>
             </select>
         </div>
+        <div class="Tri">
+        <label for="LabelTri">Trier par :</label>
+        <select name="tri" id="LabelTri">
+            <option value="" selected>Aucun tri</option>
+            <option value="prixCroissant">Prix croissant</option>
+            <option value="prixDecroissant">Prix décroissant</option>
+            <option value="plusCommandes">Les plus commandés</option>
+        </select>
+        </div>    
     </div>
 </div>
 '

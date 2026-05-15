@@ -39,7 +39,7 @@
 
         if($affiche){
             echo '
-                <div class="BoitePlat">
+                <div class="BoitePlat" data-prix="'.$plat["prix"].'" data-nbcommande="'.($plat["commandes"] ?? 0).'">
                     <div class="PlatImage">
                         <img src="'.$plat["image"].'" alt="Image '.$plat["nom"].'" />
                     </div>

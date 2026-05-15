@@ -234,27 +234,5 @@ if(isset($_POST['valider_commande'])){
 
         </section>
     </div>
-           <script src="section/Javascript/validation.js"></script>
-       <script>
-    const AdresseInput = document.getElementById('adresse_livraison');
-    const commentaireInput = document.getElementById('commentaire_commande');
-    const loginForm = document.getElementById('loginForm');
-    
-    // Validation en temps réel
-     commentaireInput.addEventListener('input', function () {
-        verificationChampNormal(this, document.getElementById('erreurNom'));
-    });
-    
-    AdresseInput.addEventListener('input', function () {
-        verificationChampNormal(this, document.getElementById('erreurAdresse'));
-    });
-    // Validation au submit
-    t.addEventListener('input', function () {
-        let AdresseValid = verificationChampNormal(this, document.getElementById('erreurAdresse'));
-        if (!AdresseValide) {
-            e.preventDefault(); // Empêcher l'envoi
-        }
-    });
-</script>
 </body>
 </html>
