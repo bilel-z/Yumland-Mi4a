@@ -44,6 +44,8 @@ function themeChargement(){
         link.setAttribute("href","CSS/Variable.css");
     }
     else{
+        bouton.innerHTML = "Mode clair ☀️";
+        link.setAttribute("href","CSS/Variable.css");
         console.log("Erreur avec le cookie du thème");
     }
 }

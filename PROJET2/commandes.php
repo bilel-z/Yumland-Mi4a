@@ -12,7 +12,7 @@ $cheminUtilisateurs = "section/JSON/utilisateurs.json";
 $messageSucces = '';
 $messageErreur = '';
 
-$statutsDisponibles = ['à préparer', 'en cours', 'à attendre', 'en livraison', 'livrée', 'abandonnée'];
+$statutsDisponibles = ['à préparer', 'en cours', 'à attendre', 'en livraison', 'prête', 'livrée', 'abandonnée'];
 
 $utilisateurs = lireJson($cheminUtilisateurs);
 $livreursDisponibles = array_values(array_filter($utilisateurs, function ($user) {
