@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
     <script src="section/Javascript/theme.js" defer></script>
    <script src="section/Javascript/validation.js"></script>
+   <script src="section/Javascript/profil.js"></script>
 </head>
 <script src="section/Javascript/check_bloque.js" defer></script>
 
