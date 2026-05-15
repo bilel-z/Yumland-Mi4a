@@ -55,6 +55,9 @@
     --texte_secondaire: #666;
     --texte_badge_statut: #5a4100;
     --texte_theme: rgb(255, 255, 255);
+    --texte_compteur_ok: #5cb85c;
+    --texte_compteur_attention: #f0ad4e;
+    --texte_compteur_critique: #d9534f;
 }
 
 .modeGras * {
