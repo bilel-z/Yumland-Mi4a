@@ -65,8 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <span class="messageErreur" id="erreurEmail"></span>
 
             <label>Mot de passe</label>
-            <input type="password" name="Mdp" id="mdp" placeholder="••••••••" maxlength="30" data-compteur="compteur-mdp" required>
-            <button type="button" id="togglePassword">👁️</button>
+            <div class="champ-mdp">
+                <input type="password" name="Mdp" id="mdp" placeholder="••••••••" maxlength="30" data-compteur="compteur-mdp" required>
+                <button type="button" id="togglePassword">👁️</button>
+            </div>
             <span id="compteur-mdp" class="compteur-texte"></span>
             <span class="messageErreur" id="erreurMdp"></span>
 

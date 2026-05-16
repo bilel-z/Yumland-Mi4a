@@ -127,6 +127,26 @@ a.inscrire {
 .erreur {
     font-size: 18px;
 }
+.champ-mdp {
+    position: relative;
+    margin-bottom: 20px;
+}
+.champ-mdp input {
+    margin-bottom: 0;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+}
 .compteur-texte {
     font-size: 11px;
     margin-top: -15px;
