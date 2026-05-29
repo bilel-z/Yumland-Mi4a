@@ -214,6 +214,31 @@ body {
     box-sizing: border-box;
 }
 
+
+.champsCheck{
+    background-color: var(--fond_formulaire); 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    border: 2px solid var(--contour_menu);
+}
+
+#labelCheck {
+    cursor: pointer;                                                              
+    font-weight: bold; 
+    color: var(--texte_noir);
+}
+
+#checkGratuit {
+    width: 20px; 
+    height: auto;
+}
+
+#checkSecondaire {
+    margin: 5px 0 0 30px; 
+    font-size: 16px; 
+    color: var(--texte_noir);
+}
 .champCommande textarea {
     resize: vertical;
     min-height: 90px;

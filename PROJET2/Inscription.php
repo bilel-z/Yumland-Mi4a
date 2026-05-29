@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "derniere_connexion" => date("Y-m-d H:i:s"),
         "statut" => "Classique",
         "bloquer"=> false,
-        "Commandes" => []
+        "Commandes" => [],
+        "plats_gratuits" => 0
     ];
 
     $file = "section/JSON/utilisateurs.json";

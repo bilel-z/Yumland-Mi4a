@@ -79,6 +79,27 @@ if(isset($_POST['valider_commande'])){
             if($messageErreur === ''){
                 $cheminCommandes = __DIR__ . '/section/JSON/commandes.json';
                 $commandes = lireJson($cheminCommandes);
+                //On cherche le prix le moins élevé et on le déduit du prix final si on utilise le bon d'achat
+                $utiliser_plat_gratuit = isset($_POST['utiliser_plat_gratuit']) && $_POST['utiliser_plat_gratuit'] == '1';
+                $reduction = 0;
+
+                if($utiliser_plat_gratuit && isset($_SESSION['user']['plats_gratuits']) && $_SESSION['user']['plats_gratuits'] > 0){
+                    $prix_min = 0;
+                    foreach ($_SESSION['Panier'] as $plat) {
+                        $prix_plat = floatval($plat[1]);
+                        if ($prix_min == 0 || $prix_plat < $prix_min) {
+                            $prix_min = $prix_plat;
+                        }
+                    }
+                    $reduction = $prix_min;
+                }
+
+                $total_commande = total($_SESSION["Panier"]) - $reduction;
+                if($total_commande < 0){
+                    $total_commande = 0;
+                }
+
+
 
                 if(!is_array($commandes)){
                     $commandes = [];
@@ -92,7 +113,7 @@ if(isset($_POST['valider_commande'])){
                     'client_nom' => trim($_SESSION['user']['Prenom'] . ' ' . $_SESSION['user']['Nom']),
                     'articles' => convertirPanierEnArticles($_SESSION['Panier']),
                     'nombre_articles' => count($_SESSION['Panier']),
-                    'total' => round(total($_SESSION["Panier"]), 2),
+                    'total' => round($total_commande, 2),
                     'type_service' => $typeService,
                     'moment_preparation' => $momentPreparation,
                     'date_retrait_livraison' => $dateRetraitFormatee,
@@ -106,6 +127,20 @@ if(isset($_POST['valider_commande'])){
                 $commandes[] = $commande;
 
                 if(ecrireJson($cheminCommandes, $commandes) !== false){
+                    //On enleve un bon du compte si la reduction a été appliqué
+                    if($reduction > 0){
+                        $_SESSION['user']['plats_gratuits']--;
+                        if(file_exists("section/JSON/utilisateurs.json")){
+                            $liste_utilisateurs = lireJson("section/JSON/utilisateurs.json");
+                            foreach($liste_utilisateurs as &$Lui){
+                                if($Lui['id'] == $_SESSION['user']['id']){
+                                    $Lui['plats_gratuits'] = $_SESSION['user']['plats_gratuits'];
+                                    break;
+                                }
+                            }
+                            ecrireJson("section/JSON/utilisateurs.json", $liste_utilisateurs);
+                        }
+                    }
                     $_SESSION['message_succes_commande'] = "Commande enregistrée avec succès. " .
                         ($momentPreparation === 'immediate'
                             ? "Elle peut être préparée tout de suite."
@@ -222,6 +257,16 @@ if(isset($_POST['valider_commande'])){
                             <label for="commentaire_commande">Commentaire</label>
                             <textarea name="commentaire_commande" id="commentaire_commande" rows="3" placeholder="Interphone, précision pour la livraison, heure souhaitée..."></textarea>
                         </div>
+
+                        <?php if(isset($_SESSION['user']['plats_gratuits']) && $_SESSION['user']['plats_gratuits'] > 0): ?>
+                        <div class="champCommande champsCheck">
+                            <label for="checkGratuit" id="labelCheck">Utiliser 1 plat gratuit</label>
+                            <input type="checkbox" id="checkGratuit" name="utiliser_plat_gratuit" value="1"> 
+                            <p id="checkSecondaire" >
+                                Il vous reste <strong><?php echo $_SESSION['user']['plats_gratuits']; ?></strong> plat(s) gratuit(s). Le plat le moins cher du panier sera déduit.
+                            </p>
+                        </div> 
+                        <?php endif; ?>
 
                         <div class="resumePlanification" id="resumePlanification">
                             Cette commande sera préparée tout de suite.

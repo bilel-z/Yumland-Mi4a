@@ -11,10 +11,11 @@
         "interphone": "1234",
         "role": "client",
         "date_inscription": "2026-04-05",
-        "derniere_connexion": "2026-05-15 17:27:24",
+        "derniere_connexion": "2026-05-29 19:23:45",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775344462,
@@ -31,7 +32,8 @@
         "derniere_connexion": "2026-04-05 19:24:13",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775344500,
@@ -48,7 +50,8 @@
         "derniere_connexion": "2026-04-05 01:15:00",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775344543,
@@ -65,7 +68,8 @@
         "derniere_connexion": "2026-04-05 04:14:49",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775344591,
@@ -82,7 +86,8 @@
         "derniere_connexion": "2026-04-29 15:18:14",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775311001,
@@ -98,7 +103,8 @@
         "statut": "Classique",
         "bloquer": false,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-05-09 16:19:35"
+        "derniere_connexion": "2026-05-09 16:19:35",
+        "plats_gratuits": 0
     },
     {
         "id": 1775311002,
@@ -115,7 +121,8 @@
         "bloquer": false,
         "disponible_livraison": true,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-05-09 16:22:58"
+        "derniere_connexion": "2026-05-09 16:22:58",
+        "plats_gratuits": 0
     },
     {
         "id": 1775311003,
@@ -132,7 +139,8 @@
         "bloquer": false,
         "disponible_livraison": true,
         "date_inscription": "2026-04-04",
-        "derniere_connexion": "2026-04-30 04:47:18"
+        "derniere_connexion": "2026-04-30 04:47:18",
+        "plats_gratuits": 0
     },
     {
         "id": 1775311004,
@@ -149,7 +157,8 @@
         "bloquer": false,
         "date_inscription": "2026-04-05",
         "derniere_connexion": "2026-04-05 10:38:48",
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775311005,
@@ -166,7 +175,8 @@
         "bloquer": false,
         "date_inscription": "2026-04-05",
         "derniere_connexion": "2026-05-09 16:24:13",
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775311006,
@@ -183,7 +193,8 @@
         "bloquer": false,
         "date_inscription": "2026-04-05",
         "derniere_connexion": "2026-04-29 15:51:16",
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     },
     {
         "id": 1775416372,
@@ -200,6 +211,7 @@
         "derniere_connexion": "2026-04-29 15:57:51",
         "statut": "Classique",
         "bloquer": false,
-        "Commandes": []
+        "Commandes": [],
+        "plats_gratuits": 0
     }
 ]
