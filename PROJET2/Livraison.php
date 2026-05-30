@@ -1,10 +1,12 @@
 <?php
-session_start();
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 
 $estLivreur = isset($_SESSION['user']) && isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'livreur';
 
 if ($estLivreur && isset($_POST["Livraison"])) {
+    if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
     $commande = lireJson("section/JSON/commandes.json");
 
     foreach ($commande as &$c) {

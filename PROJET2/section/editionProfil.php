@@ -1,7 +1,9 @@
 <?php
 
-    session_start();
     include_once(__DIR__ . "/Fonction/fonction.php");
+    securiserCookieSession();
+    session_start();
+    if (!requeteInterne()) { http_response_code(403); echo json_encode(["succes" => false, "message" => "Requête refusée."]); exit(); }
     $requete = json_decode(file_get_contents("php://input"),true);
     if($requete === null || !isset($requete["Prenom"]) || !isset($requete["Nom"]) || !isset($requete["Mail"]) || !isset($requete["Num"]) || !isset($requete["Adresse"]) || !isset($requete["Interphone"]) || !isset($requete["Age"])) {
         echo json_encode(["succes" => false, "message" => "Erreur avec les données", "code" => "DonneeCorrompu"]);
@@ -14,6 +16,14 @@
     }
     
     $id_actuel = $_SESSION["user"]["id"];
+
+    $requete["Prenom"]     = nettoyerEntree($requete["Prenom"], 50);
+    $requete["Nom"]        = nettoyerEntree($requete["Nom"], 50);
+    $requete["Mail"]       = nettoyerEntree($requete["Mail"], 100);
+    $requete["Num"]        = nettoyerEntree($requete["Num"], 20);
+    $requete["Adresse"]    = nettoyerEntree($requete["Adresse"], 200);
+    $requete["Interphone"] = nettoyerEntree($requete["Interphone"], 50);
+    $requete["Age"]        = nettoyerEntree($requete["Age"], 20);
 
     $VerifChangementMDP = false;
     if (isset($requete["NouveauMDP"]) && trim($requete["NouveauMDP"]) != ""){

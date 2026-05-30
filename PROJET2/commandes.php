@@ -1,6 +1,7 @@
-<?php 
-session_start();
+<?php
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 
 if (!isset($_SESSION['user']) || !in_array($_SESSION['user']['role'] ?? '', ['restaurateur', 'administrateur'], true)) {
     header('Location: Connexion.php');
@@ -32,6 +33,7 @@ $livreursDisponibles = array_values(array_filter($utilisateurs, function ($user)
 }));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mettre_a_jour_commande'])) {
+    if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
     $commandeId = trim($_POST['commande_id'] ?? '');
     $nouveauStatut = trim($_POST['statut'] ?? '');
     $livreurId = trim($_POST['livreur_id'] ?? '');

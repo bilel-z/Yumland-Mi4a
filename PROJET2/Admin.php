@@ -1,5 +1,8 @@
-<?php session_start(); 
-if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "administrateur") {
+<?php 
+include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start(); 
+if (!isset($_SESSION["user"]) || ($_SESSION["user"]["role"] ?? "") != "administrateur") {
     header('Location: Connexion.php');
     exit();
 }
@@ -33,13 +36,24 @@ if ($users === null) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $userId = $_POST["user-id"];
+    if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
+    $userId = $_POST["user-id"] ?? "";
     $userTrouve = null;
 
     foreach ($users as &$user) {
         if ($user["id"] == $userId) {
-            if (isset($_POST["role"]))   $user["role"]    = $_POST["role"];
-            if (isset($_POST["statut"])) $user["statut"]  = $_POST["statut"];
+            if (isset($_POST["role"])) {
+                $rolesValides = ["client", "livreur", "restaurateur", "administrateur"];
+                if (in_array($_POST["role"], $rolesValides, true)) {
+                    $user["role"] = $_POST["role"];
+                }
+            }
+            if (isset($_POST["statut"])) {
+                $statutsValides = ["Classique", "Premium", "VIP"];
+                if (in_array($_POST["statut"], $statutsValides, true)) {
+                    $user["statut"] = $_POST["statut"];
+                }
+            }
             if (isset($_POST["bloque"])) $user["bloquer"] = (bool)intval($_POST["bloque"]);
             $userTrouve = $user;
             break;

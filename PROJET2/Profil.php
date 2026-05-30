@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,6 +32,10 @@ if (!isset($_SESSION["user"])) {
 }
 
 if (isset($_GET["id"])) {
+    if (($_SESSION["user"]["role"] ?? "") !== "administrateur") {
+        header("Location: Profil.php");
+        exit();
+    }
     $users = lireJson("section/JSON/utilisateurs.json");
     $user = null;
     foreach ($users as $u) {
@@ -61,42 +69,42 @@ if (isset($_GET["id"])) {
 
             <h2 id="titreProfil"><?php echo htmlspecialchars($user["Nom"] . ' ' . $user["Prenom"]); ?></h2>
             <div class="infos-profil">
-                <p id="champsPrenom" class="lecture"><strong>Prenom :</strong> <?php echo $user["Prenom"]?></p>
+                <p id="champsPrenom" class="lecture"><strong>Prenom :</strong> <?php echo echapper($user["Prenom"]); ?></p>
                 <label class="edition" for="changerPrenom">Prenom :</label>
-                <input class="edition champsEdition" id="changerPrenom" type="text" value="<?php echo $user["Prenom"] ?>">
+                <input class="edition champsEdition" id="changerPrenom" type="text" value="<?php echo echapper($user["Prenom"]); ?>">
 		<span id="compteur-prenom" class="compteur-texte"></span>
                 <span class="messageErreur" id="prenomErreur"></span>
 
-                <p id="champsNom" class="lecture"><strong>Nom :</strong> <?php echo $user["Nom"]?></p>
+                <p id="champsNom" class="lecture"><strong>Nom :</strong> <?php echo echapper($user["Nom"]); ?></p>
                 <label class="edition" for="changerNom">Nom :</label>
-                <input class="edition champsEdition" id="changerNom" type="text" value="<?php echo $user["Nom"] ?>">
+                <input class="edition champsEdition" id="changerNom" type="text" value="<?php echo echapper($user["Nom"]); ?>">
 		<span id="compteur-nom" class="compteur-texte"></span>
                 <span class="messageErreur" id="nomErreur"></span>
 
-                <p id="champsMail" class="lecture"><strong>Email :</strong> <?php echo $user["Mail"]?></p>
+                <p id="champsMail" class="lecture"><strong>Email :</strong> <?php echo echapper($user["Mail"]); ?></p>
                 <label class="edition" for="changerMail">Email :</label>
-                <input class="edition champsEdition" id="changerMail" type="email" value="<?php echo $user["Mail"] ?>"maxlength="100" data-compteur="compteur-mail">
+                <input class="edition champsEdition" id="changerMail" type="email" value="<?php echo echapper($user["Mail"]); ?>"maxlength="100" data-compteur="compteur-mail">
 		<span id="compteur-mail" class="edition champsEdition" class="compteur-texte"></span>
                 <span class="messageErreur" id="mailErreur"></span>
 
-                <p id="champsNum" class="lecture"><strong>Téléphone :</strong> <?php echo $user["numero"]?></p>
+                <p id="champsNum" class="lecture"><strong>Téléphone :</strong> <?php echo echapper($user["numero"]); ?></p>
                 <label class="edition" for="changerNumero">Téléphone :</label>
-                <input class="edition champsEdition" id="changerNumero" type="tel" value="<?php echo $user["numero"] ?>">
+                <input class="edition champsEdition" id="changerNumero" type="tel" value="<?php echo echapper($user["numero"]); ?>">
                 <span class="messageErreur" id="numErreur"></span>
 
-                <p id="champsAdresse" class="lecture"><strong>Adresse :</strong><?php echo $user["adresse"]?></p>
+                <p id="champsAdresse" class="lecture"><strong>Adresse :</strong><?php echo echapper($user["adresse"]); ?></p>
                 <label class="edition" for="changerAdresse">Adresse :</label>
-                <input class="edition champsEdition" id="changerAdresse" type="text" value="<?php echo $user["adresse"] ?>">
+                <input class="edition champsEdition" id="changerAdresse" type="text" value="<?php echo echapper($user["adresse"]); ?>">
                 <span class="messageErreur" id="adresseErreur"></span>
 
-                <p id="champsInterphone" class="lecture"><strong>Interphone :</strong><?php echo $user["interphone"]?></p>
+                <p id="champsInterphone" class="lecture"><strong>Interphone :</strong><?php echo echapper($user["interphone"]); ?></p>
                 <label class="edition" for="changerInterphone">Interphone (optionnel) :</label>
-                <input class="edition champsEdition" id="changerInterphone" type="text" value="<?php echo $user["interphone"] ?>">
+                <input class="edition champsEdition" id="changerInterphone" type="text" value="<?php echo echapper($user["interphone"]); ?>">
                 <span class="messageErreur" id="interphoneErreur"></span>
 
-                <p id="champsAge" class="lecture"><strong>Date de naissance:</strong><?php echo $user["age"]?></p>
+                <p id="champsAge" class="lecture"><strong>Date de naissance:</strong><?php echo echapper($user["age"]); ?></p>
                 <label class="edition" for="changerAge">Date de naissance :</label>
-                <input class="edition champsEdition" id="changerAge" type="date" value="<?php echo $user["age"] ?>">
+                <input class="edition champsEdition" id="changerAge" type="date" value="<?php echo echapper($user["age"]); ?>">
                 <span class="messageErreur" id="ageErreur"></span>
 
                 <br class="edition">
@@ -118,7 +126,7 @@ if (isset($_GET["id"])) {
                 <button type="button" id="togglePassword2" class="edition">👁️</button>
                 <span id="mdpErreur" class="messageErreur edition"></span>
 
-                <p class="lecture"><strong>Dernière connexion :</strong><?php echo $user["derniere_connexion"]?></p></br>
+                <p class="lecture"><strong>Dernière connexion :</strong><?php echo echapper($user["derniere_connexion"]); ?></p></br>
 
             </div>
 

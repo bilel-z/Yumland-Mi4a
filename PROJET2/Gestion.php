@@ -1,6 +1,7 @@
 <?php
-session_start();
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 
 if (
     !isset($_SESSION['user']) ||

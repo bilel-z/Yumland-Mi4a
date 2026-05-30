@@ -103,4 +103,48 @@ function getAPIKey($vendeur)
         }
         return 'à préparer';
     }
+
+    function echapper($valeur){
+        return htmlspecialchars((string)($valeur ?? ''), ENT_QUOTES, 'UTF-8');
+    }
+
+    function nettoyerEntree($valeur, $longueurMax = 255){
+        $valeur = trim((string)$valeur);
+        $valeur = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $valeur);
+        if (function_exists('mb_strlen') && mb_strlen($valeur) > $longueurMax){
+            $valeur = mb_substr($valeur, 0, $longueurMax);
+        } elseif (strlen($valeur) > $longueurMax){
+            $valeur = substr($valeur, 0, $longueurMax);
+        }
+        return $valeur;
+    }
+
+    function securiserCookieSession(){
+        if (session_status() === PHP_SESSION_ACTIVE){
+            return; 
+        }
+        $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path'     => '/',
+            'httponly' => true,   
+            'secure'   => $https, 
+            'samesite' => 'Lax'   
+        ]);
+    }
+    function requeteInterne(){
+        if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST'){
+            return true;
+        }
+        $hote = $_SERVER['HTTP_HOST'] ?? '';
+        $origine = $_SERVER['HTTP_ORIGIN'] ?? '';
+        if ($origine !== ''){
+            return parse_url($origine, PHP_URL_HOST) === parse_url('http://' . $hote, PHP_URL_HOST);
+        }
+        $referer = $_SERVER['HTTP_REFERER'] ?? '';
+        if ($referer !== ''){
+            return parse_url($referer, PHP_URL_HOST) === parse_url('http://' . $hote, PHP_URL_HOST);
+        }
+        return true;
+    }
 ?>

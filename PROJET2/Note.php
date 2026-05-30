@@ -1,6 +1,7 @@
 <?php
-session_start();
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 
 $estClient = isset($_SESSION['user']) && (($_SESSION['user']['role'] ?? '') === 'client');
 
@@ -31,6 +32,7 @@ if ($estClient) {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
+        if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
         $service = (int)($_POST['service'] ?? 0);
         $qualite = (int)($_POST['qualite'] ?? 0);
         $ambiance = (int)($_POST['ambiance'] ?? 0);

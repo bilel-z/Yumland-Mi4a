@@ -1,8 +1,14 @@
 <?php
-session_start();
 include_once(__DIR__ . "/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 
 header('Content-Type: application/json');
+
+if (!requeteInterne()) {
+    echo json_encode(["succes" => false, "erreur" => "Requête refusée."]);
+    exit();
+}
 
 if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] !== "client") {
     echo json_encode(["succes" => false, "erreur" => "Non autorisé."]);
@@ -44,11 +50,57 @@ if (!in_array($commande["statut"] ?? "", $statutsModifiables, true) || ($command
 }
 
 $ancienTotal = round((float)($commande["total"] ?? 0), 2);
-$diff = round($nouveauTotal - $ancienTotal, 2);
 
-$commandes[$commandeIndex]["articles"] = $articles;
-$commandes[$commandeIndex]["total"] = $nouveauTotal;
-$commandes[$commandeIndex]["nombre_articles"] = array_sum(array_column($articles, "quantite"));
+$prixPlats = [];
+foreach (lireJson(__DIR__ . "/JSON/plats.json") as $plat) {
+    if (isset($plat["nom"])) {
+        $prixPlats[$plat["nom"]] = (float)($plat["prix"] ?? 0);
+    }
+}
+$prixOrigine = [];
+foreach (($commande["articles"] ?? []) as $art) {
+    if (isset($art["nom"])) {
+        $prixOrigine[$art["nom"]] = (float)($art["prix_unitaire"] ?? 0);
+    }
+}
+
+$articlesValides = [];
+$totalRecalcule = 0;
+foreach ($articles as $art) {
+    $nom = (string)($art["nom"] ?? "");
+    $quantite = (int)($art["quantite"] ?? 0);
+    if ($nom === "" || $quantite <= 0) {
+        continue;
+    }
+    if (isset($prixPlats[$nom])) {
+        $prixReel = $prixPlats[$nom];
+    } elseif (isset($prixOrigine[$nom])) {
+        $prixReel = $prixOrigine[$nom];
+    } else {
+        echo json_encode(["succes" => false, "erreur" => "Article invalide dans la commande."]);
+        exit();
+    }
+    $sousTotal = round($prixReel * $quantite, 2);
+    $articlesValides[] = [
+        "nom" => $nom,
+        "prix_unitaire" => $prixReel,
+        "quantite" => $quantite,
+        "sous_total" => $sousTotal
+    ];
+    $totalRecalcule += $sousTotal;
+}
+$totalRecalcule = round($totalRecalcule, 2);
+
+if (empty($articlesValides)) {
+    echo json_encode(["succes" => false, "erreur" => "Données invalides."]);
+    exit();
+}
+
+$diff = round($totalRecalcule - $ancienTotal, 2);
+
+$commandes[$commandeIndex]["articles"] = $articlesValides;
+$commandes[$commandeIndex]["total"] = $totalRecalcule;
+$commandes[$commandeIndex]["nombre_articles"] = array_sum(array_column($articlesValides, "quantite"));
 
 ecrireJson($cheminCommandes, $commandes);
 

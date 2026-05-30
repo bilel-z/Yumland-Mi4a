@@ -1,6 +1,12 @@
 <?php 
-session_start();
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && !requeteInterne()) {
+    http_response_code(403);
+    exit("Requête refusée.");
+}
 
 if (!isset($_SESSION["Panier"])) {
     $_SESSION["Panier"] = [];

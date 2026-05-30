@@ -1,18 +1,21 @@
-<?php session_start(); 
+<?php 
 include_once("section/Fonction/fonction.php");
+securiserCookieSession();
+session_start();
 $doublonMail = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
 
     $newUser = [
         "id" => time(),
-        "Nom" => $_POST["Nom"],
-        "Prenom" => $_POST["Prenom"],
-        "Mail" => $_POST["Mail"],
-        "Mdp" => password_hash($_POST["Mdp"], PASSWORD_DEFAULT),
-        "age" => $_POST["Age"],
-        "numero" => $_POST["Num"],
-        "adresse" => $_POST["Adresse"],
-        "interphone" => $_POST["Interphone"],
+        "Nom" => nettoyerEntree($_POST["Nom"] ?? "", 50),
+        "Prenom" => nettoyerEntree($_POST["Prenom"] ?? "", 50),
+        "Mail" => nettoyerEntree($_POST["Mail"] ?? "", 100),
+        "Mdp" => password_hash($_POST["Mdp"] ?? "", PASSWORD_DEFAULT),
+        "age" => nettoyerEntree($_POST["Age"] ?? "", 20),
+        "numero" => nettoyerEntree($_POST["Num"] ?? "", 20),
+        "adresse" => nettoyerEntree($_POST["Adresse"] ?? "", 200),
+        "interphone" => nettoyerEntree($_POST["Interphone"] ?? "", 50),
         "role" => "client",
         "date_inscription" => date("Y-m-d"),
         "derniere_connexion" => date("Y-m-d H:i:s"),
@@ -30,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $users = [];
     }
     foreach($users as $element){
-        if($element["Mail"] === $_POST["Mail"]){
+        if($element["Mail"] === $newUser["Mail"]){
             $doublonMail = 1;
             break;
         }

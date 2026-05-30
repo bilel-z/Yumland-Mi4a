@@ -1,14 +1,16 @@
 <?php
+include_once("section/Fonction/fonction.php");
+securiserCookieSession();
 session_start();
 $error = "";
-include_once("section/Fonction/fonction.php");
 if (isset($_SESSION["user"])) {
     header("Location: Profil.php");
     exit();
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["Mail"];
-    $password = $_POST["Mdp"];
+    if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
+    $email = nettoyerEntree($_POST["Mail"] ?? "", 100);
+    $password = (string)($_POST["Mdp"] ?? "");
     $file = "section/JSON/utilisateurs.json";
     if (file_exists($file)) {
         $users = lireJson($file);
@@ -20,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 }
                 $user["derniere_connexion"] = date("Y-m-d H:i:s");
+                session_regenerate_id(true);
                 $_SESSION["user"] = $user;
                 file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
                 if ($user["role"] == "client") {
