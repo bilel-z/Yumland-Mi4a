@@ -1,7 +1,9 @@
 <?php 
     session_start();
     include_once(__DIR__ . "/Fonction/fonction.php");
+    //On charge tous les plats depuis le JSON et on parcourt chaque plat pour décider s'il doit être affiché en fonction des filtres
     $menu = lireJson(__DIR__ . "/JSON/plats.json");
+    //On initialise le panier s'il n'existe pas
     if (!isset($_SESSION["Panier"])) {
         $_SESSION["Panier"] = [];
     }
@@ -9,7 +11,7 @@
     foreach($menu as $plat){
 
         $affiche = true;
-
+        //On exclut les plats simples
         if($plat['categorie'] != "Menu"){
             $affiche = false;
         }
@@ -24,7 +26,7 @@
                 $affiche = false;
             }
         }
-
+        //On affiche la carte du menu s'il passe tous les filtres
         if($affiche){
             echo '
                 <div class="BoitePlat" data-prix="'.$plat["prix"].'" data-nbcommande="'.($plat["commandes"] ?? 0).'">

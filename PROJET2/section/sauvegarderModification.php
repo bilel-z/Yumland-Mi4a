@@ -108,7 +108,7 @@ if ($diff > 0) {
     $transaction = genererTransaction();
     $montant     = number_format($diff, 2, '.', '');
     $vendeur     = 'MI-4_A';
-    $retour      = 'http://localhost:8888/Yumland-Mi4a-1/PROJET2/retour_paiement.php?session=s&complement=1&commande_id=' . urlencode($commandeId);
+    $retour      = 'http://localhost:8000/retour_paiement.php?session=s&complement=1&commande_id=' . urlencode($commandeId);
     $api_key     = getAPIKey($vendeur);
     $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 

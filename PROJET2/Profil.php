@@ -133,11 +133,13 @@ if (isset($_GET["id"])) {
         </div>
 
         <div class="actions-profil">
-            <button class="btn-modifier lecture" id="bouttonModifier" onclick="modeEdition();">
-                <img src="image/editImage.png" alt="image crayon">
-            </button>
-            <button class="edition" id="validerProfil" onclick="modifierProfil();">Valider</button>
-            <button class="edition" id="annulerProfil" onclick="modeLecture();">Annuler</button>
+            <?php if(!isset($_GET["id"])): ?>
+                <button class="btn-modifier lecture" id="bouttonModifier" onclick="modeEdition();">
+                    <img src="image/editImage.png" alt="image crayon">
+                </button>
+                <button class="edition" id="validerProfil" onclick="modifierProfil();">Valider</button>
+                <button class="edition" id="annulerProfil" onclick="modeLecture();">Annuler</button>
+            <?php endif;?>
             <a href="section/deconnexion.php" class="btn-deco lecture">Déconnexion</a>
         </div>
 

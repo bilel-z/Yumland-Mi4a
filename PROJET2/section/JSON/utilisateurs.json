@@ -11,11 +11,11 @@
         "interphone": "1234",
         "role": "client",
         "date_inscription": "2026-04-05",
-        "derniere_connexion": "2026-05-29 19:23:45",
+        "derniere_connexion": "2026-05-30 18:19:18",
         "statut": "Classique",
         "bloquer": false,
         "Commandes": [],
-        "plats_gratuits": 0
+        "plats_gratuits": 1
     },
     {
         "id": 1775344462,

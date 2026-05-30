@@ -13,6 +13,9 @@
             else if($_POST["Ajouter"] == "Supprimer"){
                 SupprPanier($_SESSION["Panier"],$_POST["nomSuppr"],$_POST["prixSuppr"]);
             }
+            //Empêche le renvoie du formulaire quand on recharge la page
+            header("Location: Menu.php");
+            exit;
         }
         else{
             header("Location: Connexion.php");

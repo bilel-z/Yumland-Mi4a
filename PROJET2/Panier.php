@@ -33,6 +33,24 @@ if(isset($_POST["Ajouter"]) && $_POST["Ajouter"] == "Supprimer"){
         }
     }
 }
+if(isset($_POST["Ajouter"]) && $_POST["Ajouter"] == "Ajouter"){
+    if(isset($_POST["nomAjout"])){
+        $nom = $_POST["nomAjout"];
+        $prix = null;
+        foreach($_SESSION["Panier"] as $plat){
+            if(isset($plat[0]) && $plat[0] == $nom){
+                $prix = $plat[1];
+                break;
+            }
+        }
+        if($prix !== null){
+            $_SESSION["Panier"][] = array($nom, $prix);
+        }
+    }
+    header("Location: Panier.php");
+    exit;
+}
+
 $api_key = getAPIKey('MI-4_A');
 $transaction = genererTransaction();
 $montant = number_format(total($_SESSION["Panier"]), 2, '.', '');

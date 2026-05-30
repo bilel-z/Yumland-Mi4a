@@ -7,6 +7,8 @@ let boitePlat = document.getElementById('grillePlat');
 let boiteMenu = document.getElementById('grilleMenu');
 let recherche = document.getElementById('rechercheFor');
 
+
+//Fonction qui applique un tri en fonction du prix croissant, decroissant ou en fonction du plat le plus commandé
 function appliqueTri(){
     let typeTri = Tri.value;
     let boites = [];
@@ -15,20 +17,24 @@ function appliqueTri(){
         boites.push(element);
     }
     if(typeTri == "prixCroissant"){
+        //Prix du moins cher au plus cher
         boites.sort(function(a, b){
             return parseFloat(a.dataset.prix) - parseFloat(b.dataset.prix);
         });
     }
     else if(typeTri == "prixDecroissant"){
+        //Prix du plus cher au moins cher
         boites.sort(function(a, b){
             return parseFloat(b.dataset.prix) - parseFloat(a.dataset.prix);
         });
     }
     else if(typeTri == "plusCommandes"){
+        //Du plat le plus commandé au moins commandé
         boites.sort(function(a, b){
             return parseFloat(b.dataset.nbcommande) - parseFloat(a.dataset.nbcommande);
         });
     }
+    //On réinsère les cartes dans l'ordre
     for(let carte of boites){
         boitePlat.appendChild(carte);
     }
@@ -59,7 +65,9 @@ function appliqueTri(){
 
 }
 
+//Fonction qui applique un filtre en fonction des choix de l'utilisateur
 function appliqueFiltre(){
+    //On recupere les composantes de l'URL et on fait un fetch ou en envoie les filtre avec de récupéré seuelemnt les plats correspondant avec le fetch
     let url = "?&recherche="+encodeURIComponent(recherche.value)+"&typePlat="+encodeURIComponent(typePlat.value)+"&Allergene="+encodeURIComponent(Allergene.value)+"&typeSaveur="+encodeURIComponent(Saveur.value);
     fetch("section/plat.php"+url)
     .then((response) => {
@@ -70,6 +78,7 @@ function appliqueFiltre(){
         return response.text();
     })
     .then((contenu) => {
+        //Affiche seulement les plats filtrés et triés
         boitePlat.innerHTML = contenu;
         appliqueTri();
     })
@@ -86,6 +95,7 @@ function appliqueFiltre(){
         return response.text();
     })
     .then((contenu) => {
+        //Affiche seulement les menus filtrés et triés
         boiteMenu.innerHTML = contenu;
         appliqueTri();
     })
@@ -94,6 +104,7 @@ function appliqueFiltre(){
     });
 }
 
+//Faire en sorte que la touche entrée valide la recherche
 document.getElementById('rechercheFor').addEventListener('keydown', (touche) => {
     if (touche.key == 'Enter'){
         appliqueFiltre();

@@ -1,15 +1,17 @@
 <?php 
     session_start();
     include_once(__DIR__ . "/Fonction/fonction.php");
+    //On initialise le panier s'il n'existe pas
     if (!isset($_SESSION["Panier"])) {
         $_SESSION["Panier"] = [];
     }
+    //On charge tous les plats depuis le JSON et on parcourt chaque plat pour décider s'il doit être affiché en fonction des filtres
     $menu = lireJson(__DIR__ . '/JSON/plats.json');
 
     foreach($menu as $plat){
 
         $affiche = true;
-
+        //On exclut les menus
         if($plat['categorie'] == "Menu"){
             $affiche = false;
         }
@@ -30,6 +32,7 @@
             }
         }
 
+        //On filtre grâce à la recherche sur le nom du plat
         if(!empty($_GET['recherche'])){
             $resultat = strtolower(trim($_GET['recherche']));
             if(strpos(strtolower($plat['nom']), $resultat) === false){
@@ -37,6 +40,7 @@
             }
         }
 
+        //On affiche la carte du plat s'il passe tous les filtres
         if($affiche){
             echo '
                 <div class="BoitePlat" data-prix="'.$plat["prix"].'" data-nbcommande="'.($plat["commandes"] ?? 0).'">

@@ -17,6 +17,11 @@
                         <input type="hidden" name="Ajouter" value="Supprimer" >
                         <button type="submit" class="retirerPlatPanier">-</button>
                     </form>
+                    <form method="post">
+                        <input type="hidden" name="nomAjout" value="'.$plat["nom"].'" >
+                        <input type="hidden" name="Ajouter" value="Ajouter" >
+                        <button type="submit" class="retirerPlatPanier">+</button>
+                    </form>
                 </div>
             </div>
         ';

@@ -37,7 +37,8 @@ $historique = array_reverse($historique);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KUNG FOOD - Historique</title>
     <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" href="CSS/Variable.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
+    <script src="section/Javascript/theme.js" defer></script>
     <link rel="stylesheet" href="CSS/styleHistorique.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
 </head>

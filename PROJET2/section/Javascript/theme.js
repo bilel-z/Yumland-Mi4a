@@ -1,8 +1,12 @@
+//Fonction qui change le thème de la page
 function changerTheme(){
+
+    //On recupère les éléments
     let bouton = document.getElementById("bouttonTheme");
     let link = document.getElementById("theme");
     let nomCSS = link.getAttribute("href");
-    
+
+    //On vérifie quelle thème est actuellement appliqué sur la page
     if(nomCSS.includes("Variable.css")){
         bouton.innerHTML = "Mode sombre 🌙";
         link.setAttribute("href","CSS/VariableClair.css");
@@ -15,6 +19,7 @@ function changerTheme(){
     }
 }
 
+//Fonction qui enregistre le thème dans un cookie
 function enregistreCookie(nom,valeur){
     document.cookie = nom + "=" + valeur + "; path=/;";
 }
@@ -30,6 +35,7 @@ function lireCookie(nom,origine){
     return origine;
 }
 
+//Fonction qui lit le cookie afin de savoir quel thème était appliqué
 function themeChargement(){
     let theme = lireCookie("theme","sombre");
     let link = document.getElementById("theme");
@@ -50,6 +56,7 @@ function themeChargement(){
     }
 }
 
+//Fonction qui rend les écritures gras en changeant le CSS
 function changerVisibilite(){
     document.body.classList.toggle("modeGras");
 }
