@@ -26,6 +26,10 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
                 <li><a href="Profil.php">PROFIL</a></li>
             <?php endif; ?>
 
+            <?php if (isset($_SESSION["user"])): ?>
+                <li><a href="Jackpot.php">JEU</a></li>
+            <?php endif; ?>
+
             <?php if ($role === "livreur"): ?>
                 <li><a href="Livraison.php">LIVRAISON</a></li>
             <?php endif; ?>

@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
+    //verif finale validité inscription
     
     if (inscriptionForm) {
         inscriptionForm.addEventListener('submit', function (e) {
@@ -232,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
-    
+    //cache mot de passe
     if (togglePassword && mdpInput) {
         togglePassword.addEventListener('click', function (e) {
             e.preventDefault();
