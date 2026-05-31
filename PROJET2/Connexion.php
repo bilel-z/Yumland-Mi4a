@@ -8,23 +8,29 @@ if (isset($_SESSION["user"])) {
     exit();
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //On vérifie que la requête vient bien du site
     if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
+    //On nettoie les données reçues du formulaire
     $email = nettoyerEntree($_POST["Mail"] ?? "", 100);
     $password = (string)($_POST["Mdp"] ?? "");
     $file = "section/JSON/utilisateurs.json";
     if (file_exists($file)) {
         $users = lireJson($file);
         $error = "Email ou mot de passe incorrect";
+        //On cherche l'utilisateur
         foreach ($users as &$user) { 
             if ($user["Mail"] === $email && password_verify($password, $user["Mdp"])) {
+                //Si le compte est bloqué, on empêche la connexion
                 if ($user["bloquer"] === true) {
                     $error = "Votre compte a été bloqué, veuillez contacter l'administrateur.";
                     break;
                 }
+                //On met à jour la date de dernière connexion
                 $user["derniere_connexion"] = date("Y-m-d H:i:s");
                 session_regenerate_id(true);
                 $_SESSION["user"] = $user;
                 file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
+                //On redirige vers la page correspondant au rôle de l'utilisateur
                 if ($user["role"] == "client") {
                     header("Location: Acceuil.php");
                 } elseif ($user["role"] == "livreur") {

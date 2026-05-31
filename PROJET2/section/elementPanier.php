@@ -1,8 +1,10 @@
 <?php 
+    //On récupère la liste des plats uniques du panier
     include_once("section/Fonction/fonction.php");
     $liste = listeUnique($_SESSION["Panier"]);
-
+    //On affiche une carte pour chaque plat du panier
     foreach($liste as $plat){
+        //On compte le nombre de ce plat dans le panier
         $nb = ComptePanier($_SESSION["Panier"],$plat["nom"]);
         echo '
             <div class="boitePlatPanier">

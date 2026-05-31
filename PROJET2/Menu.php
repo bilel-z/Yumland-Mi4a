@@ -1,16 +1,21 @@
 <?php 
     session_start();
     include_once("section/Fonction/fonction.php");
+    //On initialise le panier s'il n'existe pas encore en session
     if (!isset($_SESSION["Panier"])) {
         $_SESSION["Panier"] = [];
     }
+    //On traite les données si le bouton Ajouter ou Supprimer a été cliqué
     if(isset($_POST["Ajouter"])){
+        //On vérifie que l'utilisateur est bien connecté
         if(isset($_SESSION["user"])){
             if($_POST["Ajouter"] == "Ajouter"){
+                //On ajoute le plat au panier avec son nom et son prix
                 $couple = array($_POST["nomAjout"],$_POST["prixAjout"]);
                 $_SESSION["Panier"][] = $couple;
             }
             else if($_POST["Ajouter"] == "Supprimer"){
+                //On retire une fois le plat du panier
                 SupprPanier($_SESSION["Panier"],$_POST["nomSuppr"],$_POST["prixSuppr"]);
             }
             //Empêche le renvoie du formulaire quand on recharge la page

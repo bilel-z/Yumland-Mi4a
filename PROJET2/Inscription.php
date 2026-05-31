@@ -4,8 +4,9 @@ securiserCookieSession();
 session_start();
 $doublonMail = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //On vérifie que la requête vient bien du site
     if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
-
+    //On construit le tableau du nouvel utilisateur avec les données nettoyées
     $newUser = [
         "id" => time(),
         "Nom" => nettoyerEntree($_POST["Nom"] ?? "", 50),
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "Commandes" => [],
         "plats_gratuits" => 0
     ];
-
+    //On charge la liste des utilisateurs existants depuis le JSON
     $file = "section/JSON/utilisateurs.json";
 
     if (file_exists($file)) {
@@ -32,13 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $users = [];
     }
+    //On vérifie qu'aucun compte n'utilise déjà cette adresse mail
     foreach($users as $element){
         if($element["Mail"] === $newUser["Mail"]){
             $doublonMail = 1;
             break;
         }
     }
-
+    //Si l'email est disponible on enregistre le nouvel utilisateur
     if(!$doublonMail){
         $users[] = $newUser;
         file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));

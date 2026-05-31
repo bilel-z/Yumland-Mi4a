@@ -81,8 +81,8 @@ La phase 3 a consisté à rendre le site dynamique côté client grâce au langa
 
 * **Blocage/déblocage d'un utilisateur en asynchrone (`Admin.php`)** : L'administrateur peut bloquer ou débloquer un compte sans recharger la page. Si un utilisateur est bloqué, sa session est terminée immédiatement via une vérification périodique côté client (`check_bloque.php` utilisée toutes les 5 secondes).
 
-# Fonctionnalité innovante
+# Phase 4
 
-## Machine à jackpot (En cours) 
+## Fonctionnalité innovante
 
-* **(`Panier.php` `jackpot.php`)** : Les clients peuvent tenter leur chance une fois par jour via une machine à jackpot. En cas de victoire (trois pandas alignés), un bon de réduction est ajouté sur leur compte et peut être utilisé lors de la prochaine commande pour obtenir le plat le moins cher gratuitement. La machine peut être utilisé qu'une seul fois par jour.
+* **Machine à jackpot (`Panier.php` `jackpot.php`)** : Les clients peuvent tenter leur chance une fois par jour via une machine à jackpot. En cas de victoire (trois pandas alignés), un bon de réduction est ajouté sur leur compte et peut être utilisé lors de la prochaine commande pour obtenir le plat le moins cher gratuitement. La machine peut être utilisé qu'une seul fois par jour.
