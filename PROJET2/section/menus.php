@@ -1,5 +1,7 @@
 <?php 
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     include_once(__DIR__ . "/Fonction/fonction.php");
     //On charge tous les plats depuis le JSON et on parcourt chaque plat pour décider s'il doit être affiché en fonction des filtres
     $menu = lireJson(__DIR__ . "/JSON/plats.json");

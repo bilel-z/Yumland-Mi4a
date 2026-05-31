@@ -32,6 +32,8 @@ if(isset($_POST["Ajouter"]) && $_POST["Ajouter"] == "Supprimer"){
             SupprPanier($_SESSION["Panier"], $nom, $prix);
         }
     }
+    header("Location: Panier.php");
+    exit;
 }
 if(isset($_POST["Ajouter"]) && $_POST["Ajouter"] == "Ajouter"){
     if(isset($_POST["nomAjout"])){
