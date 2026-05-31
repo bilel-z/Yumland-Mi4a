@@ -29,7 +29,7 @@ foreach ($listeCommandes as $commande) {
         $statutCommande = $commande['statut'];
     }
 
-    if ($statutCommande !== 'livrée' && $statutCommande !== 'annulée') {
+    if ($statutCommande !== 'livrée' && $statutCommande !== 'abandonnée') {
         $nombreCommandesActives++;
     }
 

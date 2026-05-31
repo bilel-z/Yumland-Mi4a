@@ -2,30 +2,6 @@
 include_once("section/Fonction/fonction.php");
 securiserCookieSession();
 session_start();
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUNG FOOD - Profil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/profil.css">
-    <link rel="stylesheet" href="CSS/BarreNav.css">
-    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
-    <link rel="icon" type="image/png" href="image/pandaLogo.png">
-    <script src="section/Javascript/theme.js" defer></script>
-   <script src="section/Javascript/validation.js"></script>
-   <script src="section/Javascript/profil.js"></script>
-</head>
-<script src="section/Javascript/check_bloque.js" defer></script>
-
-
-<body>
-<?php
-include_once("section/Fonction/fonction.php");
-
-
 if (!isset($_SESSION["user"])) {
     header("Location: Connexion.php");
     exit();
@@ -53,6 +29,27 @@ if (isset($_GET["id"])) {
     $user = $_SESSION["user"];
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUNG FOOD - Profil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/profil.css">
+    <link rel="stylesheet" href="CSS/BarreNav.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
+    <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
+   <script src="section/Javascript/validation.js"></script>
+   <script src="section/Javascript/profil.js"></script>
+</head>
+<script src="section/Javascript/check_bloque.js" defer></script>
+
+
+<body>
+
 <?php include 'section/Navigation.php'; ?>
 
 <div class="Teinte"></div>

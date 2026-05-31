@@ -1,5 +1,7 @@
 <?php 
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     include_once(__DIR__ . "/Fonction/fonction.php");
     //On initialise le panier s'il n'existe pas
     if (!isset($_SESSION["Panier"])) {

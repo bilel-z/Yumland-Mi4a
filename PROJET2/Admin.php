@@ -6,21 +6,6 @@ if (!isset($_SESSION["user"]) || ($_SESSION["user"]["role"] ?? "") != "administr
     header('Location: Connexion.php');
     exit();
 }
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Gestion des utilisateurs</title>
-    <link rel="stylesheet" href="CSS/styleAdmin+commandes.css">
-    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
-    <link rel="icon" type="image/png" href="image/pandaLogo.png">
-    <script src="section/Javascript/theme.js" defer></script>
-    <script src="section/Javascript/fonction.js" defer></script>
-</head>
-<body>
-
-<?php
 
 $file = "section/JSON/utilisateurs.json";
 
@@ -84,6 +69,21 @@ if ($filtre !== "tous") {
     });
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des utilisateurs</title>
+    <link rel="stylesheet" href="CSS/styleAdmin+commandes.css">
+    <link rel="stylesheet" id="theme" href="CSS/Variable.css">
+    <link rel="icon" type="image/png" href="image/pandaLogo.png">
+    <script src="section/Javascript/theme.js" defer></script>
+    <script src="section/Javascript/fonction.js" defer></script>
+</head>
+<body>
+
+
 
     <div style="position: fixed; top: 20px; right: 30px; z-index: 1000;">
         <a href="section/deconnexion.php" class="Envoi" style="text-decoration: none;">🔓 Déconnexion</a>
