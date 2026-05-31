@@ -14,7 +14,6 @@ if (!isset($_SESSION["user"])) {
 	 <link rel="stylesheet" href="CSS/BarreNav.css">
 	<link rel="stylesheet" id="theme" href="CSS/jackpot.css">
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
-    <script src="section/Javascript/theme.js" defer></script>
 	<script src="section/Javascript/jackpot.js" defer></script>
 
     
