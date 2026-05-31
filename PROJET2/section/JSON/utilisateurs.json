@@ -11,11 +11,12 @@
         "interphone": "1234",
         "role": "client",
         "date_inscription": "2026-04-05",
-        "derniere_connexion": "2026-05-31 18:54:31",
+        "derniere_connexion": "2026-05-31 22:51:28",
         "statut": "Classique",
         "bloquer": false,
         "Commandes": [],
-        "plats_gratuits": 1
+        "plats_gratuits": 1,
+        "dernier_tirage": "2026-05-31"
     },
     {
         "id": 1775344462,
@@ -43,7 +44,7 @@
         "Mdp": "$2y$10$CSDkanmrOS5sad4gMU9WUe.qWJ.VVt9QQLjpA305kqNeNNQc5pdcC",
         "age": "2003-04-17",
         "numero": "0677889900",
-        "adresse": "3 place de la R\u00e9publique, 75011 Paris",
+        "adresse": "3 place de la République, 75011 Paris",
         "interphone": "",
         "role": "client",
         "date_inscription": "2026-04-05",
@@ -187,7 +188,7 @@
         "age": "1988-05-14",
         "numero": "0611223344",
         "adresse": "42 avenue de l'Innovation",
-        "interphone": "Code 1337, B\u00e2timent B",
+        "interphone": "Code 1337, Bâtiment B",
         "role": "administrateur",
         "statut": "Classique",
         "bloquer": false,

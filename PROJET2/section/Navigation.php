@@ -28,7 +28,7 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
             <?php endif; ?>
 
             <?php if (isset($_SESSION["user"])): ?>
-                <li><a href="Jackpot.php">JEU</a></li>
+                <li><a href="jackpot.php">JEU</a></li>
             <?php endif; ?>
 
             <?php if ($role === "livreur"): ?>
