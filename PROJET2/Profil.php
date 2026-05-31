@@ -108,17 +108,17 @@ if (isset($_GET["id"])) {
                 <h3 class="edition" >Modifier le mot de passe (optionnel)</h3>
 
                 <label class="edition" for="changerAncienMDP">Ancien mot de passe :</label>
-                <input class="edition champsEdition" id="changerAncienMDP" type="password" maxlength="30" data-compteur="compteur-ancien-mdp" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerAncienMDP" type="password" maxlength="30" data-compteur="compteur-ancien-mdp" value="" placeholder="••••••••" autocomplete="new-password">
 		<span id="compteur-ancien-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword" class="edition">👁️</button>
                 
                 <label class="edition" for="changerNouveauMDP">Nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerNouveauMDP" type="password" maxlength="30" data-compteur="compteur-nouveau-mdp" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerNouveauMDP" type="password" maxlength="30" data-compteur="compteur-nouveau-mdp" value="" placeholder="••••••••" autocomplete="new-password">
 		<span id="compteur-nouveau-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword1" class="edition">👁️</button>
                 
                 <label class="edition" for="changerConfirmeMDP">Confirmation du nouveau mot de passe :</label>
-                <input class="edition champsEdition" id="changerConfirmeMDP" type="password" maxlength="30" data-compteur="compteur-confirmation-mdp" value="" placeholder="••••••••">
+                <input class="edition champsEdition" id="changerConfirmeMDP" type="password" maxlength="30" data-compteur="compteur-confirmation-mdp" value="" placeholder="••••••••" autocomplete="new-password">
 		<span id="compteur-confirmation-mdp" class="edition champsEdition" class="compteur-texte"></span>
                 <button type="button" id="togglePassword2" class="edition">👁️</button>
                 <span id="mdpErreur" class="messageErreur edition"></span>
