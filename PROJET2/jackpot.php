@@ -16,6 +16,7 @@ if (!isset($_SESSION["user"])) {
     <link rel="icon" type="image/png" href="image/pandaLogo.png">
 	<script src="section/Javascript/jackpot.js" defer></script>
 
+	
     
 </head>
 <body>
