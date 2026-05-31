@@ -18,6 +18,7 @@ $role = $estConnecte ? ($_SESSION["user"]["role"] ?? "") : "";
         <ul>
             <li><a href="Acceuil.php">ACCUEIL</a></li>
             <li><a href="Menu.php">MENU</a></li>
+            <?php //On affiche les liens selon le rôle de l'utilisateur connecté ?>
             <?php if (!isset($_SESSION["user"])): ?>
                 <li><a href="Connexion.php">CONNEXION</a></li>
             <?php endif; ?>

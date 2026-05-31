@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//On vide la session, on supprime le cookie et on redirige vers la connexion
 $_SESSION = [];
 
 if (ini_get("session.use_cookies")) {

@@ -9,6 +9,7 @@ if (!isset($_SESSION["user"])) {
     exit();
 }
 
+//On charge la liste des utilisateurs et on vérifie si l'utilisateur connecté est bloqué
 $file = __DIR__ . "/JSON/utilisateurs.json";
 $users = json_decode(file_get_contents($file), true);
 

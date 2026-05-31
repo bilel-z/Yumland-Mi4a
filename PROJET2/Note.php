@@ -14,6 +14,7 @@ $messageSucces = '';
 $commandesEligibles = [];
 
 if ($estClient) {
+    //On filtre les commandes livrées appartenant au client connecté
     foreach ($commandes as $commande) {
         $estAuClient = isset($commande['client_id']) && ((string)$commande['client_id'] === (string)($_SESSION['user']['id'] ?? ''));
         $estLivree = (($commande['statut'] ?? '') === 'livrée');
@@ -31,6 +32,7 @@ if ($estClient) {
         $messageErreur = "Cette commande est introuvable, ne vous appartient pas, ou n'a pas encore été livrée.";
     }
 
+    //On enregistre la note dans le JSON si le formulaire est soumis et que la commande est valide
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer_note'])) {
         if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
         $service = (int)($_POST['service'] ?? 0);

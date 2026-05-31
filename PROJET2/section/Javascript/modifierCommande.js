@@ -1,3 +1,4 @@
+//Fonction qui calcule le total de la commande à partir des articles
 function calculerTotal(articles) {
     let total = 0;
     for (let i = 0; i < articles.length; i++) {
@@ -6,6 +7,7 @@ function calculerTotal(articles) {
     return Math.round(total * 100) / 100;
 }
 
+//Fonction qui récupère la liste des articles affichés dans le tableau avec leur quantité et prix
 function getArticles() {
     const lignes = document.querySelectorAll('#articlesList .article-ligne');
     const articles = [];
@@ -25,6 +27,7 @@ function getArticles() {
     return articles;
 }
 
+//Fonction qui met à jour le total affiché et affiche le supplément ou la réduction par rapport à l'ancien prix
 function recalculerTotal() {
     const articles = getArticles();
     const nouveauTotal = calculerTotal(articles);
@@ -46,12 +49,14 @@ function recalculerTotal() {
     }
 }
 
+//Fonction qui augmente la quantité d'un article d'une unité
 function augmenterQte(btn) {
     const qteEl = btn.previousElementSibling;
     qteEl.textContent = parseInt(qteEl.textContent) + 1;
     recalculerTotal();
 }
 
+//Fonction qui diminue la quantité d'un article, et le supprime s'il tombe à zéro
 function diminuerQte(btn) {
     const qteEl = btn.nextElementSibling;
     const qte   = parseInt(qteEl.textContent);
@@ -63,11 +68,13 @@ function diminuerQte(btn) {
     recalculerTotal();
 }
 
+//Fonction qui supprime un article de la liste
 function supprimerArticle(btn) {
     btn.closest('.article-ligne').remove();
     recalculerTotal();
 }
 
+//Fonction qui vérifie si un article est déjà dans la liste
 function trouverArticleExistant(liste, nom) {
     const lignes = liste.querySelectorAll('.article-ligne');
     for (let i = 0; i < lignes.length; i++) {
@@ -78,6 +85,7 @@ function trouverArticleExistant(liste, nom) {
     return null;
 }
 
+//Fonction qui ajoute un plat à la liste, ou augmente sa quantité s'il est déjà présent
 function ajouterPlat(nom, prix) {
     const liste = document.getElementById('articlesList');
     const existant = trouverArticleExistant(liste, nom);
@@ -102,6 +110,7 @@ function ajouterPlat(nom, prix) {
     recalculerTotal();
 }
 
+//Fonction qui crée et soumet un formulaire caché pour rediriger vers la plateforme de paiement
 function soumettreFormulaireCybank(cybank) {
     const form = document.createElement('form');
     form.method = 'POST';
@@ -117,6 +126,7 @@ function soumettreFormulaireCybank(cybank) {
     form.submit();
 }
 
+//Fonction qui envoie la commande modifiée au serveur et redirige vers le paiement si un supplément est dû
 function validerModification() {
     const articles = getArticles();
     if (articles.length === 0) {

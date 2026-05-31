@@ -20,6 +20,7 @@ if ($users === null) {
     die("Erreur : JSON invalide — " . json_last_error_msg());
 }
 
+//On met à jour le rôle, le statut ou le blocage d'un utilisateur selon ce qui est envoyé
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
     $userId = $_POST["user-id"] ?? "";

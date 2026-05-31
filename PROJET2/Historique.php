@@ -11,6 +11,7 @@ $user = $_SESSION["user"];
 $commandes = lireJson("section/JSON/commandes.json");
 $historique = [];
 
+//Fonction qui formate la liste des articles d'une commande en une chaîne lisible
 function formaterArticles($articles) {
     if (empty($articles) || !is_array($articles)) { return "-"; }
     $liste = [];
@@ -22,6 +23,7 @@ function formaterArticles($articles) {
     return htmlspecialchars(implode(", ", $liste));
 }
 
+//On récupère les commandes du client connecté et on les affiche de la plus récente à la plus ancienne
 foreach ($commandes as $commande) {
     if (isset($commande["client_id"]) && $commande["client_id"] == $user["id"]) {
         $historique[] = $commande;

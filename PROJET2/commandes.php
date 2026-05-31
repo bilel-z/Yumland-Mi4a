@@ -16,6 +16,7 @@ $messageErreur = '';
 $statutsDisponibles = ['à préparer', 'en cours', 'à attendre', 'en livraison', 'prête', 'livrée', 'abandonnée'];
 
 $utilisateurs = lireJson($cheminUtilisateurs);
+//On filtre les livreurs disponibles (non bloqués et disponibles)
 $livreursDisponibles = array_values(array_filter($utilisateurs, function ($user) {
     if (($user['role'] ?? '') !== 'livreur') {
         return false;
@@ -32,6 +33,7 @@ $livreursDisponibles = array_values(array_filter($utilisateurs, function ($user)
     return true;
 }));
 
+//On met à jour le statut et le livreur de la commande si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mettre_a_jour_commande'])) {
     if (!requeteInterne()) { http_response_code(403); exit("Requête refusée."); }
     $commandeId = trim($_POST['commande_id'] ?? '');

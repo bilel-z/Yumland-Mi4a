@@ -22,6 +22,7 @@ $chiffreAffaires = 0;
 $nombrePlats = count($listePlats);
 $nombreLivreursDisponibles = 0;
 
+//On calcule les statistiques du tableau de bord (commandes actives et chiffre d'affaires)
 foreach ($listeCommandes as $commande) {
     $statutCommande = '';
 

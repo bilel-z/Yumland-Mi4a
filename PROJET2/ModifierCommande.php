@@ -27,6 +27,7 @@ if ($commande === null) {
     exit();
 }
 
+//On vérifie que la commande est encore modifiable (statut et paiement complété), sinon on redirige
 $statutsModifiables = ["à préparer", "à attendre"];
 if (!in_array($commande["statut"] ?? "", $statutsModifiables, true) || ($commande["paiement_statut"] ?? "") !== "complété") {
     header("Location: Historique.php");

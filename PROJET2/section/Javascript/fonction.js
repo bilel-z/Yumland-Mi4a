@@ -1,3 +1,4 @@
+    //Fonction qui bloque ou débloque un utilisateur en envoyant la nouvelle valeur au serveur
     const toggleBloquer = async (btn) => {
         const userId  = btn.dataset.userId;
         const estBloque = btn.dataset.bloque === '1';   // état actuel
@@ -31,6 +32,7 @@
         }
     };
 
+	//On écoute les clics sur le tableau pour déclencher le blocage au clic sur le bon bouton
 	document.addEventListener('DOMContentLoaded', () => {
 	 const maTable = document.querySelector('table');
 	if (maTable) {

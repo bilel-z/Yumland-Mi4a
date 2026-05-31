@@ -5,6 +5,7 @@ session_start();
 
 header('Content-Type: application/json');
 
+//On refuse les requêtes qui ne viennent pas de notre application
 if (!requeteInterne()) {
     echo json_encode(["succes" => false, "erreur" => "Requête refusée."]);
     exit();
@@ -15,6 +16,7 @@ if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] !== "client") {
     exit();
 }
 
+//On récupère les données envoyées par le fetch
 $body = json_decode(file_get_contents("php://input"), true);
 $commandeId  = trim($body["commande_id"] ?? "");
 $articles = $body["articles"] ?? [];
@@ -25,6 +27,7 @@ if ($commandeId === "" || empty($articles)) {
     exit();
 }
 
+//On charge les commandes et on cherche celle qui correspond à l'utilisateur connecté
 $cheminCommandes = __DIR__ . "/JSON/commandes.json";
 $commandes = lireJson($cheminCommandes);
 $commandeIndex = null;

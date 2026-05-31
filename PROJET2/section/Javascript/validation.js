@@ -1,4 +1,5 @@
 
+//Fonction qui vérifie qu'un champ texte n'est pas vide
 function verificationChampNormal(champ, message) {
     let verif = true;
     if (champ.value.trim() == "") {
@@ -16,6 +17,7 @@ function verificationChampNormal(champ, message) {
     return verif;
 }
 
+//Fonction qui vérifie que l'adresse mail est valide
 function verificationMail(champ, message) {
     let verif = true;
     let erreur = "";
@@ -42,6 +44,7 @@ function verificationMail(champ, message) {
     return verif;
 }
 
+//Fonction qui vérifie que le numéro de téléphone est valide (10 chiffres)
 function verificationNumero(champ, message) {
     let verif = true;
     let erreur = "";
@@ -68,6 +71,7 @@ function verificationNumero(champ, message) {
     return verif;
 }
 
+//Fonction qui vérifie que le mot de passe est assez fort
 function verificationMDP(champ, message) {
     let verif = true;
     let erreur = "";
@@ -132,6 +136,7 @@ function verificationMDP(champ, message) {
     }
     return verif;
 }
+//Fonction qui vérifie que les champs de changement de mot de passe sont bien remplis
 function verifChangementMDP(ancien,nouveau,confirmation,message){
     let verif = true;
     message.style.display = "none";
@@ -160,9 +165,9 @@ function verifChangementMDP(ancien,nouveau,confirmation,message){
     }
     return verif;
 }
-	//inscription
+	//Gestion des validations en temps réel sur le formulaire d'inscription
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     const mdpInput = document.getElementById('MdpFor');
     const emailInput = document.getElementById('MailFor');
     const prenomInput = document.getElementById('PrenomFor');
@@ -216,8 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
-    //verif finale validité inscription
-    
+    //On vérifie que tous les champs sont valides avant d'envoyer le formulaire d'inscription
     if (inscriptionForm) {
         inscriptionForm.addEventListener('submit', function (e) {
             let emailValide = verificationMail(emailInput, document.getElementById('erreurEmail'));
@@ -233,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
-    //cache mot de passe
+    //On gère l'affichage ou le masquage du mot de passe
     if (togglePassword && mdpInput) {
         togglePassword.addEventListener('click', function (e) {
             e.preventDefault();
@@ -269,21 +273,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
+    //On vérifie que les champs sont valides avant d'envoyer le formulaire de connexion
     if (loginForm) {
         loginForm.addEventListener('submit', function (e) {
             let emailValid = verificationMail(emailInput, document.getElementById('erreurEmail'));
             let mdpValid = verificationMDP(mdpInput, document.getElementById('erreurMdp'));
-            
+
             if (!emailValid || !mdpValid) {
                 e.preventDefault();
             }
         });
     }
-    
+
+    //On gère l'affichage ou le masquage du mot de passe
     if (togglePassword && mdpInput) {
         togglePassword.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             if (mdpInput.type === 'password') {
                 mdpInput.type = 'text';
                 togglePassword.textContent = '🙈';
